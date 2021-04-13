@@ -95,8 +95,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../overview/daeploy_description.html">Daeploy</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Getting Started</span></p>
+<p class="caption"><span class="caption-text">User Guide</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/custom_service.html">Anatomy of a Service</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/dashboard.html">Dashboard</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/service_logs.html">Read Logs From Service</a></li>
@@ -107,7 +108,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/monitoring.html">Monitoring Your Service</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/cross_service_communication.html">Cross-service Communication</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Advanced Tutorials</span></p>
+<p class="caption"><span class="caption-text">Advanced User Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/sdk_typing.html">Typing in the SDK</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/using_multiple_hosts.html">Using Multiple Hosts</a></li>
@@ -139,7 +140,7 @@
 <li class="toctree-l1"><a class="reference internal" href="cli.html">Command-line Interface</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Software Development Kit</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#service-api-daeploy-service">Service API (<code class="xref py py-mod docutils literal notranslate"><span class="pre">daeploy.service</span></code>)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#communication-api-daeploy-communication">Communication API (<code class="xref py py-mod docutils literal notranslate"><span class="pre">daeploy.communication</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-daeploy.communication">Communication API (<code class="xref py py-mod docutils literal notranslate"><span class="pre">daeploy.communication</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-daeploy.utilities">Utilities API (<code class="xref py py-mod docutils literal notranslate"><span class="pre">daeploy.utilities</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-daeploy.data_types">Data Types API (<code class="xref py py-mod docutils literal notranslate"><span class="pre">daeploy.data_types</span></code>)</a></li>
 </ul>
@@ -373,9 +374,9 @@ entrypoints etc for the service has been specified</p>
 </dd></dl>
 
 </div>
-<div class="section" id="communication-api-daeploy-communication">
-<h2>Communication API (<a class="reference internal" href="#module-daeploy.communication" title="daeploy.communication"><code class="xref py py-mod docutils literal notranslate"><span class="pre">daeploy.communication</span></code></a>)<a class="headerlink" href="#communication-api-daeploy-communication" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="module-daeploy.communication"></span><dl class="py class">
+<div class="section" id="module-daeploy.communication">
+<span id="communication-api-daeploy-communication"></span><h2>Communication API (<a class="reference internal" href="#module-daeploy.communication" title="daeploy.communication"><code class="xref py py-mod docutils literal notranslate"><span class="pre">daeploy.communication</span></code></a>)<a class="headerlink" href="#module-daeploy.communication" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
 <dt id="daeploy.communication.Severity">
 <em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">Severity</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#daeploy.communication.Severity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
@@ -404,7 +405,7 @@ entrypoints etc for the service has been specified</p>
 <p>Example usage:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">call_service</span><span class="p">(</span>
     <span class="n">service_name</span><span class="o">=</span><span class="s2">&quot;data_connector&quot;</span><span class="p">,</span>
-    <span class="n">entrypoint_name</span><span class="o">=</span> <span class="s2">&quot;get_data&quot;</span><span class="p">,</span>
+    <span class="n">entrypoint_name</span><span class="o">=</span><span class="s2">&quot;get_data&quot;</span><span class="p">,</span>
     <span class="n">arguments</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;variable_name&quot;</span><span class="p">:</span> <span class="n">value</span><span class="p">}</span>
 <span class="p">)</span>
 </pre></div>

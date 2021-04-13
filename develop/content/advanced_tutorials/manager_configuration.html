@@ -95,8 +95,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../overview/daeploy_description.html">Daeploy</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Getting Started</span></p>
+<p class="caption"><span class="caption-text">User Guide</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/custom_service.html">Anatomy of a Service</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/dashboard.html">Dashboard</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/service_logs.html">Read Logs From Service</a></li>
@@ -107,7 +108,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/monitoring.html">Monitoring Your Service</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/cross_service_communication.html">Cross-service Communication</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Advanced Tutorials</span></p>
+<p class="caption"><span class="caption-text">Advanced User Guide</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="sdk_typing.html">Typing in the SDK</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_multiple_hosts.html">Using Multiple Hosts</a></li>
@@ -242,6 +243,81 @@
 <div class="section" id="manager-configuration">
 <span id="manager-configuration-reference"></span><h1>Manager Configuration<a class="headerlink" href="#manager-configuration" title="Permalink to this headline">¶</a></h1>
 <p>The Manager is highly configurable using environment variables.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 18%" />
+<col style="width: 48%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Environment Variable</p></th>
+<th class="head"><p>Default Value</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DAEPLOY_HOST_NAME</p></td>
+<td><p>“localhost”</p></td>
+<td><p>Host name of the machine running the Manager.</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAEPLOY_PROXY_HTTP_PORT</p></td>
+<td><p>80</p></td>
+<td><p>Proxy port for HTTP communication with Manager.</p></td>
+</tr>
+<tr class="row-even"><td><p>DAEPLOY_PROXY_HTTPS_PORT</p></td>
+<td><p>443</p></td>
+<td><p>Proxy port for HTTP communication with Manager.</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAEPLOY_PROXY_CONFIG_PATH</p></td>
+<td><p>“proxy_config”</p></td>
+<td><p>Path to proxy configuration files.</p></td>
+</tr>
+<tr class="row-even"><td><p>DAEPLOY_AUTH_ENABLED</p></td>
+<td><p>False</p></td>
+<td><p>Using the Manager requires login if true.</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAEPLOY_LOG_LEVEL</p></td>
+<td><p>“INFO”</p></td>
+<td><p>Minimum logger level for Manager.</p></td>
+</tr>
+<tr class="row-even"><td><p>DAEPLOY_ACCESS_LOGS_ENABLED</p></td>
+<td><p>True</p></td>
+<td><p>Whether to print access logs.</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAEPLOY_PROXY_HTTPS</p></td>
+<td><p>False</p></td>
+<td><p>Sets up a secure connection to the Manager if true</p></td>
+</tr>
+<tr class="row-even"><td><p>DAEPLOY_HTTPS_STAGING_SERVER</p></td>
+<td><p>False</p></td>
+<td><p>Sets if a staging server without rate limits should be used</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAEPLOY_CONFIG_EMAIL</p></td>
+<td><p>null</p></td>
+<td><p>Email address HTTPS and sending notifications.</p></td>
+</tr>
+<tr class="row-even"><td><p>DAEPLOY_CONFIG_EMAIL_PASSWORD</p></td>
+<td><p>null</p></td>
+<td><p>Password for config email, only required for notifications.</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAEPLOY_NOTIFICATION_SMTP_SERVER</p></td>
+<td><p>null</p></td>
+<td><p>SMTP server URL.</p></td>
+</tr>
+<tr class="row-even"><td><p>DAEPLOY_NOTIFICATION_SMTP_PORT</p></td>
+<td><p>null</p></td>
+<td><p>Port to SMTP server, usually 587 or 465.</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAEPLOY_ACTIVATION_KEY</p></td>
+<td><p>“”</p></td>
+<td><p>License activation key. Without key Manager lives for 12h.</p></td>
+</tr>
+<tr class="row-even"><td><p>DAEPLOY_ADMIN_PASSWORD</p></td>
+<td><p>admin</p></td>
+<td><p>Password for the admin user. Defualt to admin.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="section" id="secure-manager-connection">
 <h2>Secure Manager Connection<a class="headerlink" href="#secure-manager-connection" title="Permalink to this headline">¶</a></h2>
 <p>It is possible to get a secure HTTPS connection to the Manager using automatically
@@ -267,6 +343,31 @@ an email account that you can use. We recommend to have a dedicated email addres
 for sending notifications.</p>
 <p>The Manager is configured with a notification sender email at startup. We do this
 by setting four different environment variables at Manager startup</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 66%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Environment Variable</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DAEPLOY_CONFIG_EMAIL</p></td>
+<td><p>“<a class="reference external" href="mailto:email&#37;&#52;&#48;address&#46;com">email<span>&#64;</span>address<span>&#46;</span>com</a>”</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAEPLOY_CONFIG_EMAIL_PASSWORD</p></td>
+<td><p>“password”</p></td>
+</tr>
+<tr class="row-even"><td><p>DAEPLOY_NOTIFICATION_SMTP_SERVER</p></td>
+<td><p>“smtp.server.url”</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAEPLOY_NOTIFICATION_SMTP_PORT</p></td>
+<td><p>Usually 587 or 465</p></td>
+</tr>
+</tbody>
+</table>
 <p>Upon startup of the Manager, if everything worked, an email will be sent from
 “<a class="reference external" href="mailto:email&#37;&#52;&#48;address&#46;com">email<span>&#64;</span>address<span>&#46;</span>com</a>” to itself, to show that it successfully connected. Otherwise,
 as long as the Manager could still start, any issues with the email configuration
@@ -325,7 +426,7 @@ docker run <span class="se">\</span>
     --log-driver json-file <span class="se">\</span>
     --log-opt max-size<span class="o">=</span>100m <span class="se">\</span>
     --log-opt max-file<span class="o">=</span><span class="m">5</span> <span class="se">\</span>
-    -d ghcr.io/vikinganalytics/mvi/mvi_manager:<span class="o">{</span>version<span class="o">}</span> <span class="se">\</span>
+    -d daeploy/manager:<span class="o">{</span>version<span class="o">}</span> <span class="se">\</span>
 </pre></div>
 </div>
 <div class="admonition tip">
