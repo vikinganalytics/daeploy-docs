@@ -499,12 +499,12 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>import requests
-import json
-import time
+<span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">time</span>
 
-HOST = &quot;http://localhost&quot;  # Change to your host
-TOKEN = &quot;&quot;  # Add your token here
+<span class="n">HOST</span> <span class="o">=</span> <span class="s2">&quot;http://localhost&quot;</span>  <span class="c1"># Change to your host</span>
+<span class="n">TOKEN</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>  <span class="c1"># Add your token here</span>
 </pre></div>
 </div>
 </div>
@@ -517,7 +517,7 @@ TOKEN = &quot;&quot;  # Add your token here
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>!daeploy login --host $HOST --token $TOKEN
+<span></span><span class="o">!</span>daeploy login --host <span class="nv">$HOST</span> --token <span class="nv">$TOKEN</span>
 </pre></div>
 </div>
 </div>
@@ -542,7 +542,7 @@ Changed host to http://localhost
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>from daeploy.notebook import service_cell
+<span></span><span class="kn">from</span> <span class="nn">daeploy.notebook</span> <span class="kn">import</span> <span class="n">service_cell</span>
 </pre></div>
 </div>
 </div>
@@ -553,7 +553,7 @@ Changed host to http://localhost
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>%%service_cell notebook_service
+<span></span><span class="o">%%</span><span class="k">service_cell</span> notebook_service
 
 import logging
 
@@ -590,7 +590,7 @@ if __name__ == &quot;__main__&quot;:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>from daeploy.notebook import service_requirements
+<span></span><span class="kn">from</span> <span class="nn">daeploy.notebook</span> <span class="kn">import</span> <span class="n">service_requirements</span>
 </pre></div>
 </div>
 </div>
@@ -599,7 +599,7 @@ if __name__ == &quot;__main__&quot;:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>%%service_requirements notebook_service
+<span></span><span class="o">%%</span><span class="k">service_requirements</span> notebook_service
 numpy
 </pre></div>
 </div>
@@ -622,8 +622,8 @@ numpy
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>!daeploy deploy notebook_service 1.0.0 notebook_service
-time.sleep(5)  # Wait a moment for the service to start
+<span></span><span class="o">!</span>daeploy deploy notebook_service <span class="m">1</span>.0.0 notebook_service
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># Wait a moment for the service to start</span>
 </pre></div>
 </div>
 </div>
@@ -650,13 +650,13 @@ MAIN    NAME              VERSION    STATUS    RUNNING
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>response = requests.post(
-    url=f&quot;{HOST}/services/notebook_service/sqrt&quot;,
-    json={&quot;number&quot;: 2},
-    headers={&quot;Authorization&quot;: f&quot;Bearer {TOKEN}&quot;}
-)
-assert response.status_code == 200, f&quot;{response.status_code}, {response.text}&quot;
-response.json()
+<span></span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">HOST</span><span class="si">}</span><span class="s2">/services/notebook_service/sqrt&quot;</span><span class="p">,</span>
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;number&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">TOKEN</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+<span class="p">)</span>
+<span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -678,7 +678,7 @@ response.json()
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>!daeploy kill notebook_service 1.0.0 --yes
+<span></span><span class="o">!</span>daeploy <span class="nb">kill</span> notebook_service <span class="m">1</span>.0.0 --yes
 </pre></div>
 </div>
 </div>
