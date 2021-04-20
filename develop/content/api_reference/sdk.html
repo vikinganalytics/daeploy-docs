@@ -253,7 +253,7 @@
 <code class="sig-prename descclassname"><span class="pre">daeploy.</span></code><code class="sig-name descname"><span class="pre">service</span></code><a class="headerlink" href="#daeploy.service" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py function">
 <dt id="daeploy._service._Service.daeploy.entrypoint">
-<code class="sig-name descname"><span class="pre">entrypoint</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Callable</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">monitor</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">fastapi_kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Callable</span><a class="headerlink" href="#daeploy._service._Service.daeploy.entrypoint" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">entrypoint</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Callable</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'POST'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">monitor</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">fastapi_kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Callable</span><a class="headerlink" href="#daeploy._service._Service.daeploy.entrypoint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Registers a function as an entrypoint, which will make it reachable
 as an HTTP method on your host machine.</p>
 <p>Decorate a function with this method to create an entrypoint for it:</p>
@@ -268,14 +268,19 @@ objects for the decorated function.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>func</strong> (<em>Callable</em>) – The decorated function to make an entrypoint for.</p></li>
+<li><p><strong>method</strong> (<em>str</em>) – HTTP method for entrypoint. Defauts to “POST”</p></li>
 <li><p><strong>monitor</strong> (<em>bool</em>) – Set if the input and output to this entrypoint should
-be saved to the service’s monitoring database.</p></li>
+be saved to the service’s monitoring database. Defaults to False.</p></li>
 <li><p><strong>**fastapi_kwargs</strong> – Keyword arguments for the resulting API endpoint.
-See FastAPI for keyword arguments of the <code class="docutils literal notranslate"><span class="pre">FastAPI.post()</span></code> function.</p></li>
+See FastAPI for keyword arguments of the <code class="docutils literal notranslate"><span class="pre">FastAPI.api_route()</span></code>
+function.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>TypeError</strong> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">func</span></code> is not callable.</p>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>TypeError</strong> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">func</span></code> is not callable.</p></li>
+<li><p><strong>ValueError</strong> – If method is not a valid HTTP method.</p></li>
+</ul>
 </dd>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>The decorated function: <code class="xref py py-obj docutils literal notranslate"><span class="pre">func</span></code>.</p>
@@ -400,7 +405,7 @@ entrypoints etc for the service has been specified</p>
 
 <dl class="py function">
 <dt id="daeploy.communication.call_service">
-<code class="sig-name descname"><span class="pre">call_service</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">service_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entrypoint_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arguments</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">service_version</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">request_kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Any</span><a class="headerlink" href="#daeploy.communication.call_service" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">call_service</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">service_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entrypoint_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arguments</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">service_version</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entrypoint_method</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'POST'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">request_kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Any</span><a class="headerlink" href="#daeploy.communication.call_service" title="Permalink to this definition">¶</a></dt>
 <dd><p>Call an entrypoint in a different service.</p>
 <p>Example usage:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">call_service</span><span class="p">(</span>
@@ -418,17 +423,24 @@ entrypoints etc for the service has been specified</p>
 The return object(s) of this entrypoint must be jsonable, i.e pass FastAPI’s
 jsonable_encoder, otherwise it won’t be reachable.</p></li>
 <li><p><strong>arguments</strong> (<em>dict</em>) – Arguments to the entrypoint.
-In the form: {“argument_name”: value, …}. Default None.</p></li>
+In the form: {“argument_name”: value, …}. Defaults to None.</p></li>
 <li><p><strong>service_version</strong> (<em>str</em>) – The specific version of the service to call.
-Default None, the main version and the shadows versions will be called.</p></li>
+Defaults to None, in which case the main version and the shadows
+versions will be called.</p></li>
+<li><p><strong>entrypoint_method</strong> (<em>str</em>) – HTTP method of the entrypoint to call. You only need
+to change this if you have created an entrypoint with a non-default HTTP
+method. Defaults to “POST”.</p></li>
 <li><p><strong>**request_kwargs</strong> – Keyword arguments to pass on to :func:<code class="docutils literal notranslate"><span class="pre">requests.post</span></code>.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The output from the entrypoint in the other service.</p>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If entrypoint_method is not a valid HTTP method</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>Any</p>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The output from the entrypoint in the other service.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
 </dd>
 </dl>
 </dd></dl>
