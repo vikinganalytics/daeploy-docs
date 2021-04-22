@@ -121,7 +121,12 @@
 <li class="toctree-l2"><a class="reference internal" href="#secure-manager-connection">Secure Manager Connection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#email-notifications">Email notifications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#log-configuration">Log configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#typical-production-setup">Typical production setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#changing-ports">Changing Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#typical-production-setup">Typical production setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#docker-cli">Docker CLI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">start_manager script</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="testing_services.html">Testing Services Before Deployment</a></li>
@@ -400,10 +405,23 @@ originating from a full HDD, we highly recommend setting a specific log configur
 for the Manager container when starting.</p>
 </div>
 </div>
+<div class="section" id="changing-ports">
+<h2>Changing Ports<a class="headerlink" href="#changing-ports" title="Permalink to this headline">¶</a></h2>
+<p>If you want to change the port that the manager is running on, you have to set the
+environment variable <code class="docutils literal notranslate"><span class="pre">DAEPLOY_PROXY_HTTP_PORT</span></code> or <code class="docutils literal notranslate"><span class="pre">DAEPLOY_PROXY_HTTPS_PORT</span></code> as
+well as changing the published port of the container with
+<code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-p</span> <span class="pre">external:internal</span> <span class="pre">...</span></code>. The manager application assumes that the
+external and internal ports are the same.</p>
+</div>
 <div class="section" id="typical-production-setup">
 <h2>Typical production setup<a class="headerlink" href="#typical-production-setup" title="Permalink to this headline">¶</a></h2>
-<p>The example below starts a Manager instance that is listening on <code class="docutils literal notranslate"><span class="pre">my.domain.com</span></code>, enforcing traffic over https with access
-control enabled and being activated using a provided activation key:</p>
+<p>Below we show an example of a typical production setup using the Docker CLI
+and the
+<a class="reference external" href="https://github.com/vikinganalytics/daeploy-examples/blob/master/start_manager">start_manager script</a>.
+In the example we start a Manager instance listening on <code class="docutils literal notranslate"><span class="pre">my.domain.com</span></code>, with HTTPS,
+authentication, an activated license and email notifications enabled.</p>
+<div class="section" id="docker-cli">
+<h3>Docker CLI<a class="headerlink" href="#docker-cli" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># We create a docker volume for keeping our data persistent across restarts/upgrades</span>
 docker volume create daeploy_data
 
@@ -435,6 +453,24 @@ docker run <span class="se">\</span>
 of the <code class="docutils literal notranslate"><span class="pre">--env-file</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code>.
 See <a class="reference external" href="https://docs.docker.com/engine/reference/commandline/run/#set-environment-variables--e---env---env-file">here</a>
 for details on syntax etc.</p>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>start_manager script<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>To reduce the complexity of launching the manager we have created a simple script
+<code class="docutils literal notranslate"><span class="pre">start_manager</span></code> that hides much of the complexity while still leaving all
+manager settings available.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>bash start_manager </dt><dd><p>–version … –host-name my.domain.com –auth-enabled –https-enabled –activation-key … –admin-password … –config-email … –config-password … –smtp-server … –smtp-port … </p>
+</dd>
+</dl>
+</div></blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">start_manager</span> <span class="pre">--help</span></code> to get a short description of the
+available options.</p>
+</div>
 </div>
 </div>
 </div>
