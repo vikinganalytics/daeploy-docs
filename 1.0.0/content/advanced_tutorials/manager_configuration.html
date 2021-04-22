@@ -1,0 +1,545 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Manager Configuration &mdash; Daeploy  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Testing Services Before Deployment" href="testing_services.html" />
+    <link rel="prev" title="Service Environment" href="service_environment.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/VA_Symbol_DarkBlue.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/daeploy_description.html">Daeploy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/compatibility.html">Version compatibility</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/custom_service.html">Anatomy of a Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/dashboard.html">Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/service_logs.html">Read Logs From Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/autodocs.html">API Autodocs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/shadow_deployment.html">Versioning and Shadow Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/reaching_service_from_external_applications.html">Reaching a service from external applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/ticker.html">Schedule Repeating Actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/monitoring.html">Monitoring Your Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/cross_service_communication.html">Cross-service Communication</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sdk_typing.html">Typing in the SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_multiple_hosts.html">Using Multiple Hosts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="email_notifications.html">Email Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manager_api.html">Manager API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adv_deploy.html">Deployment Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli_autocompletion.html">Autocompletion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="service_environment.html">Service Environment</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Manager Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#secure-manager-connection">Secure Manager Connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#email-notifications">Email notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#log-configuration">Log configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#changing-ports">Changing Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#typical-production-setup">Typical production setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#docker-cli">Docker CLI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">start_manager script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="testing_services.html">Testing Services Before Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proxy_dashboard.html">Proxy Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upload_image.html">Upload local docker image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="status_codes.html">HTTP Status Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integration_with_other_tools.html">Connecting Daeploy with Other Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="going_beyond_sdk.html">Going Beyond the SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="daeploy_notebook_service.html">Work With Daeploy From a Notebook</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Special Usecases</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/deploying_ml_model.html">Deploying Machine Learning Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/ui_streamlit.html">Using Streamlit to build a dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/ui_plotly_dash.html">Using Plotly Dash to build a dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/conda.html">Using Daeploy with Conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/gpu_services.html">Access NVIDIA GPUs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/hosting_static_html.html">Host static HTML pages using Daeploy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Api Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/cli.html">Command-line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/sdk.html">Software Development Kit</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3rd_party_software.html">3rd party software</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Daeploy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Manager Configuration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/content/advanced_tutorials/manager_configuration.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="manager-configuration">
+<span id="manager-configuration-reference"></span><h1>Manager Configuration<a class="headerlink" href="#manager-configuration" title="Permalink to this headline">¶</a></h1>
+<p>The Manager is highly configurable using environment variables.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 18%" />
+<col style="width: 48%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Environment Variable</p></th>
+<th class="head"><p>Default Value</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DAEPLOY_HOST_NAME</p></td>
+<td><p>“localhost”</p></td>
+<td><p>Host name of the machine running the Manager.</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAEPLOY_PROXY_HTTP_PORT</p></td>
+<td><p>80</p></td>
+<td><p>Proxy port for HTTP communication with Manager.</p></td>
+</tr>
+<tr class="row-even"><td><p>DAEPLOY_PROXY_HTTPS_PORT</p></td>
+<td><p>443</p></td>
+<td><p>Proxy port for HTTP communication with Manager.</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAEPLOY_PROXY_CONFIG_PATH</p></td>
+<td><p>“proxy_config”</p></td>
+<td><p>Path to proxy configuration files.</p></td>
+</tr>
+<tr class="row-even"><td><p>DAEPLOY_AUTH_ENABLED</p></td>
+<td><p>False</p></td>
+<td><p>Using the Manager requires login if true.</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAEPLOY_LOG_LEVEL</p></td>
+<td><p>“INFO”</p></td>
+<td><p>Minimum logger level for Manager.</p></td>
+</tr>
+<tr class="row-even"><td><p>DAEPLOY_ACCESS_LOGS_ENABLED</p></td>
+<td><p>True</p></td>
+<td><p>Whether to print access logs.</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAEPLOY_PROXY_HTTPS</p></td>
+<td><p>False</p></td>
+<td><p>Sets up a secure connection to the Manager if true</p></td>
+</tr>
+<tr class="row-even"><td><p>DAEPLOY_HTTPS_STAGING_SERVER</p></td>
+<td><p>False</p></td>
+<td><p>Sets if a staging server without rate limits should be used</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAEPLOY_CONFIG_EMAIL</p></td>
+<td><p>null</p></td>
+<td><p>Email address HTTPS and sending notifications.</p></td>
+</tr>
+<tr class="row-even"><td><p>DAEPLOY_CONFIG_EMAIL_PASSWORD</p></td>
+<td><p>null</p></td>
+<td><p>Password for config email, only required for notifications.</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAEPLOY_NOTIFICATION_SMTP_SERVER</p></td>
+<td><p>null</p></td>
+<td><p>SMTP server URL.</p></td>
+</tr>
+<tr class="row-even"><td><p>DAEPLOY_NOTIFICATION_SMTP_PORT</p></td>
+<td><p>null</p></td>
+<td><p>Port to SMTP server, usually 587 or 465.</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAEPLOY_ACTIVATION_KEY</p></td>
+<td><p>“”</p></td>
+<td><p>License activation key. Without key Manager lives for 12h.</p></td>
+</tr>
+<tr class="row-even"><td><p>DAEPLOY_ADMIN_PASSWORD</p></td>
+<td><p>admin</p></td>
+<td><p>Password for the admin user. Defualt to admin.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="secure-manager-connection">
+<h2>Secure Manager Connection<a class="headerlink" href="#secure-manager-connection" title="Permalink to this headline">¶</a></h2>
+<p>It is possible to get a secure HTTPS connection to the Manager using automatically
+created certificates from <a class="reference external" href="https://letsencrypt.org">Let’s Encrypt</a>. To enable HTTPS you must
+start a new Manager with the environment variable
+<code class="docutils literal notranslate"><span class="pre">DAEPLOY_PROXY_HTTPS</span></code> set to true. We also recommend that you set an email
+address with the environment variable <code class="docutils literal notranslate"><span class="pre">DAEPLOY_CONFIG_EMAIL</span></code>, so you can get
+notified if the certificate is about to run out.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For the <cite>Let’s Encrypt</cite> certificates to work,
+the server must have a valid hostname which resolves via DNS to the server’s IP
+address. It will not work if you access the Manager using an IP address or
+<code class="docutils literal notranslate"><span class="pre">localhost</span></code> due to how TLS certificates are generated.</p>
+</div>
+</div>
+<div class="section" id="email-notifications">
+<span id="email-config-reference"></span><h2>Email notifications<a class="headerlink" href="#email-notifications" title="Permalink to this headline">¶</a></h2>
+<p>The first step is to set up an email address that the Daeploy Manager can use to send
+the notification emails. For this you need an
+<a class="reference external" href="https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol">SMTP</a> server with
+an email account that you can use. We recommend to have a dedicated email address
+for sending notifications.</p>
+<p>The Manager is configured with a notification sender email at startup. We do this
+by setting four different environment variables at Manager startup</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 66%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Environment Variable</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DAEPLOY_CONFIG_EMAIL</p></td>
+<td><p>“<a class="reference external" href="mailto:email&#37;&#52;&#48;address&#46;com">email<span>&#64;</span>address<span>&#46;</span>com</a>”</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAEPLOY_CONFIG_EMAIL_PASSWORD</p></td>
+<td><p>“password”</p></td>
+</tr>
+<tr class="row-even"><td><p>DAEPLOY_NOTIFICATION_SMTP_SERVER</p></td>
+<td><p>“smtp.server.url”</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAEPLOY_NOTIFICATION_SMTP_PORT</p></td>
+<td><p>Usually 587 or 465</p></td>
+</tr>
+</tbody>
+</table>
+<p>Upon startup of the Manager, if everything worked, an email will be sent from
+“<a class="reference external" href="mailto:email&#37;&#52;&#48;address&#46;com">email<span>&#64;</span>address<span>&#46;</span>com</a>” to itself, to show that it successfully connected. Otherwise,
+as long as the Manager could still start, any issues with the email configuration
+will be viewable on the notification tab in the dashboard.</p>
+</div>
+<div class="section" id="log-configuration">
+<h2>Log configuration<a class="headerlink" href="#log-configuration" title="Permalink to this headline">¶</a></h2>
+<p>All logging in Daeploy is done directly to stdout and stderr and relies heavily on the
+built-in logging features of the docker daemon. As such, any configuration of log
+rotation etc needs to be done on the docker daemon level.</p>
+<p>Daeploy takes care of setting reasonable log configuration options on all the
+<em>services</em> that are started. For each service, this means that log files are rotated when
+they grow above 100MB in size and a maximum of 3 such files are kept on disk.</p>
+<p>For the Manager container however, the log configuration is left to the user. But we give
+some hints here on reasonable options. In general, the docker daemon and its logging
+mechanism can be configured in two ways, either by editing the <code class="docutils literal notranslate"><span class="pre">daemon.json</span></code> configuration
+file (which sets daemon-wide default configurations) or by providing container-specific
+configuration when starting a new container with <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code>. For more details, please
+have a look at the <a class="reference external" href="https://docs.docker.com/config/containers/logging/configure/">docker docs</a>.</p>
+<p>An example container-specific configuration could be provided as such (maximum of 5 log
+files no larger than 10 megabytes each using the JSON log handler (the docker daemon default)):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">...</span> <span class="o">--</span><span class="n">log</span><span class="o">-</span><span class="n">driver</span> <span class="n">json</span><span class="o">-</span><span class="n">file</span> <span class="o">--</span><span class="n">log</span><span class="o">-</span><span class="n">opt</span> <span class="nb">max</span><span class="o">-</span><span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="n">m</span> <span class="o">--</span><span class="n">log</span><span class="o">-</span><span class="n">opt</span> <span class="nb">max</span><span class="o">-</span><span class="n">file</span><span class="o">=</span><span class="mi">5</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>By default, the docker daemon is configured to <em>NOT</em> do any log rotation at all,
+meaning that it will slowly fill up the HDD of the host. To avoid any problems
+originating from a full HDD, we highly recommend setting a specific log configuration
+for the Manager container when starting.</p>
+</div>
+</div>
+<div class="section" id="changing-ports">
+<h2>Changing Ports<a class="headerlink" href="#changing-ports" title="Permalink to this headline">¶</a></h2>
+<p>If you want to change the port that the manager is running on, you have to set the
+environment variable <code class="docutils literal notranslate"><span class="pre">DAEPLOY_PROXY_HTTP_PORT</span></code> or <code class="docutils literal notranslate"><span class="pre">DAEPLOY_PROXY_HTTPS_PORT</span></code> as
+well as changing the published port of the container with
+<code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-p</span> <span class="pre">external:internal</span> <span class="pre">...</span></code>. The manager application assumes that the
+external and internal ports are the same.</p>
+</div>
+<div class="section" id="typical-production-setup">
+<h2>Typical production setup<a class="headerlink" href="#typical-production-setup" title="Permalink to this headline">¶</a></h2>
+<p>Below we show an example of a typical production setup using the Docker CLI
+and the
+<a class="reference external" href="https://github.com/vikinganalytics/daeploy-examples/blob/master/start_manager">start_manager script</a>.
+In the example we start a Manager instance listening on <code class="docutils literal notranslate"><span class="pre">my.domain.com</span></code>, with HTTPS,
+authentication, an activated license and email notifications enabled.</p>
+<div class="section" id="docker-cli">
+<h3>Docker CLI<a class="headerlink" href="#docker-cli" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># We create a docker volume for keeping our data persistent across restarts/upgrades</span>
+docker volume create daeploy_data
+
+docker run <span class="se">\</span>
+    --name daeploy_manager <span class="se">\</span>
+    -v /var/run/docker.sock:/var/run/docker.sock <span class="se">\</span>
+    -v daeploy_data:/data <span class="se">\</span>
+    -p <span class="m">80</span>:80 <span class="se">\</span>
+    -p <span class="m">443</span>:443 <span class="se">\</span>
+    -e <span class="nv">DAEPLOY_HOST_NAME</span><span class="o">=</span>my.domain.com <span class="se">\</span>
+    -e <span class="nv">DAEPLOY_PROXY_HTTPS</span><span class="o">=</span>True <span class="se">\</span>
+    -e <span class="nv">DAEPLOY_AUTH_ENABLED</span><span class="o">=</span>True <span class="se">\</span>
+    -e <span class="nv">DAEPLOY_ACTIVATION_KEY</span><span class="o">=</span>... <span class="se">\</span>
+    -e <span class="nv">DAEPLOY_ADMIN_PASSWORD</span><span class="o">=</span>... <span class="se">\</span>
+    -e <span class="nv">DAEPLOY_CONFIG_EMAIL</span><span class="o">=</span>&lt;some@email.com&gt; <span class="se">\</span>
+    -e <span class="nv">DAEPLOY_CONFIG_EMAIL_PASSWORD</span><span class="o">=</span>&lt;password <span class="k">for</span> some@email.com&gt; <span class="se">\</span>
+    -e <span class="nv">DAEPLOY_NOTIFICATION_SMTP_SERVER</span><span class="o">=</span>&lt;your smtp server address&gt; <span class="se">\</span>
+    -e <span class="nv">DAEPLOY_NOTIFICATION_SMTP_PORT</span><span class="o">=</span>&lt;your smtp server port&gt; <span class="se">\</span>
+    --restart always <span class="se">\</span>
+    --log-driver json-file <span class="se">\</span>
+    --log-opt max-size<span class="o">=</span>100m <span class="se">\</span>
+    --log-opt max-file<span class="o">=</span><span class="m">5</span> <span class="se">\</span>
+    -d daeploy/manager:<span class="o">{</span>version<span class="o">}</span> <span class="se">\</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To ease working with all environment variables, it is possible to make use
+of the <code class="docutils literal notranslate"><span class="pre">--env-file</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code>.
+See <a class="reference external" href="https://docs.docker.com/engine/reference/commandline/run/#set-environment-variables--e---env---env-file">here</a>
+for details on syntax etc.</p>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>start_manager script<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>To reduce the complexity of launching the manager we have created a simple script
+<code class="docutils literal notranslate"><span class="pre">start_manager</span></code> that hides much of the complexity while still leaving all
+manager settings available.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>bash start_manager </dt><dd><p>–version … –host-name my.domain.com –auth-enabled –https-enabled –activation-key … –admin-password … –config-email … –config-password … –smtp-server … –smtp-port … </p>
+</dd>
+</dl>
+</div></blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">start_manager</span> <span class="pre">--help</span></code> to get a short description of the
+available options.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="testing_services.html" class="btn btn-neutral float-right" title="Testing Services Before Deployment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="service_environment.html" class="btn btn-neutral float-left" title="Service Environment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Viking Analytics AB.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: 1.0.0
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Tags</dt>
+      <dd><a href="manager_configuration.html">1.0.0</a></dd>
+      <dd><a href="../../../1.0.0-beta/content/advanced_tutorials/manager_configuration.html">1.0.0-beta</a></dd>
+    </dl>
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../../develop/content/advanced_tutorials/manager_configuration.html">develop</a></dd>
+    </dl>
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

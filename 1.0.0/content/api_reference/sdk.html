@@ -1,0 +1,736 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Software Development Kit &mdash; Daeploy  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3rd party software" href="../3rd_party_software.html" />
+    <link rel="prev" title="Command-line Interface" href="cli.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/VA_Symbol_DarkBlue.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/daeploy_description.html">Daeploy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/compatibility.html">Version compatibility</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/custom_service.html">Anatomy of a Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/dashboard.html">Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/service_logs.html">Read Logs From Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/autodocs.html">API Autodocs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/shadow_deployment.html">Versioning and Shadow Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/reaching_service_from_external_applications.html">Reaching a service from external applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/ticker.html">Schedule Repeating Actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/monitoring.html">Monitoring Your Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/cross_service_communication.html">Cross-service Communication</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/sdk_typing.html">Typing in the SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/using_multiple_hosts.html">Using Multiple Hosts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/email_notifications.html">Email Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/manager_api.html">Manager API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/adv_deploy.html">Deployment Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/cli_autocompletion.html">Autocompletion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/service_environment.html">Service Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/manager_configuration.html">Manager Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/testing_services.html">Testing Services Before Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/proxy_dashboard.html">Proxy Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/upload_image.html">Upload local docker image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/status_codes.html">HTTP Status Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/integration_with_other_tools.html">Connecting Daeploy with Other Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/going_beyond_sdk.html">Going Beyond the SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/daeploy_notebook_service.html">Work With Daeploy From a Notebook</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Special Usecases</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/deploying_ml_model.html">Deploying Machine Learning Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/ui_streamlit.html">Using Streamlit to build a dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/ui_plotly_dash.html">Using Plotly Dash to build a dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/conda.html">Using Daeploy with Conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/gpu_services.html">Access NVIDIA GPUs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/hosting_static_html.html">Host static HTML pages using Daeploy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Api Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command-line Interface</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Software Development Kit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#service-api-daeploy-service">Service API (<code class="xref py py-mod docutils literal notranslate"><span class="pre">daeploy.service</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-daeploy.communication">Communication API (<code class="xref py py-mod docutils literal notranslate"><span class="pre">daeploy.communication</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-daeploy.utilities">Utilities API (<code class="xref py py-mod docutils literal notranslate"><span class="pre">daeploy.utilities</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-daeploy.data_types">Data Types API (<code class="xref py py-mod docutils literal notranslate"><span class="pre">daeploy.data_types</span></code>)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3rd_party_software.html">3rd party software</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Daeploy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Software Development Kit</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/content/api_reference/sdk.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="software-development-kit">
+<span id="sdk-reference"></span><h1>Software Development Kit<a class="headerlink" href="#software-development-kit" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="service-api-daeploy-service">
+<h2>Service API (<a class="reference internal" href="#daeploy.service" title="daeploy.service"><code class="xref py py-mod docutils literal notranslate"><span class="pre">daeploy.service</span></code></a>)<a class="headerlink" href="#service-api-daeploy-service" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#daeploy.service" title="daeploy.service"><code class="xref py py-mod docutils literal notranslate"><span class="pre">daeploy.service</span></code></a> is an object (not a module), and should be used accordingly.</p>
+</div>
+<dl class="py attribute">
+<dt id="daeploy.service">
+<code class="sig-prename descclassname"><span class="pre">daeploy.</span></code><code class="sig-name descname"><span class="pre">service</span></code><a class="headerlink" href="#daeploy.service" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py function">
+<dt id="daeploy._service._Service.daeploy.entrypoint">
+<code class="sig-name descname"><span class="pre">entrypoint</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Callable</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'POST'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">monitor</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disable_http_logs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">fastapi_kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Callable</span><a class="headerlink" href="#daeploy._service._Service.daeploy.entrypoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Registers a function as an entrypoint, which will make it reachable
+as an HTTP method on your host machine.</p>
+<p>Decorate a function with this method to create an entrypoint for it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@entrypoint</span>
+<span class="k">def</span> <span class="nf">my_function</span><span class="p">(</span><span class="n">arg1</span><span class="p">:</span><span class="n">type1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">type2</span><span class="p">:</span>
+    <span class="o">....</span>
+</pre></div>
+</div>
+<p>It is strongly recommended to include types of the arguments and return
+objects for the decorated function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>func</strong> (<em>Callable</em>) – The decorated function to make an entrypoint for.</p></li>
+<li><p><strong>method</strong> (<em>str</em>) – HTTP method for entrypoint. Defauts to “POST”</p></li>
+<li><p><strong>monitor</strong> (<em>bool</em>) – Set if the input and output to this entrypoint should
+be saved to the service’s monitoring database. Defaults to False.</p></li>
+<li><p><strong>disable_http_logs</strong> (<em>bool</em>) – <p>Set if the http entry logs should be disabled for
+this entrypoint.
+These logs are genereated from uvicorn. Defaults to False.
+Example of http entry log:</p>
+<blockquote>
+<div><p>”POST /services/service_1.0.0/entrypoint_name HTTP/1.1” 200 OK</p>
+</div></blockquote>
+</p></li>
+<li><p><strong>**fastapi_kwargs</strong> – Keyword arguments for the resulting API endpoint.
+See FastAPI for keyword arguments of the <code class="docutils literal notranslate"><span class="pre">FastAPI.api_route()</span></code>
+function.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>TypeError</strong> – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">func</span></code> is not callable.</p></li>
+<li><p><strong>ValueError</strong> – If method is not a valid HTTP method.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The decorated function: <code class="xref py py-obj docutils literal notranslate"><span class="pre">func</span></code>.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Callable</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="daeploy._service._Service.store">
+<code class="sig-name descname"><span class="pre">store</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">variables</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#daeploy._service._Service.store" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves variables to the service’s monitoring database. Supports
+numbers and strings. If a variable is not a number or string it store
+will try to coerce it into a string before storing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>**variables</strong> – Variables to save to the database. Non-numeric
+variables will be saved as <code class="docutils literal notranslate"><span class="pre">str(variable)</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="daeploy._service._Service.call_every">
+<code class="sig-name descname"><span class="pre">call_every</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seconds</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait_first</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#daeploy._service._Service.call_every" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a decorator that converts a function to an awaitable that runs
+every <cite>seconds</cite>.</p>
+<p>Decorate a function with this method to make it run repeatedly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@call_every</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">my_function</span><span class="p">():</span>
+    <span class="o">....</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seconds</strong> (<em>float</em>) – Interval between calls in seconds</p></li>
+<li><p><strong>wait_first</strong> (<em>bool</em>) – If we should skip the first execution. Defaults to False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The decorator</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Callable</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="daeploy._service._Service.get_parameter">
+<code class="sig-name descname"><span class="pre">get_parameter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Any</span><a class="headerlink" href="#daeploy._service._Service.get_parameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get specific parameter</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>parameter</strong> (<em>str</em>) – The name of the parameter</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The value of the parameter</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="daeploy._service._Service.add_parameter">
+<code class="sig-name descname"><span class="pre">add_parameter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expose</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">monitor</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#daeploy._service._Service.add_parameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a parameter to the parameter endpoints.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>str</em>) – The name of the parameter</p></li>
+<li><p><strong>value</strong> (<em>Any</em>) – The value of the parameter</p></li>
+<li><p><strong>expose</strong> (<em>bool</em>) – Should parameter update be exposed to the API.
+Defaults to True.</p></li>
+<li><p><strong>monitor</strong> (<em>bool</em>) – Stores updates to this parameter in the monitoring
+database if True. Will try to coerce non-numeric types to
+string Defaults to False.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="daeploy._service._Service.run">
+<code class="sig-name descname"><span class="pre">run</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#daeploy._service._Service.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs the service</p>
+<p>This method is usually called at the end of the module when all
+entrypoints etc for the service has been specified</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-daeploy.communication">
+<span id="communication-api-daeploy-communication"></span><h2>Communication API (<a class="reference internal" href="#module-daeploy.communication" title="daeploy.communication"><code class="xref py py-mod docutils literal notranslate"><span class="pre">daeploy.communication</span></code></a>)<a class="headerlink" href="#module-daeploy.communication" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="daeploy.communication.Severity">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">Severity</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#daeploy.communication.Severity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration of notification severities.</p>
+<dl class="py attribute">
+<dt id="daeploy.communication.Severity.CRITICAL">
+<code class="sig-name descname"><span class="pre">CRITICAL</span></code><em class="property"> <span class="pre">=</span> <span class="pre">2</span></em><a class="headerlink" href="#daeploy.communication.Severity.CRITICAL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="daeploy.communication.Severity.INFO">
+<code class="sig-name descname"><span class="pre">INFO</span></code><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#daeploy.communication.Severity.INFO" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="daeploy.communication.Severity.WARNING">
+<code class="sig-name descname"><span class="pre">WARNING</span></code><em class="property"> <span class="pre">=</span> <span class="pre">1</span></em><a class="headerlink" href="#daeploy.communication.Severity.WARNING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="daeploy.communication.call_service">
+<code class="sig-name descname"><span class="pre">call_service</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">service_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entrypoint_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arguments</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">service_version</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entrypoint_method</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'POST'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">request_kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Any</span><a class="headerlink" href="#daeploy.communication.call_service" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call an entrypoint in a different service.</p>
+<p>Example usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">call_service</span><span class="p">(</span>
+    <span class="n">service_name</span><span class="o">=</span><span class="s2">&quot;data_connector&quot;</span><span class="p">,</span>
+    <span class="n">entrypoint_name</span><span class="o">=</span><span class="s2">&quot;get_data&quot;</span><span class="p">,</span>
+    <span class="n">arguments</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;variable_name&quot;</span><span class="p">:</span> <span class="n">value</span><span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>service_name</strong> (<em>str</em>) – The service which contains the entrypoint to call.</p></li>
+<li><p><strong>entrypoint_name</strong> (<em>str</em>) – The name of the entrypoint to call.
+The return object(s) of this entrypoint must be jsonable, i.e pass FastAPI’s
+jsonable_encoder, otherwise it won’t be reachable.</p></li>
+<li><p><strong>arguments</strong> (<em>dict</em>) – Arguments to the entrypoint.
+In the form: {“argument_name”: value, …}. Defaults to None.</p></li>
+<li><p><strong>service_version</strong> (<em>str</em>) – The specific version of the service to call.
+Defaults to None, in which case the main version and the shadows
+versions will be called.</p></li>
+<li><p><strong>entrypoint_method</strong> (<em>str</em>) – HTTP method of the entrypoint to call. You only need
+to change this if you have created an entrypoint with a non-default HTTP
+method. Defaults to “POST”.</p></li>
+<li><p><strong>**request_kwargs</strong> – Keyword arguments to pass on to :func:<code class="docutils literal notranslate"><span class="pre">requests.post</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If entrypoint_method is not a valid HTTP method</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The output from the entrypoint in the other service.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="daeploy.communication.notify">
+<code class="sig-name descname"><span class="pre">notify</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">severity</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#daeploy.communication.Severity" title="daeploy.communication.Severity"><span class="pre">daeploy.communication.Severity</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dashboard</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emails</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timer</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#daeploy.communication.notify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates and sends a notification</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>msg</strong> (<em>str</em>) – The message to include for the recipient of the notification.</p></li>
+<li><p><strong>severity</strong> (<a class="reference internal" href="#daeploy.communication.Severity" title="daeploy.communication.Severity"><em>Severity</em></a>) – The severity of the notification.</p></li>
+<li><p><strong>dashboard</strong> (<em>bool</em>) – If this is True, the notification will be shown
+on the daeploy dashboard. Defaults to True.</p></li>
+<li><p><strong>emails</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of emails to send the notifications to.
+Defaults to None, in which case no emails are sent</p></li>
+<li><p><strong>timer</strong> (<em>int</em>) – The amount of time (in seconds) that has to pass
+before the same notification can be send again. Defaults to 0.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-daeploy.utilities">
+<span id="utilities-api-daeploy-utilities"></span><h2>Utilities API (<a class="reference internal" href="#module-daeploy.utilities" title="daeploy.utilities"><code class="xref py py-mod docutils literal notranslate"><span class="pre">daeploy.utilities</span></code></a>)<a class="headerlink" href="#module-daeploy.utilities" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="daeploy.utilities.get_authorized_domains">
+<code class="sig-name descname"><span class="pre">get_authorized_domains</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#daeploy.utilities.get_authorized_domains" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns list of autorized domains for auth header</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List of authorized domains</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="daeploy.utilities.get_daeploy_manager_hostname">
+<code class="sig-name descname"><span class="pre">get_daeploy_manager_hostname</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#daeploy.utilities.get_daeploy_manager_hostname" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the hostname of the manager currently running
+this service.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Hostname of manager</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="daeploy.utilities.get_daeploy_manager_url">
+<code class="sig-name descname"><span class="pre">get_daeploy_manager_url</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#daeploy.utilities.get_daeploy_manager_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a URL where the manager currently running
+this service can be reached.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>URL to manager</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="daeploy.utilities.get_db_table_limit">
+<code class="sig-name descname"><span class="pre">get_db_table_limit</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">int</span><a class="headerlink" href="#daeploy.utilities.get_db_table_limit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Limit of rows or duration to keep records in service database.
+Reads from the environment variable DAEPLOY_SERVICE_DB_TABLE_LIMIT.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>int: Maximum rows/days etc. of database. Defaults to 365</p></li>
+<li><p>str: One of rows, days, hours, minutes, seconds. Defaults to “days”</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="daeploy.utilities.get_headers">
+<code class="sig-name descname"><span class="pre">get_headers</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#daeploy.utilities.get_headers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generating headers for API calls</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Assembled header</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="daeploy.utilities.get_service_access_token">
+<code class="sig-name descname"><span class="pre">get_service_access_token</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#daeploy.utilities.get_service_access_token" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a valid access token for communicating with
+the manager currently running this service and other services
+running on that manager.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>JWT token</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="daeploy.utilities.get_service_name">
+<code class="sig-name descname"><span class="pre">get_service_name</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#daeploy.utilities.get_service_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of this service</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Name</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="daeploy.utilities.get_service_root_path">
+<code class="sig-name descname"><span class="pre">get_service_root_path</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#daeploy.utilities.get_service_root_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the root path at which this service is running.
+Can be for example <cite>/services/&lt;service_name&gt;_&lt;service_version&gt;</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Root path</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="daeploy.utilities.get_service_version">
+<code class="sig-name descname"><span class="pre">get_service_version</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#daeploy.utilities.get_service_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Versio of this service</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Version string (ex. 1.2.3)</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-daeploy.data_types">
+<span id="data-types-api-daeploy-data-types"></span><h2>Data Types API (<a class="reference internal" href="#module-daeploy.data_types" title="daeploy.data_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">daeploy.data_types</span></code></a>)<a class="headerlink" href="#module-daeploy.data_types" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="daeploy.data_types.ArrayInput">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">ArrayInput</span></code><a class="headerlink" href="#daeploy.data_types.ArrayInput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></p>
+<p>Pydantic compatible data type for numpy ndarray input.</p>
+<dl class="py method">
+<dt id="daeploy.data_types.ArrayInput.validate">
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">validate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">numpy.ndarray</span><a class="headerlink" href="#daeploy.data_types.ArrayInput.validate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="daeploy.data_types.ArrayOutput">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">ArrayOutput</span></code><a class="headerlink" href="#daeploy.data_types.ArrayOutput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></p>
+<p>Pydantic compatible data type for numpy ndarray output.</p>
+<dl class="py method">
+<dt id="daeploy.data_types.ArrayOutput.validate">
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">validate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><a class="headerlink" href="#daeploy.data_types.ArrayOutput.validate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="daeploy.data_types.DataFrameInput">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">DataFrameInput</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Axes</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Axes</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dtype</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#daeploy.data_types.DataFrameInput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.core.frame.DataFrame</span></code></p>
+<p>Pydantic compatible data type for pandas DataFrame input.</p>
+<dl class="py method">
+<dt id="daeploy.data_types.DataFrameInput.validate">
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">validate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">pandas.core.frame.DataFrame</span><a class="headerlink" href="#daeploy.data_types.DataFrameInput.validate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="daeploy.data_types.DataFrameOutput">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">DataFrameOutput</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Axes</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Axes</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dtype</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#daeploy.data_types.DataFrameOutput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.core.frame.DataFrame</span></code></p>
+<p>Pydantic compatible data type for pandas DataFrame output.</p>
+<dl class="py method">
+<dt id="daeploy.data_types.DataFrameOutput.validate">
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">validate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pandas.core.frame.DataFrame</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#daeploy.data_types.DataFrameOutput.validate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../3rd_party_software.html" class="btn btn-neutral float-right" title="3rd party software" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="cli.html" class="btn btn-neutral float-left" title="Command-line Interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Viking Analytics AB.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: 1.0.0
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Tags</dt>
+      <dd><a href="sdk.html">1.0.0</a></dd>
+      <dd><a href="../../../1.0.0-beta/content/api_reference/sdk.html">1.0.0-beta</a></dd>
+    </dl>
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../../develop/content/api_reference/sdk.html">develop</a></dd>
+    </dl>
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
