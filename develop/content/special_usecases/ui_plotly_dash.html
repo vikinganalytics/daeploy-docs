@@ -286,7 +286,7 @@ some custom root_path (aka base_path):</p>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">dash</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span>
     <span class="vm">__name__</span><span class="p">,</span>
-    <span class="n">requests_pathname_prefix</span><span class="o">=</span><span class="n">daeploy</span><span class="o">.</span><span class="n">utilities</span><span class="o">.</span><span class="n">get_service_root_path</span><span class="p">(),</span>
+    <span class="n">requests_pathname_prefix</span><span class="o">=</span><span class="n">daeploy</span><span class="o">.</span><span class="n">utilities</span><span class="o">.</span><span class="n">get_service_root_path</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -303,7 +303,7 @@ accepts connections from others than localhost:</p>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">dash</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span>
     <span class="vm">__name__</span><span class="p">,</span>
-    <span class="n">requests_pathname_prefix</span><span class="o">=</span><span class="n">daeploy</span><span class="o">.</span><span class="n">utilities</span><span class="o">.</span><span class="n">get_service_root_path</span><span class="p">(),</span>
+    <span class="n">requests_pathname_prefix</span><span class="o">=</span><span class="n">daeploy</span><span class="o">.</span><span class="n">utilities</span><span class="o">.</span><span class="n">get_service_root_path</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="n">app</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span>
@@ -356,7 +356,7 @@ Daeploy SDK service <code class="docutils literal notranslate"><span class="pre"
 <span class="c1"># We make sure to give it the correct path where it will be mounted</span>
 <span class="n">app</span> <span class="o">=</span> <span class="n">dash</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span>
     <span class="vm">__name__</span><span class="p">,</span>
-    <span class="n">requests_pathname_prefix</span><span class="o">=</span><span class="n">daeploy</span><span class="o">.</span><span class="n">utilities</span><span class="o">.</span><span class="n">get_service_root_path</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;dashboard/&quot;</span><span class="p">,</span>
+    <span class="n">requests_pathname_prefix</span><span class="o">=</span><span class="n">daeploy</span><span class="o">.</span><span class="n">utilities</span><span class="o">.</span><span class="n">get_service_root_path</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;/dashboard/&quot;</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="n">app</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span>
