@@ -271,14 +271,11 @@ objects for the decorated function.</p>
 <li><p><strong>method</strong> (<em>str</em>) – HTTP method for entrypoint. Defauts to “POST”</p></li>
 <li><p><strong>monitor</strong> (<em>bool</em>) – Set if the input and output to this entrypoint should
 be saved to the service’s monitoring database. Defaults to False.</p></li>
-<li><p><strong>disable_http_logs</strong> (<em>bool</em>) – <p>Set if the http entry logs should be disabled for
+<li><p><strong>disable_http_logs</strong> (<em>bool</em>) – Set if the http entry logs should be disabled for
 this entrypoint.
 These logs are genereated from uvicorn. Defaults to False.
-Example of http entry log:</p>
-<blockquote>
-<div><p>”POST /services/service_1.0.0/entrypoint_name HTTP/1.1” 200 OK</p>
-</div></blockquote>
-</p></li>
+Example of http entry log:
+<code class="docutils literal notranslate"><span class="pre">&quot;POST</span> <span class="pre">/services/service_1.0.0/entrypoint_name</span> <span class="pre">HTTP/1.1&quot;</span> <span class="pre">200</span> <span class="pre">OK</span></code></p></li>
 <li><p><strong>**fastapi_kwargs</strong> – Keyword arguments for the resulting API endpoint.
 See FastAPI for keyword arguments of the <code class="docutils literal notranslate"><span class="pre">FastAPI.api_route()</span></code>
 function.</p></li>
@@ -291,7 +288,7 @@ function.</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The decorated function: <code class="xref py py-obj docutils literal notranslate"><span class="pre">func</span></code>.</p>
+<dd class="field-odd"><p>The decorated function: <code class="xref py py-obj docutils literal notranslate"><span class="pre">func</span></code></p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>Callable</p>
@@ -308,7 +305,7 @@ will try to coerce it into a string before storing.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>**variables</strong> – Variables to save to the database. Non-numeric
-variables will be saved as <code class="docutils literal notranslate"><span class="pre">str(variable)</span></code>.</p>
+variables will be saved as JSON with <code class="xref py py-func docutils literal notranslate"><span class="pre">json.dumps()</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -343,7 +340,7 @@ every <cite>seconds</cite>.</p>
 <dl class="py function">
 <dt id="daeploy._service._Service.get_parameter">
 <code class="sig-name descname"><span class="pre">get_parameter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Any</span><a class="headerlink" href="#daeploy._service._Service.get_parameter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get specific parameter</p>
+<dd><p>Get parameter value</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>parameter</strong> (<em>str</em>) – The name of the parameter</p>
