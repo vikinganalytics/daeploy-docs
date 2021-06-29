@@ -264,26 +264,27 @@ available in standard python:</p>
 <div class="section" id="daeploy-service-configuration">
 <h2>Daeploy Service Configuration<a class="headerlink" href="#daeploy-service-configuration" title="Permalink to this headline">¶</a></h2>
 <p>There are some special environment variables that are used for Daeploy service
-configuration.</p>
-<table class="colwidths-given docutils align-default">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Environment Variable</p></th>
-<th class="head"><p>Explanation</p></th>
-<th class="head"><p>Example</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DAEPLOY_SERVICE_DB_TABLE_LIMIT</span></code></p></td>
-<td><p>Format <code class="docutils literal notranslate"><span class="pre">&lt;number&gt;&lt;limiter&gt;</span></code>. Limiter options: <code class="docutils literal notranslate"><span class="pre">&quot;rows&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;days&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;hours&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;minutes&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;seconds&quot;</span></code>.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">DAEPLOY_SERVICE_DB_TABLE_LIMIT=30days</span></code></p></td>
-</tr>
-</tbody>
-</table>
+configuration:</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>DAEPLOY_SERVICE_DB_TABLE_LIMIT</dt><dd><ul>
+<li><p>Number of rows or length of time to keep data in database, cleaned at even intervals. Format <code class="docutils literal notranslate"><span class="pre">&lt;number&gt;&lt;unit&gt;</span></code>. Unit options: <code class="docutils literal notranslate"><span class="pre">&quot;rows&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;days&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;hours&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;minutes&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;seconds&quot;</span></code>.</p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">DAEPLOY_SERVICE_DB_TABLE_LIMIT=30days</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>DAEPLOY_SERVICE_DB_CLEAN_INTERVAL</dt><dd><ul>
+<li><p>Interval between database cleans. Format <code class="docutils literal notranslate"><span class="pre">&lt;number&gt;&lt;unit&gt;</span></code>. Unit options: <code class="docutils literal notranslate"><span class="pre">&quot;days&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;hours&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;minutes&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;seconds&quot;</span></code></p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">DAEPLOY_SERVICE_DB_CLEAN_INTERVAL=7days</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
 </div>
 </div>
 

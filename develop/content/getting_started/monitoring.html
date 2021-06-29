@@ -391,18 +391,27 @@ service database can be requested at the following entrypoint:</p>
 </div>
 <div class="section" id="limiting-the-number-of-records-in-the-database">
 <h2>Limiting the Number of Records in the Database<a class="headerlink" href="#limiting-the-number-of-records-in-the-database" title="Permalink to this headline">¶</a></h2>
-<p>Service databases are not meant as permanent data storage. The records are kept for
-365 days by default, but if a service stores large amounts of data often there is a
+<p>Service databases are not intended to be permanent data storage. Records are kept for
+90 days by default, but if a service stores large amounts of data often there is a
 risk of filling the disk of the host machine. To prevent this it’s possible to change
-how many instances of each variable can be stored or to automatically remove old instances.</p>
-<p>These options are set using an environment variable in the service’s runtime. The easiest
-way to set these are in <cite>.s2i/environment</cite>:</p>
+how many instances of each variable can be stored or to automatically remove old instances.
+The database is cleaned at even intervals.</p>
+<p>These options are set using a pair of environment variable in the service’s runtime.
+The easiest way to set these are in <cite>.s2i/environment</cite>:</p>
 <blockquote>
 <div><ul class="simple">
 <li><dl class="simple">
 <dt>DAEPLOY_SERVICE_DB_TABLE_LIMIT</dt><dd><ul>
 <li><p>Should have the format &lt;number&gt;&lt;limiter&gt;</p></li>
 <li><p>Limiter options: rows, days, hours, minutes or seconds.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>DAEPLOY_SERVICE_DB_CLEAN_INTERVAL</dt><dd><ul>
+<li><p>Should have the format &lt;number&gt;&lt;limiter&gt;</p></li>
+<li><p>Limiter options: days, hours, minutes or seconds.</p></li>
 </ul>
 </dd>
 </dl>

@@ -519,14 +519,32 @@ this service can be reached.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt id="daeploy.utilities.get_db_clean_interval_seconds">
+<code class="sig-name descname"><span class="pre">get_db_clean_interval_seconds</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">float</span><a class="headerlink" href="#daeploy.utilities.get_db_clean_interval_seconds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the environment variable DAEPLOY_SERVICE_DB_CLEAN_INTERVAL,
+that defines how often to clean the database from old records, into seconds
+and returns that.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Seconds between cleans. Defaults to 7 days</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt id="daeploy.utilities.get_db_table_limit">
-<code class="sig-name descname"><span class="pre">get_db_table_limit</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">int</span><a class="headerlink" href="#daeploy.utilities.get_db_table_limit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_db_table_limit</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#daeploy.utilities.get_db_table_limit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Limit of rows or duration to keep records in service database.
-Reads from the environment variable DAEPLOY_SERVICE_DB_TABLE_LIMIT.</p>
+Reads from the environment variable DAEPLOY_SERVICE_DB_TABLE_LIMIT.
+Data will be cleaned in intervals, defined by the environment variable
+DAEPLOY_SERVICE_DB_CLEAN_INTERVAL.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><ul class="simple">
-<li><p>int: Maximum rows/days etc. of database. Defaults to 365</p></li>
+<li><p>int: Maximum rows/days etc. of database. Defaults to 90</p></li>
 <li><p>str: One of rows, days, hours, minutes, seconds. Defaults to “days”</p></li>
 </ul>
 </p>
@@ -609,6 +627,11 @@ Can be for example <cite>/services/&lt;service_name&gt;_&lt;service_version&gt;<
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="py function">
+<dt id="daeploy.utilities.match_limit_and_unit">
+<code class="sig-name descname"><span class="pre">match_limit_and_unit</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accepted_units</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#daeploy.utilities.match_limit_and_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </div>
 <div class="section" id="module-daeploy.data_types">
