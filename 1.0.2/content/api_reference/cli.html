@@ -1,0 +1,646 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Command-line Interface &mdash; Daeploy  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Software Development Kit" href="sdk.html" />
+    <link rel="prev" title="Host static HTML pages using Daeploy" href="../special_usecases/hosting_static_html.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/daeploy_white.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/daeploy_description.html">Daeploy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/compatibility.html">Version compatibility</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/custom_service.html">Anatomy of a Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/dashboard.html">Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/service_logs.html">Read Logs From Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/autodocs.html">API Autodocs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/notifications.html">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/shadow_deployment.html">Versioning and Shadow Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/reaching_service_from_external_applications.html">Reaching a service from external applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/ticker.html">Schedule Repeating Actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/monitoring.html">Monitoring Your Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/cross_service_communication.html">Cross-service Communication</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/sdk_typing.html">Typing in the SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/using_multiple_hosts.html">Using Multiple Hosts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/manager_api.html">Manager API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/adv_deploy.html">Deployment Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/cli_autocompletion.html">Autocompletion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/service_environment.html">Service Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/manager_configuration.html">Manager Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/testing_services.html">Testing Services Before Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/proxy_dashboard.html">Proxy Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/upload_image.html">Upload local docker image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/status_codes.html">HTTP Status Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/integration_with_other_tools.html">Connecting Daeploy with Other Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/going_beyond_sdk.html">Going Beyond the SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/daeploy_notebook_service.html">Work With Daeploy From a Notebook</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Special Usecases</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/deploying_ml_model.html">Deploying Machine Learning Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/ui_streamlit.html">Using Streamlit to build a dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/ui_plotly_dash.html">Using Plotly Dash to build a dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/conda.html">Using Daeploy with Conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/gpu_services.html">Access NVIDIA GPUs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/hosting_static_html.html">Host static HTML pages using Daeploy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Api Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Command-line Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#daeploy">daeploy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#daeploy-assign">assign</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#daeploy-deploy">deploy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#daeploy-init">init</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#daeploy-kill">kill</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#daeploy-login">login</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#daeploy-logs">logs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#daeploy-ls">ls</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#daeploy-test">test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#daeploy-token">token</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sdk.html">Software Development Kit</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3rd_party_software.html">3rd party software</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Daeploy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Command-line Interface</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/content/api_reference/cli.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="command-line-interface">
+<span id="cli-reference"></span><h1>Command-line Interface<a class="headerlink" href="#command-line-interface" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="daeploy">
+<h2>daeploy<a class="headerlink" href="#daeploy" title="Permalink to this headline">¶</a></h2>
+<p>Command-line tool for Daeploy. Initialize a new project,
+deploy services, list them and kill them in a convenient package.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>daeploy <span class="o">[</span>OPTIONS<span class="o">]</span> COMMAND <span class="o">[</span>ARGS<span class="o">]</span>...
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt id="cmdoption-daeploy-version">
+<code class="sig-name descname"><span class="pre">--version</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show version of the SDK and the Manager</p>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-daeploy-install-completion">
+<code class="sig-name descname"><span class="pre">--install-completion</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;install_completion&gt;</span></code><a class="headerlink" href="#cmdoption-daeploy-install-completion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Install completion for the specified shell.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Options</dt>
+<dd class="field-odd"><p>bash | zsh | fish | powershell | pwsh</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-daeploy-show-completion">
+<code class="sig-name descname"><span class="pre">--show-completion</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;show_completion&gt;</span></code><a class="headerlink" href="#cmdoption-daeploy-show-completion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show completion for the specified shell, to copy it or customize the installation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Options</dt>
+<dd class="field-odd"><p>bash | zsh | fish | powershell | pwsh</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="daeploy-assign">
+<h3>assign<a class="headerlink" href="#daeploy-assign" title="Permalink to this headline">¶</a></h3>
+<p>Change main version of a service.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>daeploy assign <span class="o">[</span>OPTIONS<span class="o">]</span> NAME VERSION
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt id="cmdoption-daeploy-assign-yes">
+<code class="sig-name descname"><span class="pre">--yes</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-assign-yes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Give confirmation to kill services at runtime. Skips prompt, so use with caution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>False</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt id="cmdoption-daeploy-assign-arg-NAME">
+<code class="sig-name descname"><span class="pre">NAME</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-assign-arg-NAME" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-daeploy-assign-arg-VERSION">
+<code class="sig-name descname"><span class="pre">VERSION</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-assign-arg-VERSION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</div>
+<div class="section" id="daeploy-deploy">
+<h3>deploy<a class="headerlink" href="#daeploy-deploy" title="Permalink to this headline">¶</a></h3>
+<p>Deploy a new service.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>daeploy deploy <span class="o">[</span>OPTIONS<span class="o">]</span> NAME VERSION SOURCE
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt id="cmdoption-daeploy-deploy-p">
+<code class="sig-name descname"><span class="pre">-p</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--port</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;port&gt;</span></code><a class="headerlink" href="#cmdoption-daeploy-deploy-p" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal port for the service.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>8000</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-daeploy-deploy-i">
+<code class="sig-name descname"><span class="pre">-i</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--image</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-deploy-i" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deploy service from an docker image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>False</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-daeploy-deploy-g">
+<code class="sig-name descname"><span class="pre">-g</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--git</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-deploy-g" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deploy service from a git repository URL.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>False</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt id="cmdoption-daeploy-deploy-arg-NAME">
+<code class="sig-name descname"><span class="pre">NAME</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-deploy-arg-NAME" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-daeploy-deploy-arg-VERSION">
+<code class="sig-name descname"><span class="pre">VERSION</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-deploy-arg-VERSION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-daeploy-deploy-arg-SOURCE">
+<code class="sig-name descname"><span class="pre">SOURCE</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-deploy-arg-SOURCE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</div>
+<div class="section" id="daeploy-init">
+<h3>init<a class="headerlink" href="#daeploy-init" title="Permalink to this headline">¶</a></h3>
+<p>Generates skeleton code for a new Daeploy project.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>daeploy init <span class="o">[</span>OPTIONS<span class="o">]</span> <span class="o">[</span>PATH<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt id="cmdoption-daeploy-init-n">
+<code class="sig-name descname"><span class="pre">-n</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--name</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;project_name&gt;</span></code><a class="headerlink" href="#cmdoption-daeploy-init-n" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the project to skip prompt.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt id="cmdoption-daeploy-init-arg-PATH">
+<code class="sig-name descname"><span class="pre">PATH</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-init-arg-PATH" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optional argument</p>
+</dd></dl>
+
+</div>
+<div class="section" id="daeploy-kill">
+<h3>kill<a class="headerlink" href="#daeploy-kill" title="Permalink to this headline">¶</a></h3>
+<p>Kill one or multiple services by name and version.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>daeploy <span class="nb">kill</span> <span class="o">[</span>OPTIONS<span class="o">]</span> <span class="o">[</span>NAME<span class="o">]</span> <span class="o">[</span>VERSION<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt id="cmdoption-daeploy-kill-a">
+<code class="sig-name descname"><span class="pre">-a</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--all</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-kill-a" title="Permalink to this definition">¶</a></dt>
+<dd><p>Kill all services</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>False</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-daeploy-kill-yes">
+<code class="sig-name descname"><span class="pre">--yes</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-kill-yes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Give confirmation to kill services at runtime. Skips prompt, so use with caution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>False</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt id="cmdoption-daeploy-kill-arg-NAME">
+<code class="sig-name descname"><span class="pre">NAME</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-kill-arg-NAME" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optional argument</p>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-daeploy-kill-arg-VERSION">
+<code class="sig-name descname"><span class="pre">VERSION</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-kill-arg-VERSION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optional argument</p>
+</dd></dl>
+
+</div>
+<div class="section" id="daeploy-login">
+<h3>login<a class="headerlink" href="#daeploy-login" title="Permalink to this headline">¶</a></h3>
+<p>Log in to the specified host.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>daeploy login <span class="o">[</span>OPTIONS<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt id="cmdoption-daeploy-login-h">
+<code class="sig-name descname"><span class="pre">-h</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--host</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;host&gt;</span></code><a class="headerlink" href="#cmdoption-daeploy-login-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>Host address to log in to.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-daeploy-login-u">
+<code class="sig-name descname"><span class="pre">-u</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--username</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;username&gt;</span></code><a class="headerlink" href="#cmdoption-daeploy-login-u" title="Permalink to this definition">¶</a></dt>
+<dd><p>Username</p>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-daeploy-login-p">
+<code class="sig-name descname"><span class="pre">-p</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--password</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;password&gt;</span></code><a class="headerlink" href="#cmdoption-daeploy-login-p" title="Permalink to this definition">¶</a></dt>
+<dd><p>Password. Use with caution because input will be saved in terminal history.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-daeploy-login-t">
+<code class="sig-name descname"><span class="pre">-t</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--token</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;_token&gt;</span></code><a class="headerlink" href="#cmdoption-daeploy-login-t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log in to a manager using a token instead of username and password.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="daeploy-logs">
+<h3>logs<a class="headerlink" href="#daeploy-logs" title="Permalink to this headline">¶</a></h3>
+<p>Shows the logs for a service.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>daeploy logs <span class="o">[</span>OPTIONS<span class="o">]</span> NAME <span class="o">[</span>VERSION<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt id="cmdoption-daeploy-logs-n">
+<code class="sig-name descname"><span class="pre">-n</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--tail</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;tail&gt;</span></code><a class="headerlink" href="#cmdoption-daeploy-logs-n" title="Permalink to this definition">¶</a></dt>
+<dd><p>Output specified number of lines at the end of logs.Use “all” to get all logs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>50</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-daeploy-logs-f">
+<code class="sig-name descname"><span class="pre">-f</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--follow</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-logs-f" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the logs should be followed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>False</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-daeploy-logs-d">
+<code class="sig-name descname"><span class="pre">-d</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--date</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;date&gt;</span></code><a class="headerlink" href="#cmdoption-daeploy-logs-d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show logs since given datetime.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt id="cmdoption-daeploy-logs-arg-NAME">
+<code class="sig-name descname"><span class="pre">NAME</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-logs-arg-NAME" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-daeploy-logs-arg-VERSION">
+<code class="sig-name descname"><span class="pre">VERSION</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-logs-arg-VERSION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optional argument</p>
+</dd></dl>
+
+</div>
+<div class="section" id="daeploy-ls">
+<h3>ls<a class="headerlink" href="#daeploy-ls" title="Permalink to this headline">¶</a></h3>
+<p>List running services, filtered by name and version.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>daeploy ls <span class="o">[</span>OPTIONS<span class="o">]</span> <span class="o">[</span>NAME<span class="o">]</span> <span class="o">[</span>VERSION<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt id="cmdoption-daeploy-ls-arg-NAME">
+<code class="sig-name descname"><span class="pre">NAME</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-ls-arg-NAME" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optional argument</p>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-daeploy-ls-arg-VERSION">
+<code class="sig-name descname"><span class="pre">VERSION</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-ls-arg-VERSION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optional argument</p>
+</dd></dl>
+
+</div>
+<div class="section" id="daeploy-test">
+<h3>test<a class="headerlink" href="#daeploy-test" title="Permalink to this headline">¶</a></h3>
+<p>Test a service before deployment.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>daeploy <span class="nb">test</span> <span class="o">[</span>OPTIONS<span class="o">]</span> <span class="o">[</span>SERVICE_PATH<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt id="cmdoption-daeploy-test-arg-SERVICE_PATH">
+<code class="sig-name descname"><span class="pre">SERVICE_PATH</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-test-arg-SERVICE_PATH" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optional argument</p>
+</dd></dl>
+
+</div>
+<div class="section" id="daeploy-token">
+<h3>token<a class="headerlink" href="#daeploy-token" title="Permalink to this headline">¶</a></h3>
+<p>Generate a new authentication token.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>daeploy token <span class="o">[</span>OPTIONS<span class="o">]</span> <span class="o">[</span>LIFETIME<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt id="cmdoption-daeploy-token-arg-LIFETIME">
+<code class="sig-name descname"><span class="pre">LIFETIME</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-token-arg-LIFETIME" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optional argument</p>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="sdk.html" class="btn btn-neutral float-right" title="Software Development Kit" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../special_usecases/hosting_static_html.html" class="btn btn-neutral float-left" title="Host static HTML pages using Daeploy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Viking Analytics AB.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: 1.0.2
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Tags</dt>
+      <dd><a href="../../../1.0.0/content/api_reference/cli.html">1.0.0</a></dd>
+      <dd><a href="../../../1.0.0-beta/content/api_reference/cli.html">1.0.0-beta</a></dd>
+      <dd><a href="../../../1.0.1/content/api_reference/cli.html">1.0.1</a></dd>
+      <dd><a href="cli.html">1.0.2</a></dd>
+    </dl>
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../../develop/content/api_reference/cli.html">develop</a></dd>
+    </dl>
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
