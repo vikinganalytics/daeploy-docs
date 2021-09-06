@@ -289,7 +289,7 @@ file called <cite>app.sh</cite> that runs the shell command:</p>
 <p>When a Daeploy service is deployed it will look at the environment variable <code class="docutils literal notranslate"><span class="pre">APP_SCRIPT</span></code>
 to decide which file should be run on start-up. It is <cite>service.py</cite> by default but it
 can be changed by modifying the value of <code class="docutils literal notranslate"><span class="pre">APP_SCRIPT</span></code> in <cite>.s2i/environment</cite>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">APP_FILE</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">sh</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">APP_SCRIPT</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
 <p>Now that Daeploy knows that <cite>app.sh</cite> is the main file of the service we must ensure that
