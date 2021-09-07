@@ -297,7 +297,7 @@ deploy services, list them and kill them in a convenient package.</p>
 <dl class="std option">
 <dt id="cmdoption-daeploy-assign-yes">
 <code class="sig-name descname"><span class="pre">--yes</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-assign-yes" title="Permalink to this definition">¶</a></dt>
-<dd><p>Give confirmation to kill services at runtime. Skips prompt, so use with caution.</p>
+<dd><p>Give confirmation to assign service. Skips prompt, so use with caution.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default</dt>
 <dd class="field-odd"><p>False</p>
@@ -432,7 +432,18 @@ deploy services, list them and kill them in a convenient package.</p>
 <dl class="std option">
 <dt id="cmdoption-daeploy-kill-yes">
 <code class="sig-name descname"><span class="pre">--yes</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-kill-yes" title="Permalink to this definition">¶</a></dt>
-<dd><p>Give confirmation to kill services at runtime. Skips prompt, so use with caution.</p>
+<dd><p>Give confirmation to kill services. Skips prompt, so use with caution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>False</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-daeploy-kill-i">
+<code class="sig-name descname"><span class="pre">-i</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--keep-image</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-kill-i" title="Permalink to this definition">¶</a></dt>
+<dd><p>Keep the image(s) of the killed service(s). Might result in dangling images.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default</dt>
 <dd class="field-odd"><p>False</p>
