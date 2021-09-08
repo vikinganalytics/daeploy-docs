@@ -357,7 +357,7 @@ you could deploy that project as a service on daeploy with the following command
 <h2>Advanced Deployment of Docker Images<a class="headerlink" href="#advanced-deployment-of-docker-images" title="Permalink to this headline">¶</a></h2>
 <p>Extra <code class="docutils literal notranslate"><span class="pre">key:</span> <span class="pre">value</span></code> arguments (beyond port number and environment variables) needed for the docker image
 to run properly can be specified when deploying the image via the <code class="docutils literal notranslate"><span class="pre">/~image</span></code> POST HTTP endpoint. These extra
-<code class="docutils literal notranslate"><span class="pre">key:</span> <span class="pre">value</span></code> arguments should be specified under the <code class="docutils literal notranslate"><span class="pre">docker_run_args</span></code> key in the request data field. The accepted
+<code class="docutils literal notranslate"><span class="pre">key:</span> <span class="pre">value</span></code> arguments should be specified under the <code class="docutils literal notranslate"><span class="pre">run_args</span></code> key in the request data field. The accepted
 parameters for <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code> which can be found <a class="reference external" href="https://docker-py.readthedocs.io/en/stable/containers.html">here</a>.</p>
 <p>For instance, a docker image
 that requires <code class="docutils literal notranslate"><span class="pre">privileged</span></code> mode to run properly can be deployed like (using pythons request library):</p>
@@ -369,7 +369,7 @@ that requires <code class="docutils literal notranslate"><span class="pre">privi
         <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="p">,</span>
         <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span><span class="p">,</span>
         <span class="s1">&#39;port&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">port</span><span class="o">&gt;</span><span class="p">,</span>
-        <span class="s1">&#39;docker_run_args&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;run_args&#39;</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">&#39;privileged&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
             <span class="o">...</span>
         <span class="p">}</span>
