@@ -286,25 +286,17 @@ file called <cite>app.sh</cite> that runs the shell command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">streamlit</span> <span class="n">run</span> <span class="n">die_app</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
-<p>When a Daeploy service is deployed it will look at the environment variable <code class="docutils literal notranslate"><span class="pre">APP_SCRIPT</span></code>
+<p>When a Daeploy service is deployed it will look for the environment variable <code class="docutils literal notranslate"><span class="pre">APP_SCRIPT</span></code>
 to decide which file should be run on start-up. It is <cite>service.py</cite> by default but it
 can be changed by modifying the value of <code class="docutils literal notranslate"><span class="pre">APP_SCRIPT</span></code> in <cite>.s2i/environment</cite>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">APP_SCRIPT</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
-<p>Now that Daeploy knows that <cite>app.sh</cite> is the main file of the service we must ensure that
-it is executable, which we can do by adding yet another file, <cite>.s2i/bin/assemble</cite>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
-# Running stock assemble script
-${STI_SCRIPTS_PATH}/assemble
-# Making app.sh executable
-chmod +x ${APP_ROOT}/src/app.sh
-</pre></div>
-</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This might seem like a lot of steps just to run a small app, but these same steps
-can be used to run any bash script on start up.</p>
+<p><code class="docutils literal notranslate"><span class="pre">APP_SCRIPT</span></code> is different from <code class="docutils literal notranslate"><span class="pre">APP_FILE</span></code>. By using <code class="docutils literal notranslate"><span class="pre">APP_SCRIPT</span></code> we let
+s2i know to run that file as a script, rather than a python file. <code class="docutils literal notranslate"><span class="pre">APP_SCRIPT</span></code> can
+be any file that is executable in linux.</p>
 </div>
 </div>
 <div class="section" id="deploying-the-service">
