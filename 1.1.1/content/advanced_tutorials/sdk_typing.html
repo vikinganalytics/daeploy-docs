@@ -1,0 +1,667 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Typing in the SDK &mdash; Daeploy  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Using Multiple Hosts" href="using_multiple_hosts.html" />
+    <link rel="prev" title="Cross-service Communication" href="../getting_started/cross_service_communication.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/daeploy_white.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/daeploy_description.html">Daeploy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/compatibility.html">Version compatibility</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/custom_service.html">Anatomy of a Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/dashboard.html">Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/service_logs.html">Read Logs From Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/autodocs.html">API Autodocs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/notifications.html">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/shadow_deployment.html">Versioning and Shadow Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/reaching_service_from_external_applications.html">Reaching a service from external applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/ticker.html">Schedule Repeating Actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/monitoring.html">Monitoring Your Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/cross_service_communication.html">Cross-service Communication</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Typing in the SDK</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#why-type-hints">Why Type Hints?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-an-input-model">Creating an Input Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#custom-validation">Custom Validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#schema-example">Schema Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-non-jsonable-data-types">Using Non-jsonable Data Types</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="using_multiple_hosts.html">Using Multiple Hosts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manager_api.html">Manager API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adv_deploy.html">Deployment Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli_autocompletion.html">Autocompletion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="service_environment.html">Service Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manager_configuration.html">Manager Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing_services.html">Testing Services Before Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proxy_dashboard.html">Proxy Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upload_image.html">Upload local docker image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="status_codes.html">HTTP Status Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integration_with_other_tools.html">Connecting Daeploy with Other Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="going_beyond_sdk.html">Going Beyond the SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="daeploy_notebook_service.html">Work With Daeploy From a Notebook</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Special Usecases</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/deploying_ml_model.html">Deploying Machine Learning Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/ui_streamlit.html">Using Streamlit to build a dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/ui_plotly_dash.html">Using Plotly Dash to build a dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/conda.html">Using Daeploy with Conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/gpu_services.html">Access NVIDIA GPUs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/hosting_static_html.html">Host static HTML pages using Daeploy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Api Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/cli.html">Command-line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/sdk.html">Software Development Kit</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3rd_party_software.html">3rd party software</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Daeploy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Typing in the SDK</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/content/advanced_tutorials/sdk_typing.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="typing-in-the-sdk">
+<span id="sdk-typing-reference"></span><h1>Typing in the SDK<a class="headerlink" href="#typing-in-the-sdk" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference internal" href="../api_reference/sdk.html#sdk-reference"><span class="std std-ref">Software Development Kit</span></a> supports type hints to add validation to the resulting API
+as well as well-defined json schemas for the automated documentation. In this
+tutorial we will see how we can make use of this to make the API and interactive
+docs easier to use.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Daeploy entrypoints communicate with json schemas and do therefore
+only support json-compatible input and output, such as numericals, strings,
+lists and dictionaries.</p>
+</div>
+<div class="section" id="why-type-hints">
+<h2>Why Type Hints?<a class="headerlink" href="#why-type-hints" title="Permalink to this headline">¶</a></h2>
+<p>It is not required to use type hints for your entrypoint functions. But if they are
+used they will give validation to the API, which can otherwise require a fair bit
+of code. Let’s look at the <code class="xref py py-func docutils literal notranslate"><span class="pre">hello()</span></code> entrypoint that we’ve seen
+a few times already, but without type hints:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">daeploy</span> <span class="kn">import</span> <span class="n">service</span>
+
+<span class="nd">@service</span><span class="o">.</span><span class="n">entrypoint</span>
+<span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Hello </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">service</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Without the type hint, any data type is allowed into the entrypoint. Let’s
+say that an error caused a list of names to be sent to name instead of a single name
+then this entrypoint would respond with <code class="docutils literal notranslate"><span class="pre">&quot;Hello</span> <span class="pre">['Lars',</span> <span class="pre">'Claus',</span> <span class="pre">'Bob']&quot;</span></code> and a
+status code of 200. We also won’t get any schema definitions in the API documentation.
+Let’s define the same entrypoint again but with type hints this time:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">daeploy</span> <span class="kn">import</span> <span class="n">service</span>
+
+<span class="nd">@service</span><span class="o">.</span><span class="n">entrypoint</span>
+<span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Hello </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">service</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>With the same input <code class="docutils literal notranslate"><span class="pre">{&quot;name&quot;:</span> <span class="pre">['Lars',</span> <span class="pre">'Claus',</span> <span class="pre">'Bob']}</span></code> we would get a 422 error
+and the response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="s2">&quot;detail&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;loc&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;body&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;str type expected&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;type_error.str&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Which tells us that the name argument expected a string, but got something else.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The validation uses <a class="reference external" href="https://pydantic-docs.helpmanual.io/">pydantic</a>
+behind the scenes which will try to coerce the input to the correct type,
+so if we were to call <code class="xref py py-func docutils literal notranslate"><span class="pre">hello()</span></code> with the input <code class="docutils literal notranslate"><span class="pre">{&quot;name&quot;:</span> <span class="pre">1}</span></code> it will
+convert <code class="docutils literal notranslate"><span class="pre">1</span></code> to string and respond with <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">1</span></code>. If this behaviour is not
+not desirable, take a look at pydantic’s
+<a class="reference external" href="https://pydantic-docs.helpmanual.io/usage/types/#strict-types">strict types</a>.</p>
+</div>
+</div>
+<div class="section" id="creating-an-input-model">
+<h2>Creating an Input Model<a class="headerlink" href="#creating-an-input-model" title="Permalink to this headline">¶</a></h2>
+<p>In our examples so far we have only seen standard python types as type hints:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">daeploy</span> <span class="kn">import</span> <span class="n">service</span>
+
+<span class="nd">@service</span><span class="o">.</span><span class="n">entrypoint</span>
+<span class="k">def</span> <span class="nf">example</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>This makes sure that only dictionaries can be used as input for <code class="xref py py-func docutils literal notranslate"><span class="pre">example()</span></code>.
+But a dictionary can contain many types of data, and usually only one (or a few)
+ways are expected. To simplify the life of the user, we can define something called
+a data model, that we create by extending the <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code> class from
+<a class="reference external" href="https://pydantic-docs.helpmanual.io/">pydantic</a>:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Item</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">description</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">price</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">tax</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code>
+describes a JSON <code class="docutils literal notranslate"><span class="pre">object</span></code> (or python <code class="docutils literal notranslate"><span class="pre">dict</span></code>) like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Foo&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;An optional description&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="mf">45.2</span><span class="p">,</span>
+    <span class="s2">&quot;tax&quot;</span><span class="p">:</span> <span class="mf">3.5</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code> helps the API to know what format the input json should
+conform to. If the request body of your API call does not match the model it will
+send a 422 HTTP-error with an error description.</p>
+<p>Let’s create a new service that will convert its input into a dataframe and respond
+with the sum of its rows. For this we must be certain that the columns only contains
+floats:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">init</span> 
+<span class="go">project_name [my_project]: row_sum_service</span>
+</pre></div>
+</div>
+<p>Then in <cite>service.py</cite> write the following code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">daeploy</span> <span class="kn">import</span> <span class="n">service</span>
+<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">DataForm</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">col1</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
+    <span class="n">col2</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
+    <span class="n">col3</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
+
+
+<span class="nd">@service</span><span class="o">.</span><span class="n">entrypoint</span>
+<span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">DataForm</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dict</span><span class="p">())</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Recieved data: </span><span class="se">\n</span><span class="si">{</span><span class="n">df</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">row_sum</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Row sums: </span><span class="si">{</span><span class="n">row_sum</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">row_sum</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">service</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>And add <cite>pydantic</cite> and <cite>pandas</cite> to <cite>requirements.txt</cite>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">daeploy</span>
+<span class="n">pydantic</span>
+<span class="n">pandas</span>
+</pre></div>
+</div>
+<p>And deploy the new service:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">deploy</span> <span class="n">row_sum</span> <span class="mf">1.0</span><span class="o">.</span><span class="mi">0</span> <span class="o">./</span><span class="n">row_sum_service</span> 
+<span class="go">Active host: http://your-host</span>
+<span class="go">Deploying service...</span>
+<span class="go">Service deployed successfully</span>
+<span class="go">MAIN    NAME     VERSION    STATUS    RUNNING</span>
+<span class="go">------  -------  ---------  --------  -----------------------------------</span>
+<span class="go">*       row_sum  1.0.0      running   Running (since 2020-11-24 10:11:37)</span>
+</pre></div>
+</div>
+<p>Now if we head on to the automated documentation at
+<a class="reference external" href="http://your-host/services/row_sum/docs">http://your-host/services/row_sum/docs</a> you should see the following:</p>
+<a class="reference internal image-reference" href="../../_images/data_model.png"><img alt="Screenshot of autodocs with data model" src="../../_images/data_model.png" style="width: 800px;" /></a>
+<p>We can see that now, we have an example input ready for us in the schema view, which
+makes testing with the interactive docs much faster, but the most important feature
+we get is validation of the input. Let’s try to change the value of “col1” to “string”:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;col1&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;col2&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="mi">0</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;col3&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="mi">0</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>And we get the response 422     Error: Unprocessable Entity:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;detail&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;loc&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;body&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;data&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;col1&quot;</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;value is not a valid list&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;type_error.list&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Which tells us that the value of “col1” in “data” in the request body is not a valid list.
+If we had used no type hinting or instead used a dictionary we would not get this
+level of control of what data we accept into the entrypoint, which invites many
+bugs due to data validation issues.</p>
+</div>
+<div class="section" id="custom-validation">
+<h2>Custom Validation<a class="headerlink" href="#custom-validation" title="Permalink to this headline">¶</a></h2>
+<p>We’ve seen how a data model can be used to ensure that the input data types are
+validated, but sometimes it’s not strict enough. Let’s take the <cite>hello</cite> service
+as an example this time. The <code class="xref py py-func docutils literal notranslate"><span class="pre">hello()</span></code> function takes any string as it’s
+input &lt;name&gt; and then returns “Hello &lt;name&gt;”. But we do not want the user to input
+numbers as name, so we want to add validation for that, so we create a base model
+for the the user name:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">validator</span>
+
+<span class="k">class</span> <span class="nc">NameModel</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+
+    <span class="nd">@validator</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">must_not_be_numeric</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Names cannot be numeric!&quot;</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">name</span>
+</pre></div>
+</div>
+<p>The <code class="xref py py-func docutils literal notranslate"><span class="pre">validator()</span></code> decorator from <cite>pydantic</cite> allows us to define classmethods
+that can run arbitrary code on the data input and raise exceptions if it violates
+the desired format.</p>
+<p>On the input name “123”, which is a number, we expect the validation to kick in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;123&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>And we get a response 422 Error: Unprocessable Entity, which is exactly what we wanted:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;detail&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;loc&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;body&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;data&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;Names cannot be numeric!&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;value_error&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="schema-example">
+<h2>Schema Example<a class="headerlink" href="#schema-example" title="Permalink to this headline">¶</a></h2>
+<p>You can add example inputs for the documentation to
+speed up testing. To do this we create a local class <code class="xref py py-class docutils literal notranslate"><span class="pre">Config</span></code>
+within the data model:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NameModel</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
+    <span class="n">schema_extra</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;example&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Kermit&quot;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<p>This would change the standard value in the schema example to “Kermit”.</p>
+<a class="reference internal image-reference" href="../../_images/schema_example.png"><img alt="Screenshot of autodocs with data model and schema example" src="../../_images/schema_example.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="using-non-jsonable-data-types">
+<span id="sdk-typing-non-json-reference"></span><h2>Using Non-jsonable Data Types<a class="headerlink" href="#using-non-jsonable-data-types" title="Permalink to this headline">¶</a></h2>
+<p>Some data types like <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> are very common for
+e.g. data science, but are not natively supported by Pydantic. They must first be
+converted to a json-compatible format like lists for arrays and dictionaries for
+dataframes. This can be made more or less automated by using type hints with
+custom classes. Daeploy includes input and output types for <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> and
+<code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>. Let’s look at how they can be used:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">daeploy</span> <span class="kn">import</span> <span class="n">service</span>
+<span class="kn">from</span> <span class="nn">daeploy.data_types</span> <span class="kn">import</span> <span class="n">ArrayInput</span><span class="p">,</span> <span class="n">ArrayOutput</span>
+
+
+<span class="nd">@service</span><span class="o">.</span><span class="n">entrypoint</span>
+<span class="k">def</span> <span class="nf">array_sum</span><span class="p">(</span><span class="n">array1</span><span class="p">:</span> <span class="n">ArrayInput</span><span class="p">,</span> <span class="n">array2</span><span class="p">:</span> <span class="n">ArrayInput</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ArrayOutput</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">array1</span> <span class="o">+</span> <span class="n">array2</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">service</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Trying out this entrypoint with the input <code class="docutils literal notranslate"><span class="pre">{&quot;array1&quot;:</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">&quot;array2&quot;:</span> <span class="pre">[4,</span> <span class="pre">5,</span> <span class="pre">6]}</span></code>
+responds with <code class="docutils literal notranslate"><span class="pre">[5,</span> <span class="pre">7,</span> <span class="pre">9]</span></code>. If we had used lists as type hints they would
+have been concatenated to <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">6]</span></code>. The <a class="reference internal" href="../api_reference/sdk.html#daeploy.data_types.ArrayInput" title="daeploy.data_types.ArrayInput"><code class="xref py py-class docutils literal notranslate"><span class="pre">ArrayInput</span></code></a>
+class has a validator that converts its input to numpy arrays and conversely,
+<a class="reference internal" href="../api_reference/sdk.html#daeploy.data_types.ArrayOutput" title="daeploy.data_types.ArrayOutput"><code class="xref py py-class docutils literal notranslate"><span class="pre">ArrayOutput</span></code></a> has a validator that converts the array to a list.</p>
+<p>Let’s take a look at how <a class="reference internal" href="../api_reference/sdk.html#daeploy.data_types.ArrayInput" title="daeploy.data_types.ArrayInput"><code class="xref py py-class docutils literal notranslate"><span class="pre">ArrayInput</span></code></a> and
+<a class="reference internal" href="../api_reference/sdk.html#daeploy.data_types.ArrayOutput" title="daeploy.data_types.ArrayOutput"><code class="xref py py-class docutils literal notranslate"><span class="pre">ArrayOutput</span></code></a> are defined so you can make your own Pydantic
+compatible data types:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ArrayInput</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Pydantic compatible data type for numpy ndarray input.&quot;&quot;&quot;</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">__get_validators__</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="bp">cls</span><span class="o">.</span><span class="n">validate</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">__modify_schema__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">field_schema</span><span class="p">):</span>
+        <span class="n">field_schema</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="p">,</span> <span class="n">items</span><span class="o">=</span><span class="p">{})</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">List</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+        <span class="c1"># Transform input to ndarray</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ArrayOutput</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Pydantic compatible data type for numpy ndarray output.&quot;&quot;&quot;</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">__get_validators__</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="bp">cls</span><span class="o">.</span><span class="n">validate</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">__modify_schema__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">field_schema</span><span class="p">):</span>
+        <span class="n">field_schema</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="p">,</span> <span class="n">items</span><span class="o">=</span><span class="p">{})</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
+        <span class="c1"># Transform ndarray to list for output</span>
+        <span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Pydantic looks for the <code class="xref py py-meth docutils literal notranslate"><span class="pre">__get_validators__()</span></code> method to see if the class has a
+validator method, in this case <code class="xref py py-meth docutils literal notranslate"><span class="pre">validate()</span></code> that takes a value and returns a value.
+For the input, the value must be a json-compatible type, that should then be converted to the
+type you want to use in your entrypoint and for the output it should be converted back to
+the json-compatible representation.</p>
+<p>The <code class="xref py py-meth docutils literal notranslate"><span class="pre">__modify_schema__()</span></code> method is let’s pydantic create a schema for for the data
+type. It takes an argument for the field_schema which should be modified in-place. Take a
+look at <a class="reference external" href="https://pydantic-docs.helpmanual.io/usage/schema/#json-schema-types">JSON Schema Types</a>
+that pydantic supports to find which schema fits you data type.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Using <a class="reference internal" href="../api_reference/sdk.html#daeploy.data_types.ArrayInput" title="daeploy.data_types.ArrayInput"><code class="xref py py-class docutils literal notranslate"><span class="pre">ArrayInput</span></code></a> and
+<a class="reference internal" href="../api_reference/sdk.html#daeploy.data_types.DataFrameInput" title="daeploy.data_types.DataFrameInput"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrameInput</span></code></a> as input type can be likened to using
+<code class="docutils literal notranslate"><span class="pre">list</span></code> or <code class="docutils literal notranslate"><span class="pre">dict</span></code> and doesn’t give as much control of the validation as the
+pydantic models. So in some cases it might be better to use pydantic and convert
+the data inside of the entrypoint.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="using_multiple_hosts.html" class="btn btn-neutral float-right" title="Using Multiple Hosts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../getting_started/cross_service_communication.html" class="btn btn-neutral float-left" title="Cross-service Communication" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Viking Analytics AB.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: 1.1.1
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Tags</dt>
+      <dd><a href="../../../1.0.0/content/advanced_tutorials/sdk_typing.html">1.0.0</a></dd>
+      <dd><a href="../../../1.0.0-beta/content/advanced_tutorials/sdk_typing.html">1.0.0-beta</a></dd>
+      <dd><a href="../../../1.0.1/content/advanced_tutorials/sdk_typing.html">1.0.1</a></dd>
+      <dd><a href="../../../1.0.2/content/advanced_tutorials/sdk_typing.html">1.0.2</a></dd>
+      <dd><a href="../../../1.1.0/content/advanced_tutorials/sdk_typing.html">1.1.0</a></dd>
+      <dd><a href="sdk_typing.html">1.1.1</a></dd>
+    </dl>
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../../develop/content/advanced_tutorials/sdk_typing.html">develop</a></dd>
+    </dl>
+  </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
