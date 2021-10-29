@@ -118,6 +118,7 @@
 <li class="toctree-l1"><a class="reference internal" href="adv_deploy.html">Deployment Options</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cli_autocompletion.html">Autocompletion</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Service Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setting-environment-variables-at-deployment">Setting Environment Variables at Deployment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#daeploy-service-configuration">Daeploy Service Configuration</a></li>
 </ul>
 </li>
@@ -129,6 +130,7 @@
 <li class="toctree-l1"><a class="reference internal" href="integration_with_other_tools.html">Connecting Daeploy with Other Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="going_beyond_sdk.html">Going Beyond the SDK</a></li>
 <li class="toctree-l1"><a class="reference internal" href="daeploy_notebook_service.html">Work With Daeploy From a Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changing_build_image.html">Source to Image and Builder Images</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Special Usecases</span></p>
 <ul>
@@ -260,6 +262,12 @@ available in standard python:</p>
 
 <span class="n">envvar</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ENV_VAR&quot;</span><span class="p">)</span>
 </pre></div>
+</div>
+<div class="section" id="setting-environment-variables-at-deployment">
+<h2>Setting Environment Variables at Deployment<a class="headerlink" href="#setting-environment-variables-at-deployment" title="Permalink to this headline">¶</a></h2>
+<p>It is possible to set environment variables at deployment time using the CLI.
+It can be very convenient for deployment specific configuration. Check the
+<a class="reference internal" href="adv_deploy.html#cli-deploy-reference"><span class="std std-ref">Deployment Options</span></a> section to read more.</p>
 </div>
 <div class="section" id="daeploy-service-configuration">
 <h2>Daeploy Service Configuration<a class="headerlink" href="#daeploy-service-configuration" title="Permalink to this headline">¶</a></h2>

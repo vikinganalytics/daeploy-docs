@@ -119,7 +119,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#git-repository">Git Repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#container-image">Container Image</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#local-container-image">Local Container Image</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#advanced-deployment-of-docker-images">Advanced Deployment of Docker Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#environment-variables">Environment Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#container-run-arguments">Container Run Arguments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ignoring-files-when-deploying">Ignoring Files when Deploying</a></li>
 </ul>
 </li>
@@ -133,6 +134,7 @@
 <li class="toctree-l1"><a class="reference internal" href="integration_with_other_tools.html">Connecting Daeploy with Other Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="going_beyond_sdk.html">Going Beyond the SDK</a></li>
 <li class="toctree-l1"><a class="reference internal" href="daeploy_notebook_service.html">Work With Daeploy From a Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changing_build_image.html">Source to Image and Builder Images</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Special Usecases</span></p>
 <ul>
@@ -353,8 +355,24 @@ you could deploy that project as a service on daeploy with the following command
 </pre></div>
 </div>
 </div>
-<div class="section" id="advanced-deployment-of-docker-images">
-<h2>Advanced Deployment of Docker Images<a class="headerlink" href="#advanced-deployment-of-docker-images" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="environment-variables">
+<h2>Environment Variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h2>
+<p id="cli-deploy-envvar-reference">It is possible to set environment variables at deployment time using the CLI
+<code class="docutils literal notranslate"><span class="pre">--environment/-e</span></code> option. The variables are given to the CLI in the format
+<code class="docutils literal notranslate"><span class="pre">VARIABLE=VALUE</span></code> or simply <code class="docutils literal notranslate"><span class="pre">VARIABLE</span></code> to copy that variable from your
+development environment (if it exists). Multi-word variable values should be
+enclosed by quotation marks.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Setting environment variables at run time will overwrite any variables
+defined in the <cite>.s2i/environment</cite> file.</p>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">deploy</span> <span class="n">example_service</span> <span class="mf">1.0</span><span class="o">.</span><span class="mi">0</span> <span class="o">-</span><span class="n">e</span> <span class="n">VAR</span><span class="o">=</span><span class="n">VAL</span> <span class="o">-</span><span class="n">e</span> <span class="n">LONGVAR</span><span class="o">=</span><span class="s2">&quot;variable with spaces&quot;</span> <span class="o">./</span><span class="n">service_path</span> 
+</pre></div>
+</div>
+</div>
+<div class="section" id="container-run-arguments">
+<h2>Container Run Arguments<a class="headerlink" href="#container-run-arguments" title="Permalink to this headline">¶</a></h2>
 <p>Extra <code class="docutils literal notranslate"><span class="pre">key:</span> <span class="pre">value</span></code> arguments (beyond port number and environment variables) needed for the docker image
 to run properly can be specified when deploying the image via the <code class="docutils literal notranslate"><span class="pre">/~image</span></code> POST HTTP endpoint. These extra
 <code class="docutils literal notranslate"><span class="pre">key:</span> <span class="pre">value</span></code> arguments should be specified under the <code class="docutils literal notranslate"><span class="pre">run_args</span></code> key in the request data field. The accepted

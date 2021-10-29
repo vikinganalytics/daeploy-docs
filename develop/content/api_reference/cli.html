@@ -126,6 +126,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/integration_with_other_tools.html">Connecting Daeploy with Other Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/going_beyond_sdk.html">Going Beyond the SDK</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/daeploy_notebook_service.html">Work With Daeploy From a Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/changing_build_image.html">Source to Image and Builder Images</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Special Usecases</span></p>
 <ul>
@@ -335,6 +336,18 @@ deploy services, list them and kill them in a convenient package.</p>
 <dd class="field-odd"><p>8000</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-daeploy-deploy-e">
+<code class="sig-name descname"><span class="pre">-e</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--environment</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;envvars&gt;</span></code><a class="headerlink" href="#cmdoption-daeploy-deploy-e" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set an environment variable in the service as NAME=VALUE</p>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-daeploy-deploy-build-image">
+<code class="sig-name descname"><span class="pre">--build-image</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;build_image&gt;</span></code><a class="headerlink" href="#cmdoption-daeploy-deploy-build-image" title="Permalink to this definition">¶</a></dt>
+<dd><p>S2I build image to use when building the service image</p>
 </dd></dl>
 
 <dl class="std option">

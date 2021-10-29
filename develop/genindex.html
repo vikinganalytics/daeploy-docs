@@ -124,6 +124,7 @@
 <li class="toctree-l1"><a class="reference internal" href="content/advanced_tutorials/integration_with_other_tools.html">Connecting Daeploy with Other Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="content/advanced_tutorials/going_beyond_sdk.html">Going Beyond the SDK</a></li>
 <li class="toctree-l1"><a class="reference internal" href="content/advanced_tutorials/daeploy_notebook_service.html">Work With Daeploy From a Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/advanced_tutorials/changing_build_image.html">Source to Image and Builder Images</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Special Usecases</span></p>
 <ul>
@@ -238,10 +239,24 @@
 </li>
       </ul></li>
       <li>
+    --build-image &lt;build_image&gt;
+
+      <ul>
+        <li><a href="content/api_reference/cli.html#cmdoption-daeploy-deploy-build-image">daeploy-deploy command line option</a>
+</li>
+      </ul></li>
+      <li>
     --date &lt;date&gt;
 
       <ul>
         <li><a href="content/api_reference/cli.html#cmdoption-daeploy-logs-d">daeploy-logs command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --environment &lt;envvars&gt;
+
+      <ul>
+        <li><a href="content/api_reference/cli.html#cmdoption-daeploy-deploy-e">daeploy-deploy command line option</a>
 </li>
       </ul></li>
       <li>
@@ -335,6 +350,8 @@
         <li><a href="content/api_reference/cli.html#cmdoption-daeploy-login-t">daeploy-login command line option</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     --username &lt;username&gt;
 
@@ -342,8 +359,6 @@
         <li><a href="content/api_reference/cli.html#cmdoption-daeploy-login-u">daeploy-login command line option</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     --version
 
@@ -372,6 +387,13 @@
 
       <ul>
         <li><a href="content/api_reference/cli.html#cmdoption-daeploy-logs-d">daeploy-logs command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -e
+
+      <ul>
+        <li><a href="content/api_reference/cli.html#cmdoption-daeploy-deploy-e">daeploy-deploy command line option</a>
 </li>
       </ul></li>
       <li>
@@ -503,6 +525,10 @@
     daeploy-deploy command line option
 
       <ul>
+        <li><a href="content/api_reference/cli.html#cmdoption-daeploy-deploy-build-image">--build-image &lt;build_image&gt;</a>
+</li>
+        <li><a href="content/api_reference/cli.html#cmdoption-daeploy-deploy-e">--environment &lt;envvars&gt;</a>
+</li>
         <li><a href="content/api_reference/cli.html#cmdoption-daeploy-deploy-g">--git</a>
 </li>
         <li><a href="content/api_reference/cli.html#cmdoption-daeploy-deploy-i">--image</a>
@@ -510,6 +536,8 @@
         <li><a href="content/api_reference/cli.html#cmdoption-daeploy-deploy-I">--image-local</a>
 </li>
         <li><a href="content/api_reference/cli.html#cmdoption-daeploy-deploy-p">--port &lt;port&gt;</a>
+</li>
+        <li><a href="content/api_reference/cli.html#cmdoption-daeploy-deploy-e">-e</a>
 </li>
         <li><a href="content/api_reference/cli.html#cmdoption-daeploy-deploy-g">-g</a>
 </li>
@@ -556,6 +584,8 @@
         <li><a href="content/api_reference/cli.html#cmdoption-daeploy-kill-arg-VERSION">VERSION</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     daeploy-login command line option
 
@@ -577,8 +607,6 @@
         <li><a href="content/api_reference/cli.html#cmdoption-daeploy-login-u">-u</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     daeploy-logs command line option
 
