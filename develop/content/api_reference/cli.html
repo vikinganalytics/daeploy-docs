@@ -146,10 +146,18 @@
 <li class="toctree-l3"><a class="reference internal" href="#daeploy-init">init</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#daeploy-kill">kill</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#daeploy-login">login</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#daeploy-logout">logout</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#daeploy-logs">logs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#daeploy-ls">ls</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#daeploy-test">test</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#daeploy-token">token</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#daeploy-user">user</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#daeploy-user-add">add</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#daeploy-user-ls">ls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#daeploy-user-rm">rm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#daeploy-user-update">update</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -298,7 +306,7 @@ deploy services, list them and kill them in a convenient package.</p>
 <dl class="std option">
 <dt id="cmdoption-daeploy-assign-yes">
 <code class="sig-name descname"><span class="pre">--yes</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-assign-yes" title="Permalink to this definition">¶</a></dt>
-<dd><p>Give confirmation to assign service. Skips prompt, so use with caution.</p>
+<dd><p>Give confirmation to assign service. Skips prompt, use with caution.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default</dt>
 <dd class="field-odd"><p>False</p>
@@ -445,7 +453,7 @@ deploy services, list them and kill them in a convenient package.</p>
 <dl class="std option">
 <dt id="cmdoption-daeploy-kill-yes">
 <code class="sig-name descname"><span class="pre">--yes</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-kill-yes" title="Permalink to this definition">¶</a></dt>
-<dd><p>Give confirmation to kill services. Skips prompt, so use with caution.</p>
+<dd><p>Give confirmation to kill services. Skips prompt, use with caution.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default</dt>
 <dd class="field-odd"><p>False</p>
@@ -507,6 +515,20 @@ deploy services, list them and kill them in a convenient package.</p>
 <dt id="cmdoption-daeploy-login-t">
 <code class="sig-name descname"><span class="pre">-t</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--token</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;_token&gt;</span></code><a class="headerlink" href="#cmdoption-daeploy-login-t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Log in to a manager using a token instead of username and password.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="daeploy-logout">
+<h3>logout<a class="headerlink" href="#daeploy-logout" title="Permalink to this headline">¶</a></h3>
+<p>Log out from a host</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>daeploy <span class="nb">logout</span> <span class="o">[</span>OPTIONS<span class="o">]</span> <span class="o">[</span>HOST<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt id="cmdoption-daeploy-logout-arg-HOST">
+<code class="sig-name descname"><span class="pre">HOST</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-logout-arg-HOST" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optional argument</p>
 </dd></dl>
 
 </div>
@@ -606,6 +628,88 @@ deploy services, list them and kill them in a convenient package.</p>
 <dd><p>Optional argument</p>
 </dd></dl>
 
+</div>
+<div class="section" id="daeploy-user">
+<h3>user<a class="headerlink" href="#daeploy-user" title="Permalink to this headline">¶</a></h3>
+<p>Collection of user management commands</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>daeploy user <span class="o">[</span>OPTIONS<span class="o">]</span> COMMAND <span class="o">[</span>ARGS<span class="o">]</span>...
+</pre></div>
+</div>
+<div class="section" id="daeploy-user-add">
+<h4>add<a class="headerlink" href="#daeploy-user-add" title="Permalink to this headline">¶</a></h4>
+<p>Add a new user to the active host</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>daeploy user add <span class="o">[</span>OPTIONS<span class="o">]</span> USERNAME
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt id="cmdoption-daeploy-user-add-p">
+<code class="sig-name descname"><span class="pre">-p</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--password</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;password&gt;</span></code><a class="headerlink" href="#cmdoption-daeploy-user-add-p" title="Permalink to this definition">¶</a></dt>
+<dd><p>Give password in command instead of in prompt. Warning: Insecure</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt id="cmdoption-daeploy-user-add-arg-USERNAME">
+<code class="sig-name descname"><span class="pre">USERNAME</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-user-add-arg-USERNAME" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</div>
+<div class="section" id="daeploy-user-ls">
+<h4>ls<a class="headerlink" href="#daeploy-user-ls" title="Permalink to this headline">¶</a></h4>
+<p>List all users for the active host</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>daeploy user ls <span class="o">[</span>OPTIONS<span class="o">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="daeploy-user-rm">
+<h4>rm<a class="headerlink" href="#daeploy-user-rm" title="Permalink to this headline">¶</a></h4>
+<p>Delete a user from the active host</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>daeploy user rm <span class="o">[</span>OPTIONS<span class="o">]</span> USERNAME
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt id="cmdoption-daeploy-user-rm-yes">
+<code class="sig-name descname"><span class="pre">--yes</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-user-rm-yes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Give confirmation to delete user. Skips prompt, use with caution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>False</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt id="cmdoption-daeploy-user-rm-arg-USERNAME">
+<code class="sig-name descname"><span class="pre">USERNAME</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-user-rm-arg-USERNAME" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</div>
+<div class="section" id="daeploy-user-update">
+<h4>update<a class="headerlink" href="#daeploy-user-update" title="Permalink to this headline">¶</a></h4>
+<p>Change the password of a user on the active host</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>daeploy user update <span class="o">[</span>OPTIONS<span class="o">]</span> USERNAME
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt id="cmdoption-daeploy-user-update-p">
+<code class="sig-name descname"><span class="pre">-p</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--password</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;password&gt;</span></code><a class="headerlink" href="#cmdoption-daeploy-user-update-p" title="Permalink to this definition">¶</a></dt>
+<dd><p>Give password in command instead of in prompt. Warning: Insecure</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt id="cmdoption-daeploy-user-update-arg-USERNAME">
+<code class="sig-name descname"><span class="pre">USERNAME</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-daeploy-user-update-arg-USERNAME" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</div>
 </div>
 </div>
 </div>
