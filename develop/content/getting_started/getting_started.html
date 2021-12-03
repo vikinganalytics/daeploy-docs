@@ -170,13 +170,12 @@ and <strong>docker</strong> in your deployment environment.</p>
 </pre></div>
 </div>
 <p>Check your installation by running: <code class="docutils literal notranslate"><span class="pre">daeploy</span> <span class="pre">--help</span></code> in a terminal.</p>
-<p>You will also need a manager container. To start a free trial
+<p>You will also need a manager container. To start a
 manager running on <code class="docutils literal notranslate"><span class="pre">localhost</span></code> for development, run the following command:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">docker</span><span class="o">.</span><span class="n">sock</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">docker</span><span class="o">.</span><span class="n">sock</span> <span class="o">-</span><span class="n">p</span> <span class="mi">80</span><span class="p">:</span><span class="mi">80</span> <span class="o">-</span><span class="n">p</span> <span class="mi">443</span><span class="p">:</span><span class="mi">443</span> <span class="o">-</span><span class="n">d</span> <span class="n">daeploy</span><span class="o">/</span><span class="n">manager</span><span class="p">:</span><span class="n">latest</span>  
 </pre></div>
 </div>
-<p>You can check that it started correctly by opening <a class="reference external" href="http://localhost/">http://localhost/</a> in your browser.
-The trial manager can be used without restrictions for 12 hours before it has to be restarted.</p>
+<p>You can check that it started correctly by opening <a class="reference external" href="http://localhost/">http://localhost/</a> in your browser.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This configuration should <strong>never</strong> be used in production. It is missing crucial

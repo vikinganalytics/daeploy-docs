@@ -222,11 +222,7 @@
 <td><p>null</p></td>
 <td><p>Port to SMTP server, usually 587 or 465.</p></td>
 </tr>
-<tr class="row-odd"><td><p>DAEPLOY_ACTIVATION_KEY</p></td>
-<td><p>“”</p></td>
-<td><p>License activation key. Without key Manager lives for 12h.</p></td>
-</tr>
-<tr class="row-even"><td><p>DAEPLOY_ADMIN_PASSWORD</p></td>
+<tr class="row-odd"><td><p>DAEPLOY_ADMIN_PASSWORD</p></td>
 <td><p>admin</p></td>
 <td><p>Password for the admin user. Defualt to admin.</p></td>
 </tr>
@@ -339,7 +335,7 @@ external and internal ports are the same.</p>
 and the
 <a class="reference external" href="https://github.com/vikinganalytics/daeploy-examples/blob/master/start_manager">start_manager script</a>.
 In the example we start a Manager instance listening on <code class="docutils literal notranslate"><span class="pre">my.domain.com</span></code>, with HTTPS,
-authentication, an activated license and email notifications enabled.</p>
+authentication and email notifications enabled.</p>
 <section id="docker-cli">
 <h3>Docker CLI<a class="headerlink" href="#docker-cli" title="Permalink to this headline"></a></h3>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># We create a docker volume for keeping our data persistent across restarts/upgrades</span>
@@ -354,7 +350,6 @@ docker run <span class="se">\</span>
     -e <span class="nv">DAEPLOY_HOST_NAME</span><span class="o">=</span>my.domain.com <span class="se">\</span>
     -e <span class="nv">DAEPLOY_PROXY_HTTPS</span><span class="o">=</span>True <span class="se">\</span>
     -e <span class="nv">DAEPLOY_AUTH_ENABLED</span><span class="o">=</span>True <span class="se">\</span>
-    -e <span class="nv">DAEPLOY_ACTIVATION_KEY</span><span class="o">=</span>... <span class="se">\</span>
     -e <span class="nv">DAEPLOY_ADMIN_PASSWORD</span><span class="o">=</span>... <span class="se">\</span>
     -e <span class="nv">DAEPLOY_CONFIG_EMAIL</span><span class="o">=</span>&lt;some@email.com&gt; <span class="se">\</span>
     -e <span class="nv">DAEPLOY_CONFIG_EMAIL_PASSWORD</span><span class="o">=</span>&lt;password <span class="k">for</span> some@email.com&gt; <span class="se">\</span>
@@ -382,7 +377,7 @@ for details on syntax etc.</p>
 manager settings available.</p>
 <blockquote>
 <div><dl class="simple">
-<dt>bash start_manager </dt><dd><p>–version … –host-name my.domain.com –auth-enabled –https-enabled –activation-key … –admin-password … –config-email … –config-password … –smtp-server … –smtp-port … </p>
+<dt>bash start_manager </dt><dd><p>–version … –host-name my.domain.com –auth-enabled –https-enabled –admin-password … –config-email … –config-password … –smtp-server … –smtp-port … </p>
 </dd>
 </dl>
 </div></blockquote>
