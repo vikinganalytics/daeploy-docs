@@ -1,77 +1,39 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Using Plotly Dash to build a dashboard &mdash; Daeploy  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Using Daeploy with Conda" href="conda.html" />
     <link rel="prev" title="Using Streamlit to build a dashboard" href="ui_streamlit.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../index.html">
-          
-
-          
-            
             <img src="../../_static/daeploy_white.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -79,23 +41,12 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Overview</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../overview/daeploy_description.html">Daeploy</a></li>
 </ul>
-<p class="caption"><span class="caption-text">User Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/custom_service.html">Anatomy of a Service</a></li>
@@ -108,7 +59,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/monitoring.html">Monitoring Your Service</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/cross_service_communication.html">Cross-service Communication</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Advanced User Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">Advanced User Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/sdk_typing.html">Typing in the SDK</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/using_multiple_hosts.html">Using Multiple Hosts</a></li>
@@ -126,7 +77,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/going_beyond_sdk.html">Going Beyond the SDK</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/daeploy_notebook_service.html">Work With Daeploy From a Notebook</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Special Usecases</span></p>
+<p class="caption" role="heading"><span class="caption-text">Special Usecases</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="deploying_ml_model.html">Deploying Machine Learning Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ui_streamlit.html">Using Streamlit to build a dashboard</a></li>
@@ -140,81 +91,40 @@
 <li class="toctree-l1"><a class="reference internal" href="gpu_services.html">Access NVIDIA GPUs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hosting_static_html.html">Host static HTML pages using Daeploy</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Api Reference</span></p>
+<p class="caption" role="heading"><span class="caption-text">Api Reference</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../api_reference/cli.html">Command-line Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api_reference/sdk.html">Software Development Kit</a></li>
 </ul>
-<p class="caption"><span class="caption-text">About</span></p>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../3rd_party_software.html">3rd party software</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Daeploy</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Using Plotly Dash to build a dashboard</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../../_sources/content/special_usecases/ui_plotly_dash.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS overrides for sphinx_rtd_theme */
@@ -239,13 +149,13 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="using-plotly-dash-to-build-a-dashboard">
-<span id="plotly-dash-service-reference"></span><h1>Using Plotly Dash to build a dashboard<a class="headerlink" href="#using-plotly-dash-to-build-a-dashboard" title="Permalink to this headline">¶</a></h1>
+<section id="using-plotly-dash-to-build-a-dashboard">
+<span id="plotly-dash-service-reference"></span><h1>Using Plotly Dash to build a dashboard<a class="headerlink" href="#using-plotly-dash-to-build-a-dashboard" title="Permalink to this headline"></a></h1>
 <p>In this tutorial we will see how to create a service that serves a dashboard using
 <a class="reference external" href="https://plotly.com/dash/">Plotly Dash</a>.We will not go into detail into how
 to use Plotly Dash itself, but rather how to deploy a Plotly Dash application with Daeploy.</p>
-<div class="section" id="example-plotly-dash-application">
-<h2>Example Plotly Dash application<a class="headerlink" href="#example-plotly-dash-application" title="Permalink to this headline">¶</a></h2>
+<section id="example-plotly-dash-application">
+<h2>Example Plotly Dash application<a class="headerlink" href="#example-plotly-dash-application" title="Permalink to this headline"></a></h2>
 <p>We will use a <cite>hello-world</cite> Plotly Dash application in this tutorial that simply prints
 <cite>Hello World</cite>. The code for this application looks like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
@@ -269,9 +179,9 @@ to use Plotly Dash itself, but rather how to deploy a Plotly Dash application wi
 </div>
 <p>That is all you need to run this Plotly Dash application locally. Lets now have a
 look at making this example deployable and runnable with Daeploy.</p>
-</div>
-<div class="section" id="plotly-dash-application-as-a-standalone-service">
-<h2>Plotly Dash application as a standalone service<a class="headerlink" href="#plotly-dash-application-as-a-standalone-service" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="plotly-dash-application-as-a-standalone-service">
+<h2>Plotly Dash application as a standalone service<a class="headerlink" href="#plotly-dash-application-as-a-standalone-service" title="Permalink to this headline"></a></h2>
 <p>Let’s get som fresh boiler-plate directories/files using the functionality provided
 by the Daeploy CLI:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">init</span> 
@@ -318,7 +228,7 @@ accepts connections from others than localhost:</p>
 <p>We can now deploy the Plotly Dash app, like we would any other service, with one important
 difference. Plotly Dash, by default, use port 8050 to communicate so we have to explicitly
 set the port when deploying:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">deploy</span> <span class="n">plotly_dashboard</span> <span class="mf">1.0</span><span class="o">.</span><span class="mi">0</span> <span class="o">./</span><span class="n">plotly_dashboard</span> <span class="o">--</span><span class="n">port</span> <span class="mi">8050</span> 
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">deploy</span> <span class="n">plotly_dashboard</span> <span class="mf">1.0.0</span> <span class="o">./</span><span class="n">plotly_dashboard</span> <span class="o">--</span><span class="n">port</span> <span class="mi">8050</span> 
 <span class="go">Active host: http://your-host</span>
 <span class="go">Deploying service...</span>
 <span class="go">Service deployed successfully</span>
@@ -334,9 +244,9 @@ port for <code class="docutils literal notranslate"><span class="pre">daeploy</s
 to change it to not get a <cite>Bad Gateway</cite>.</p>
 </div>
 <p>Open <a class="reference external" href="http://your-host/services/plotly_dashboard/">http://your-host/services/plotly_dashboard/</a> and you should see your app there</p>
-</div>
-<div class="section" id="plotly-dash-application-as-part-of-a-sdk-based-application">
-<h2>Plotly Dash application as part of a SDK-based application<a class="headerlink" href="#plotly-dash-application-as-part-of-a-sdk-based-application" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="plotly-dash-application-as-part-of-a-sdk-based-application">
+<h2>Plotly Dash application as part of a SDK-based application<a class="headerlink" href="#plotly-dash-application-as-part-of-a-sdk-based-application" title="Permalink to this headline"></a></h2>
 <p>It is also possible to add a Plotly Dash application as a (sub-)part of an SDK-based
 service. This is done by mounting the Plotly Dash <code class="docutils literal notranslate"><span class="pre">server</span></code> on the SDK <code class="docutils literal notranslate"><span class="pre">app</span></code>. In the
 example below, we mount the Plotly Dash <code class="docutils literal notranslate"><span class="pre">app</span></code> at the subpath <code class="docutils literal notranslate"><span class="pre">/dashboard/</span></code> under the
@@ -374,7 +284,7 @@ Daeploy SDK service <code class="docutils literal notranslate"><span class="pre"
 </div>
 <p>Assuming we deploy our service as such (note that we no longer need to specify a custom
 port number since we are using the SDK to actually run the application):</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">deploy</span> <span class="n">plotly_dashboard</span> <span class="mf">1.0</span><span class="o">.</span><span class="mi">0</span> <span class="o">./</span><span class="n">plotly_dashboard</span> 
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">deploy</span> <span class="n">plotly_dashboard</span> <span class="mf">1.0.0</span> <span class="o">./</span><span class="n">plotly_dashboard</span> 
 <span class="go">Active host: http://your-host</span>
 <span class="go">Deploying service...</span>
 <span class="go">Service deployed successfully</span>
@@ -384,42 +294,32 @@ port number since we are using the SDK to actually run the application):</p>
 </pre></div>
 </div>
 <p>Your dashboard would then be available at <a class="reference external" href="http://your-host/services/plotly_dashboard/dashboard/">http://your-host/services/plotly_dashboard/dashboard/</a></p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="conda.html" class="btn btn-neutral float-right" title="Using Daeploy with Conda" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="ui_streamlit.html" class="btn btn-neutral float-left" title="Using Streamlit to build a dashboard" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="conda.html" class="btn btn-neutral float-right" title="Using Daeploy with Conda" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021, Viking Analytics AB.
-
-    </p>
+    <p>&#169; Copyright 2021, Viking Analytics AB.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
   
 <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
@@ -444,18 +344,11 @@ port number since we are using the SDK to actually run the application):</p>
       <dd><a href="../../../develop/content/special_usecases/ui_plotly_dash.html">develop</a></dd>
     </dl>
   </div>
-</div>
-
-  <script type="text/javascript">
+</div><script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

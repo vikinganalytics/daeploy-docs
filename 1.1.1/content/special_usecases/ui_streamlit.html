@@ -1,77 +1,39 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Using Streamlit to build a dashboard &mdash; Daeploy  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Using Plotly Dash to build a dashboard" href="ui_plotly_dash.html" />
     <link rel="prev" title="Deploying Machine Learning Models" href="deploying_ml_model.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../index.html">
-          
-
-          
-            
             <img src="../../_static/daeploy_white.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -79,24 +41,13 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Overview</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../overview/daeploy_description.html">Daeploy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../overview/compatibility.html">Version compatibility</a></li>
 </ul>
-<p class="caption"><span class="caption-text">User Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/custom_service.html">Anatomy of a Service</a></li>
@@ -110,7 +61,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/monitoring.html">Monitoring Your Service</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/cross_service_communication.html">Cross-service Communication</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Advanced User Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">Advanced User Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/sdk_typing.html">Typing in the SDK</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/using_multiple_hosts.html">Using Multiple Hosts</a></li>
@@ -127,7 +78,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/going_beyond_sdk.html">Going Beyond the SDK</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/daeploy_notebook_service.html">Work With Daeploy From a Notebook</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Special Usecases</span></p>
+<p class="caption" role="heading"><span class="caption-text">Special Usecases</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="deploying_ml_model.html">Deploying Machine Learning Models</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Using Streamlit to build a dashboard</a><ul>
@@ -140,81 +91,40 @@
 <li class="toctree-l1"><a class="reference internal" href="gpu_services.html">Access NVIDIA GPUs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hosting_static_html.html">Host static HTML pages using Daeploy</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Api Reference</span></p>
+<p class="caption" role="heading"><span class="caption-text">Api Reference</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../api_reference/cli.html">Command-line Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api_reference/sdk.html">Software Development Kit</a></li>
 </ul>
-<p class="caption"><span class="caption-text">About</span></p>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../3rd_party_software.html">3rd party software</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Daeploy</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Using Streamlit to build a dashboard</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../../_sources/content/special_usecases/ui_streamlit.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS overrides for sphinx_rtd_theme */
@@ -239,8 +149,8 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="using-streamlit-to-build-a-dashboard">
-<span id="streamlit-service-reference"></span><h1>Using Streamlit to build a dashboard<a class="headerlink" href="#using-streamlit-to-build-a-dashboard" title="Permalink to this headline">¶</a></h1>
+<section id="using-streamlit-to-build-a-dashboard">
+<span id="streamlit-service-reference"></span><h1>Using Streamlit to build a dashboard<a class="headerlink" href="#using-streamlit-to-build-a-dashboard" title="Permalink to this headline"></a></h1>
 <p>In this tutorial we will see how to create a service with a graphical interface
 using a very convenient python package called <a class="reference external" href="https://www.streamlit.io/">streamlit</a>.</p>
 <p>With streamlit it is very quick to make graphical applications and this can be
@@ -248,8 +158,8 @@ used together with Daeploy to make dashboards for monitoring or configuration of
 your algorithms, just to name a few examples. We will not go into detail into how
 to use streamlit itself, but rather how to deploy a streamlit application in Daeploy and
 have it communicate with your services.</p>
-<div class="section" id="creating-the-streamlit-service">
-<h2>Creating the Streamlit Service<a class="headerlink" href="#creating-the-streamlit-service" title="Permalink to this headline">¶</a></h2>
+<section id="creating-the-streamlit-service">
+<h2>Creating the Streamlit Service<a class="headerlink" href="#creating-the-streamlit-service" title="Permalink to this headline"></a></h2>
 <p>Let’s reuse the <cite>Die Roller</cite> service we created as part of the <cite>Yatzee</cite> game in
 <a class="reference internal" href="../getting_started/cross_service_communication.html#cross-service-reference"><span class="std std-ref">Cross-service Communication</span></a> and create a roll button and a display for the
 die roll. We start by creating a new project:</p>
@@ -298,9 +208,9 @@ can be changed by modifying the value of <code class="docutils literal notransla
 s2i know to run that file as a script, rather than a python file. <code class="docutils literal notranslate"><span class="pre">APP_SCRIPT</span></code> can
 be any file that is executable in linux.</p>
 </div>
-</div>
-<div class="section" id="deploying-the-service">
-<h2>Deploying the Service<a class="headerlink" href="#deploying-the-service" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="deploying-the-service">
+<h2>Deploying the Service<a class="headerlink" href="#deploying-the-service" title="Permalink to this headline"></a></h2>
 <p>Since <cite>die_app</cite> is dependent of <cite>die_roller_service</cite> it has to be up and running
 before <cite>die_app</cite> can be used. The code for <cite>die_roller_service</cite> is:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
@@ -319,7 +229,7 @@ before <cite>die_app</cite> can be used. The code for <cite>die_roller_service</
     <span class="n">service</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">deploy</span> <span class="n">die_roller</span> <span class="mf">1.0</span><span class="o">.</span><span class="mi">0</span> <span class="o">./</span><span class="n">die_roller_service</span> 
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">deploy</span> <span class="n">die_roller</span> <span class="mf">1.0.0</span> <span class="o">./</span><span class="n">die_roller_service</span> 
 <span class="go">Active host: http://your-host</span>
 <span class="go">Deploying service...</span>
 <span class="go">Service deployed successfully</span>
@@ -331,7 +241,7 @@ before <cite>die_app</cite> can be used. The code for <cite>die_roller_service</
 <p>We can now deploy the streamlit app, like we would any other, with one important
 difference. Streamlit uses internal port 8501 to communicate so we have to explicitly
 set the port when deploying:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">deploy</span> <span class="n">die_app</span> <span class="mf">1.0</span><span class="o">.</span><span class="mi">0</span> <span class="o">./</span><span class="n">die_app</span> <span class="o">--</span><span class="n">port</span> <span class="mi">8501</span> 
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">deploy</span> <span class="n">die_app</span> <span class="mf">1.0.0</span> <span class="o">./</span><span class="n">die_app</span> <span class="o">--</span><span class="n">port</span> <span class="mi">8501</span> 
 <span class="go">Active host: http://your-host</span>
 <span class="go">Deploying service...</span>
 <span class="go">Service deployed successfully</span>
@@ -348,42 +258,32 @@ to change it to not get a <cite>Bad Gateway</cite>.</p>
 </div>
 <p>Open <a class="reference external" href="http://your-host/services/die_app/">http://your-host/services/die_app/</a> and you should see your app there:</p>
 <a class="reference internal image-reference" href="../../_images/streamlit_service.png"><img alt="Screenshot of streamlit service" src="../../_images/streamlit_service.png" style="width: 200px;" /></a>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="ui_plotly_dash.html" class="btn btn-neutral float-right" title="Using Plotly Dash to build a dashboard" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="deploying_ml_model.html" class="btn btn-neutral float-left" title="Deploying Machine Learning Models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ui_plotly_dash.html" class="btn btn-neutral float-right" title="Using Plotly Dash to build a dashboard" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021, Viking Analytics AB.
-
-    </p>
+    <p>&#169; Copyright 2021, Viking Analytics AB.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
   
 <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
@@ -408,18 +308,11 @@ to change it to not get a <cite>Bad Gateway</cite>.</p>
       <dd><a href="../../../develop/content/special_usecases/ui_streamlit.html">develop</a></dd>
     </dl>
   </div>
-</div>
-
-  <script type="text/javascript">
+</div><script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

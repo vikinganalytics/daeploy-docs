@@ -1,77 +1,39 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Monitoring Your Service &mdash; Daeploy  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Cross-service Communication" href="cross_service_communication.html" />
     <link rel="prev" title="Schedule Repeating Actions" href="ticker.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../index.html">
-          
-
-          
-            
             <img src="../../_static/daeploy_white.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -79,24 +41,13 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Overview</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../overview/daeploy_description.html">Daeploy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../overview/compatibility.html">Version compatibility</a></li>
 </ul>
-<p class="caption"><span class="caption-text">User Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom_service.html">Anatomy of a Service</a></li>
@@ -117,7 +68,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="cross_service_communication.html">Cross-service Communication</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Advanced User Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">Advanced User Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/sdk_typing.html">Typing in the SDK</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/using_multiple_hosts.html">Using Multiple Hosts</a></li>
@@ -128,14 +79,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/manager_configuration.html">Manager Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/testing_services.html">Testing Services Before Deployment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/proxy_dashboard.html">Proxy Dashboard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/upload_image.html">Upload local docker image</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/status_codes.html">HTTP Status Codes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/integration_with_other_tools.html">Connecting Daeploy with Other Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/going_beyond_sdk.html">Going Beyond the SDK</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/daeploy_notebook_service.html">Work With Daeploy From a Notebook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/changing_build_image.html">Source to Image and Builder Images</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Special Usecases</span></p>
+<p class="caption" role="heading"><span class="caption-text">Special Usecases</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../special_usecases/deploying_ml_model.html">Deploying Machine Learning Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../special_usecases/ui_streamlit.html">Using Streamlit to build a dashboard</a></li>
@@ -144,81 +91,40 @@
 <li class="toctree-l1"><a class="reference internal" href="../special_usecases/gpu_services.html">Access NVIDIA GPUs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../special_usecases/hosting_static_html.html">Host static HTML pages using Daeploy</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Api Reference</span></p>
+<p class="caption" role="heading"><span class="caption-text">Api Reference</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../api_reference/cli.html">Command-line Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api_reference/sdk.html">Software Development Kit</a></li>
 </ul>
-<p class="caption"><span class="caption-text">About</span></p>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../3rd_party_software.html">3rd party software</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Daeploy</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Monitoring Your Service</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../../_sources/content/getting_started/monitoring.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS overrides for sphinx_rtd_theme */
@@ -243,15 +149,15 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="monitoring-your-service">
-<span id="monitoring-reference"></span><h1>Monitoring Your Service<a class="headerlink" href="#monitoring-your-service" title="Permalink to this headline">¶</a></h1>
+<section id="monitoring-your-service">
+<span id="monitoring-reference"></span><h1>Monitoring Your Service<a class="headerlink" href="#monitoring-your-service" title="Permalink to this headline"></a></h1>
 <p>Monitoring is a very important aspect of software deployment. Deployed algorithms
 often deteriorate over time, in a process called
 <a class="reference external" href="https://en.wikipedia.org/wiki/Domain_adaptation">domain shift</a>, and being able
 to monitor your deployed algorithms can make all the difference in detecting this
 in the early stages.</p>
-<div class="section" id="monitoring-variables">
-<h2>Monitoring Variables<a class="headerlink" href="#monitoring-variables" title="Permalink to this headline">¶</a></h2>
+<section id="monitoring-variables">
+<h2>Monitoring Variables<a class="headerlink" href="#monitoring-variables" title="Permalink to this headline"></a></h2>
 <p>To monitor the value of a variable in the code you can use the
 <code class="xref py py-func docutils literal notranslate"><span class="pre">store()</span></code> function. It takes an arbitrary number of keyword
 arguments and saves their values in a service-specific database, where they can be
@@ -275,9 +181,9 @@ string data. Let’s use the <cite>hello</cite> service as an example</p>
     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">greeting_phrase</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="monitoring-an-entrypoint">
-<h2>Monitoring an Entrypoint<a class="headerlink" href="#monitoring-an-entrypoint" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="monitoring-an-entrypoint">
+<h2>Monitoring an Entrypoint<a class="headerlink" href="#monitoring-an-entrypoint" title="Permalink to this headline"></a></h2>
 <p>It is also possible to automatically monitor the input and output of a service
 entrypoint. To do this we pass <code class="docutils literal notranslate"><span class="pre">monitor=True</span></code> to the
 <code class="xref py py-meth docutils literal notranslate"><span class="pre">entrypoint()</span></code> decorator</p>
@@ -298,9 +204,9 @@ entrypoint. To do this we pass <code class="docutils literal notranslate"><span 
 </div>
 <p>In this case, the data is saved as json strings, in order to support more data
 formats.</p>
-</div>
-<div class="section" id="monitoring-a-parameter">
-<h2>Monitoring a Parameter<a class="headerlink" href="#monitoring-a-parameter" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="monitoring-a-parameter">
+<h2>Monitoring a Parameter<a class="headerlink" href="#monitoring-a-parameter" title="Permalink to this headline"></a></h2>
 <p>Parameters set with <code class="xref py py-func docutils literal notranslate"><span class="pre">add_parameter()</span></code> can also be monitored by passing
 <code class="docutils literal notranslate"><span class="pre">monitor=True</span></code>, which also supports integer, float and string data</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
@@ -318,9 +224,9 @@ formats.</p>
     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">greeting_phrase</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="getting-the-data">
-<h2>Getting the Data<a class="headerlink" href="#getting-the-data" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="getting-the-data">
+<h2>Getting the Data<a class="headerlink" href="#getting-the-data" title="Permalink to this headline"></a></h2>
 <p>Daeploy provides three options for accessing the time-series data for
 your monitored variables.</p>
 <p><strong>Option 1: Json format</strong></p>
@@ -389,9 +295,9 @@ The csv files has the following format:</p>
 <p>The time-series data is stored a in sqlite databases and the whole
 service database can be requested at the following entrypoint:</p>
 <p><code class="docutils literal notranslate"><span class="pre">http://your-host/services/&lt;servce_name&gt;_&lt;service_version&gt;/~monitor/db</span></code></p>
-</div>
-<div class="section" id="limiting-the-number-of-records-in-the-database">
-<h2>Limiting the Number of Records in the Database<a class="headerlink" href="#limiting-the-number-of-records-in-the-database" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="limiting-the-number-of-records-in-the-database">
+<h2>Limiting the Number of Records in the Database<a class="headerlink" href="#limiting-the-number-of-records-in-the-database" title="Permalink to this headline"></a></h2>
 <p>Service databases are not intended to be permanent data storage. Records are kept for
 90 days by default, but if a service stores large amounts of data often there is a
 risk of filling the disk of the host machine. To prevent this it’s possible to change
@@ -424,42 +330,32 @@ to <cite>.s2i/environment</cite>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DAEPLOY_SERVICE_DB_TABLE_LIMIT</span><span class="o">=</span><span class="mi">30</span><span class="n">days</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="cross_service_communication.html" class="btn btn-neutral float-right" title="Cross-service Communication" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="ticker.html" class="btn btn-neutral float-left" title="Schedule Repeating Actions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cross_service_communication.html" class="btn btn-neutral float-right" title="Cross-service Communication" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021, Viking Analytics AB.
-
-    </p>
+    <p>&#169; Copyright 2021, Viking Analytics AB.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
   
 <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
@@ -484,18 +380,11 @@ to <cite>.s2i/environment</cite>:</p>
       <dd><a href="monitoring.html">develop</a></dd>
     </dl>
   </div>
-</div>
-
-  <script type="text/javascript">
+</div><script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

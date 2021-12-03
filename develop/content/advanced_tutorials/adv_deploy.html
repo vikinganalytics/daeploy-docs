@@ -1,77 +1,39 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Deployment Options &mdash; Daeploy  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Autocompletion" href="cli_autocompletion.html" />
     <link rel="prev" title="Manager API" href="manager_api.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../index.html">
-          
-
-          
-            
             <img src="../../_static/daeploy_white.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -79,24 +41,13 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Overview</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../overview/daeploy_description.html">Daeploy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../overview/compatibility.html">Version compatibility</a></li>
 </ul>
-<p class="caption"><span class="caption-text">User Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/custom_service.html">Anatomy of a Service</a></li>
@@ -110,7 +61,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/monitoring.html">Monitoring Your Service</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/cross_service_communication.html">Cross-service Communication</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Advanced User Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">Advanced User Guide</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="sdk_typing.html">Typing in the SDK</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_multiple_hosts.html">Using Multiple Hosts</a></li>
@@ -122,6 +73,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#environment-variables">Environment Variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#container-run-arguments">Container Run Arguments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ignoring-files-when-deploying">Ignoring Files when Deploying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#source-to-image-and-builder-images">Source to Image and Builder Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#injecting-additional-assembly-steps">Injecting Additional Assembly Steps</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="cli_autocompletion.html">Autocompletion</a></li>
@@ -129,14 +82,10 @@
 <li class="toctree-l1"><a class="reference internal" href="manager_configuration.html">Manager Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="testing_services.html">Testing Services Before Deployment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="proxy_dashboard.html">Proxy Dashboard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="upload_image.html">Upload local docker image</a></li>
-<li class="toctree-l1"><a class="reference internal" href="status_codes.html">HTTP Status Codes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="integration_with_other_tools.html">Connecting Daeploy with Other Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="going_beyond_sdk.html">Going Beyond the SDK</a></li>
 <li class="toctree-l1"><a class="reference internal" href="daeploy_notebook_service.html">Work With Daeploy From a Notebook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="changing_build_image.html">Source to Image and Builder Images</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Special Usecases</span></p>
+<p class="caption" role="heading"><span class="caption-text">Special Usecases</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../special_usecases/deploying_ml_model.html">Deploying Machine Learning Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../special_usecases/ui_streamlit.html">Using Streamlit to build a dashboard</a></li>
@@ -145,81 +94,40 @@
 <li class="toctree-l1"><a class="reference internal" href="../special_usecases/gpu_services.html">Access NVIDIA GPUs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../special_usecases/hosting_static_html.html">Host static HTML pages using Daeploy</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Api Reference</span></p>
+<p class="caption" role="heading"><span class="caption-text">Api Reference</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../api_reference/cli.html">Command-line Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api_reference/sdk.html">Software Development Kit</a></li>
 </ul>
-<p class="caption"><span class="caption-text">About</span></p>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../3rd_party_software.html">3rd party software</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Daeploy</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Deployment Options</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../../_sources/content/advanced_tutorials/adv_deploy.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS overrides for sphinx_rtd_theme */
@@ -244,8 +152,8 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="deployment-options">
-<span id="cli-deploy-reference"></span><h1>Deployment Options<a class="headerlink" href="#deployment-options" title="Permalink to this headline">¶</a></h1>
+<section id="deployment-options">
+<span id="cli-deploy-reference"></span><h1>Deployment Options<a class="headerlink" href="#deployment-options" title="Permalink to this headline"></a></h1>
 <p>There are a few ways to use the <code class="docutils literal notranslate"><span class="pre">deploy</span></code> command from the <a class="reference internal" href="../api_reference/cli.html#cli-reference"><span class="std std-ref">Command-line Interface</span></a>
 that we haven’t looked at until this point. In this tutorial we will look at
 those, to make sure you have a good idea of the options you have available.</p>
@@ -289,12 +197,12 @@ to automatically convert source code into container images. There are advanced
 options that can be specified in <cite>s2i/</cite> and <cite>.s2iignore</cite> to tailor the containerization
 to your service.</p>
 </div>
-<div class="section" id="git-repository">
-<h2>Git Repository<a class="headerlink" href="#git-repository" title="Permalink to this headline">¶</a></h2>
+<section id="git-repository">
+<h2>Git Repository<a class="headerlink" href="#git-repository" title="Permalink to this headline"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">--git</span></code> option is used to deploy an onlie git repository. It is functionally
 identical to deploying from a local directory and have the same requirements on the
 contents of the service. To deploy a service from a public git repository:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">deploy</span> <span class="n">my_service</span> <span class="mf">1.0</span><span class="o">.</span><span class="mi">0</span> <span class="o">--</span><span class="n">git</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">sclorg</span><span class="o">/</span><span class="n">django</span><span class="o">-</span><span class="n">ex</span> 
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">deploy</span> <span class="n">my_service</span> <span class="mf">1.0.0</span> <span class="o">--</span><span class="n">git</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">sclorg</span><span class="o">/</span><span class="n">django</span><span class="o">-</span><span class="n">ex</span> 
 <span class="go">Active host: http://your-host</span>
 <span class="go">Deploying service...</span>
 <span class="go">Service deployed successfully</span>
@@ -307,7 +215,7 @@ contents of the service. To deploy a service from a public git repository:</p>
 comes down to creating a Personal Access Token
 (<a class="reference external" href="https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token">PAT</a>)
 and using it like so:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">deploy</span> <span class="n">my_service</span> <span class="mf">1.0</span><span class="o">.</span><span class="mi">0</span> <span class="o">--</span><span class="n">git</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">USERNAME</span><span class="p">:</span><span class="n">TOKEN</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">me</span><span class="o">/</span><span class="n">private_repository</span> 
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">deploy</span> <span class="n">my_service</span> <span class="mf">1.0.0</span> <span class="o">--</span><span class="n">git</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">USERNAME</span><span class="p">:</span><span class="n">TOKEN</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">me</span><span class="o">/</span><span class="n">private_repository</span> 
 <span class="go">Active host: http://your-host</span>
 <span class="go">Deploying service...</span>
 <span class="go">Service deployed successfully</span>
@@ -316,15 +224,15 @@ and using it like so:</p>
 <span class="go">*       my_service  1.0.0      running   Running (since 2020-11-23 16:56:06)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="container-image">
-<h2>Container Image<a class="headerlink" href="#container-image" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="container-image">
+<h2>Container Image<a class="headerlink" href="#container-image" title="Permalink to this headline"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">--image</span></code> option can be used to deploy any container image as a Daeploy service.
 The manager will look for the image first in it’s local system, then on docker hub.
 This can be useful for deploying applications that are not written using the
 SDK within the Daeploy framework. Keep in mind that most pre-build images will not
 support the automatic interactive documentation:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">deploy</span> <span class="o">--</span><span class="n">image</span> <span class="n">my_service2</span> <span class="mf">1.0</span><span class="o">.</span><span class="mi">0</span> <span class="n">traefik</span><span class="o">/</span><span class="n">whoami</span> <span class="o">--</span><span class="n">port</span> <span class="mi">80</span> 
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">deploy</span> <span class="o">--</span><span class="n">image</span> <span class="n">my_service2</span> <span class="mf">1.0.0</span> <span class="n">traefik</span><span class="o">/</span><span class="n">whoami</span> <span class="o">--</span><span class="n">port</span> <span class="mi">80</span> 
 <span class="go">Active host: http://your-host</span>
 <span class="go">Deploying service...</span>
 <span class="go">Service deployed successfully</span>
@@ -336,16 +244,16 @@ support the automatic interactive documentation:</p>
 <p>In the last command we used an optional argument to change the internal port of
 the service container. This is not required when deploying services locally or
 from git repositories, but it might be necessary when deploying from an image.</p>
-</div>
-<div class="section" id="local-container-image">
-<h2>Local Container Image<a class="headerlink" href="#local-container-image" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="local-container-image">
+<h2>Local Container Image<a class="headerlink" href="#local-container-image" title="Permalink to this headline"></a></h2>
 <p>To avoid having to manually upload images from your development setup to the manager
 you can use the <code class="docutils literal notranslate"><span class="pre">--image-local</span></code> flag. For this you need to have docker installed on
 your development machine. The given image will be saved as a tar file and uploaded to
 the manager and deployed from there. Assuming you have a project with a dockerfile,
 you could deploy that project as a service on daeploy with the following commands:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">docker</span> <span class="n">build</span> <span class="o">-</span><span class="n">t</span> <span class="n">image_name</span><span class="p">:</span><span class="n">tag</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">project</span> 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">deploy</span> <span class="o">--</span><span class="n">image</span><span class="o">-</span><span class="n">local</span> <span class="n">my_service</span> <span class="mf">1.0</span><span class="o">.</span><span class="mi">0</span> <span class="n">image_name</span><span class="p">:</span><span class="n">tag</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">deploy</span> <span class="o">--</span><span class="n">image</span><span class="o">-</span><span class="n">local</span> <span class="n">my_service</span> <span class="mf">1.0.0</span> <span class="n">image_name</span><span class="p">:</span><span class="n">tag</span> 
 <span class="go">Active host: http://your-host</span>
 <span class="go">Deploying service...</span>
 <span class="go">Service deployed successfully</span>
@@ -354,9 +262,9 @@ you could deploy that project as a service on daeploy with the following command
 <span class="go">*       my_service   1.0.0      running   Running (since 2021-09-06 15:53:55)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="environment-variables">
-<h2>Environment Variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="environment-variables">
+<h2>Environment Variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline"></a></h2>
 <p id="cli-deploy-envvar-reference">It is possible to set environment variables at deployment time using the CLI
 <code class="docutils literal notranslate"><span class="pre">--environment/-e</span></code> option. The variables are given to the CLI in the format
 <code class="docutils literal notranslate"><span class="pre">VARIABLE=VALUE</span></code> or simply <code class="docutils literal notranslate"><span class="pre">VARIABLE</span></code> to copy that variable from your
@@ -367,16 +275,16 @@ enclosed by quotation marks.</p>
 <p>Setting environment variables at run time will overwrite any variables
 defined in the <cite>.s2i/environment</cite> file.</p>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">deploy</span> <span class="n">example_service</span> <span class="mf">1.0</span><span class="o">.</span><span class="mi">0</span> <span class="o">-</span><span class="n">e</span> <span class="n">VAR</span><span class="o">=</span><span class="n">VAL</span> <span class="o">-</span><span class="n">e</span> <span class="n">LONGVAR</span><span class="o">=</span><span class="s2">&quot;variable with spaces&quot;</span> <span class="o">./</span><span class="n">service_path</span> 
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">deploy</span> <span class="n">example_service</span> <span class="mf">1.0.0</span> <span class="o">-</span><span class="n">e</span> <span class="n">VAR</span><span class="o">=</span><span class="n">VAL</span> <span class="o">-</span><span class="n">e</span> <span class="n">LONGVAR</span><span class="o">=</span><span class="s2">&quot;variable with spaces&quot;</span> <span class="o">./</span><span class="n">service_path</span> 
 </pre></div>
 </div>
-</div>
-<div class="section" id="container-run-arguments">
-<h2>Container Run Arguments<a class="headerlink" href="#container-run-arguments" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="container-run-arguments">
+<h2>Container Run Arguments<a class="headerlink" href="#container-run-arguments" title="Permalink to this headline"></a></h2>
 <p>Extra <code class="docutils literal notranslate"><span class="pre">key:</span> <span class="pre">value</span></code> arguments (beyond port number and environment variables) needed for the docker image
 to run properly can be specified when deploying the image via the <code class="docutils literal notranslate"><span class="pre">/~image</span></code> POST HTTP endpoint. These extra
 <code class="docutils literal notranslate"><span class="pre">key:</span> <span class="pre">value</span></code> arguments should be specified under the <code class="docutils literal notranslate"><span class="pre">run_args</span></code> key in the request data field. The accepted
-parameters for <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code> which can be found <a class="reference external" href="https://docker-py.readthedocs.io/en/stable/containers.html">here</a>.</p>
+parameters for <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code> can be found <a class="reference external" href="https://docker-py.readthedocs.io/en/stable/containers.html">here</a>.</p>
 <p>For instance, a docker image
 that requires <code class="docutils literal notranslate"><span class="pre">privileged</span></code> mode to run properly can be deployed like (using pythons request library):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
@@ -394,50 +302,92 @@ that requires <code class="docutils literal notranslate"><span class="pre">privi
     <span class="p">})</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="ignoring-files-when-deploying">
-<h2>Ignoring Files when Deploying<a class="headerlink" href="#ignoring-files-when-deploying" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="ignoring-files-when-deploying">
+<h2>Ignoring Files when Deploying<a class="headerlink" href="#ignoring-files-when-deploying" title="Permalink to this headline"></a></h2>
 <p>Sometimes not all the contents of a service have to be included when the service
 is deployed. Common exceptions can include test folders and configuration files.
 To exclude a file or a folder from being deployed you can specify their path
 in <cite>.s2iignore</cite>. By default, the <cite>.git/</cite> and <cite>test/</cite> directories are excluded
 because they do not contribute to the functionality of a service.</p>
+</section>
+<section id="source-to-image-and-builder-images">
+<h2>Source to Image and Builder Images<a class="headerlink" href="#source-to-image-and-builder-images" title="Permalink to this headline"></a></h2>
+<p>Daeploy uses something called <a class="reference external" href="https://github.com/openshift/source-to-image">Source to Image (S2I)</a> behind the hood to convert
+source code to container images. S2I injects that source code into an existing
+image, called a builder image, which it uses to produce a ready-to-run image.</p>
+<p>There exists a number of ready-made builder images for python and we have
+developed our own lightweight python builder images specifically for use with
+Daeploy (<a class="reference external" href="https://github.com/vikinganalytics/daeploy-s2i-python">github link</a>). <a class="reference external" href="https://hub.docker.com/r/daeploy/s2i-python/tags">Click here</a> for a full list of
+available tags.</p>
+<p>By default Daeploy uses a builder image based on ubuntu with python 3.8. There
+can be situations, however, where that image might not be suitable. For
+example if you want to use some library that is not supported for that version
+of python, or if you need a certain OS.</p>
+<p>To change the builder image you can use the <code class="docutils literal notranslate"><span class="pre">--build-image</span></code> option from the
+deployment command in the CLI. We recommend using one of the custom made builder
+images for Daeploy, but any python S2I builder images will work.</p>
+</section>
+<section id="injecting-additional-assembly-steps">
+<h2>Injecting Additional Assembly Steps<a class="headerlink" href="#injecting-additional-assembly-steps" title="Permalink to this headline"></a></h2>
+<p>If your application is dependent on software that must be installed on the OS level,
+it is not necessary to change the entire build image, but to instead add an additional
+step to the existing build process.</p>
+<p>The build process of S2I contains of three things:</p>
+<ol class="arabic simple">
+<li><p>A dockerfile</p></li>
+<li><p>An assemble script</p></li>
+<li><p>A run script</p></li>
+</ol>
+<p>The dockerfile is used to set up the OS and inject the source code into the
+service. The <cite>assemble</cite> script is run after the dockerfile to set up the runtime
+environment, e.g. installing required software and dependencies. The <cite>run</cite> script
+starts the application after assembly. It will try to run the file defined by the
+<code class="docutils literal notranslate"><span class="pre">APP_SCRIPT</span></code> or <code class="docutils literal notranslate"><span class="pre">APP_FILE</span></code> environment variables.</p>
+<p>Both the assemble and run scripts can be hooked into to add additional steps when
+building or starting the service. To do this we add <cite>.s2i/bin/assemble</cite> or
+<cite>.s2i/bin/run</cite> scripts in the service code.</p>
+<p>An example of an <cite>assemble</cite> script could look like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
+# Running stock assemble script
+${STI_SCRIPTS_PATH}/assemble
+# Add additional assembly steps here
+</pre></div>
 </div>
+<p>And a <cite>run</cite> script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
+# Add additional run steps here
+
+# Running stock run script
+${STI_SCRIPTS_PATH}/run
+</pre></div>
 </div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="cli_autocompletion.html" class="btn btn-neutral float-right" title="Autocompletion" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="manager_api.html" class="btn btn-neutral float-left" title="Manager API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cli_autocompletion.html" class="btn btn-neutral float-right" title="Autocompletion" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021, Viking Analytics AB.
-
-    </p>
+    <p>&#169; Copyright 2021, Viking Analytics AB.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
   
 <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
@@ -462,18 +412,11 @@ because they do not contribute to the functionality of a service.</p>
       <dd><a href="adv_deploy.html">develop</a></dd>
     </dl>
   </div>
-</div>
-
-  <script type="text/javascript">
+</div><script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

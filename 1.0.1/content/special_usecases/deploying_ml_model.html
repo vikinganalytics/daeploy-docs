@@ -1,77 +1,39 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Deploying Machine Learning Models &mdash; Daeploy  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Using Streamlit to build a dashboard" href="ui_streamlit.html" />
     <link rel="prev" title="Work With Daeploy From a Notebook" href="../advanced_tutorials/daeploy_notebook_service.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../index.html">
-          
-
-          
-            
             <img src="../../_static/daeploy_white.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -79,24 +41,13 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Overview</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../overview/daeploy_description.html">Daeploy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../overview/compatibility.html">Version compatibility</a></li>
 </ul>
-<p class="caption"><span class="caption-text">User Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/custom_service.html">Anatomy of a Service</a></li>
@@ -109,7 +60,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/monitoring.html">Monitoring Your Service</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/cross_service_communication.html">Cross-service Communication</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Advanced User Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">Advanced User Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/sdk_typing.html">Typing in the SDK</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/using_multiple_hosts.html">Using Multiple Hosts</a></li>
@@ -127,7 +78,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/going_beyond_sdk.html">Going Beyond the SDK</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/daeploy_notebook_service.html">Work With Daeploy From a Notebook</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Special Usecases</span></p>
+<p class="caption" role="heading"><span class="caption-text">Special Usecases</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Deploying Machine Learning Models</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#the-classifier">The Classifier</a></li>
@@ -141,81 +92,40 @@
 <li class="toctree-l1"><a class="reference internal" href="gpu_services.html">Access NVIDIA GPUs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hosting_static_html.html">Host static HTML pages using Daeploy</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Api Reference</span></p>
+<p class="caption" role="heading"><span class="caption-text">Api Reference</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../api_reference/cli.html">Command-line Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api_reference/sdk.html">Software Development Kit</a></li>
 </ul>
-<p class="caption"><span class="caption-text">About</span></p>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../3rd_party_software.html">3rd party software</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Daeploy</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Deploying Machine Learning Models</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../../_sources/content/special_usecases/deploying_ml_model.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS overrides for sphinx_rtd_theme */
@@ -240,16 +150,16 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="deploying-machine-learning-models">
-<span id="deploy-ml-reference"></span><h1>Deploying Machine Learning Models<a class="headerlink" href="#deploying-machine-learning-models" title="Permalink to this headline">¶</a></h1>
+<section id="deploying-machine-learning-models">
+<span id="deploy-ml-reference"></span><h1>Deploying Machine Learning Models<a class="headerlink" href="#deploying-machine-learning-models" title="Permalink to this headline"></a></h1>
 <p>Machine Learning models are commonly trained in a separate environment from
 the deployment environment. The models are typically serialized as e.g.
 <a class="reference external" href="https://docs.python.org/3/library/pickle.html">pickle</a> files, which can easily
 be moved between the environments. In this tutorial we are going to look at how we
 can take a pickled <a class="reference external" href="https://scikit-learn.org/stable/">sklearn</a> classifier model
 and create a service that uses that model to predict a class on data sent to it.</p>
-<div class="section" id="the-classifier">
-<h2>The Classifier<a class="headerlink" href="#the-classifier" title="Permalink to this headline">¶</a></h2>
+<section id="the-classifier">
+<h2>The Classifier<a class="headerlink" href="#the-classifier" title="Permalink to this headline"></a></h2>
 <p>Let’s create a simple classifier for the famous iris dataset in this example.
 We will not go into any detail about how it’s done. There are plenty of tutorials
 online that go through this process:</p>
@@ -284,9 +194,9 @@ online that go through this process:</p>
     <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">knn</span><span class="p">,</span> <span class="n">fp</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="the-service">
-<h2>The Service<a class="headerlink" href="#the-service" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-service">
+<h2>The Service<a class="headerlink" href="#the-service" title="Permalink to this headline"></a></h2>
 <p>Like we have done previously we use <code class="docutils literal notranslate"><span class="pre">daeploy</span> <span class="pre">init</span></code> command to create a new project.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">init</span> 
 <span class="go">project_name [my_project]: iris_project</span>
@@ -347,11 +257,11 @@ in the service and we create the prediction entrypoint:</p>
 and responds with the result. Thanks to the special input and output types that
 we describe in <a class="reference internal" href="../advanced_tutorials/sdk_typing.html#sdk-typing-non-json-reference"><span class="std std-ref">Using Non-jsonable Data Types</span></a>, we don’t have to worry
 about converting the input and output to json compatible types.</p>
-</div>
-<div class="section" id="deployment">
-<h2>Deployment<a class="headerlink" href="#deployment" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="deployment">
+<h2>Deployment<a class="headerlink" href="#deployment" title="Permalink to this headline"></a></h2>
 <p>Just like before, we deploy the service using the CLI:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">deploy</span> <span class="n">iris_classifier</span> <span class="mf">1.0</span><span class="o">.</span><span class="mi">0</span> <span class="o">./</span><span class="n">iris_project</span> 
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">deploy</span> <span class="n">iris_classifier</span> <span class="mf">1.0.0</span> <span class="o">./</span><span class="n">iris_project</span> 
 <span class="go">Active host: http://your-host</span>
 <span class="go">Deploying service...</span>
 <span class="go">Service deployed successfully</span>
@@ -379,42 +289,32 @@ that can be transformed to a pandas dataframe, for example:</p>
 <p>To get validation on your entrypoint input you should take a look at
 <a class="reference internal" href="../advanced_tutorials/sdk_typing.html#sdk-typing-reference"><span class="std std-ref">Typing in the SDK</span></a>.</p>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="ui_streamlit.html" class="btn btn-neutral float-right" title="Using Streamlit to build a dashboard" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../advanced_tutorials/daeploy_notebook_service.html" class="btn btn-neutral float-left" title="Work With Daeploy From a Notebook" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ui_streamlit.html" class="btn btn-neutral float-right" title="Using Streamlit to build a dashboard" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021, Viking Analytics AB.
-
-    </p>
+    <p>&#169; Copyright 2021, Viking Analytics AB.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
   
 <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
@@ -439,18 +339,11 @@ that can be transformed to a pandas dataframe, for example:</p>
       <dd><a href="../../../develop/content/special_usecases/deploying_ml_model.html">develop</a></dd>
     </dl>
   </div>
-</div>
-
-  <script type="text/javascript">
+</div><script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
