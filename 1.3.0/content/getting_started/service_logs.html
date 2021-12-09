@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Read Logs From Service &mdash; Daeploy  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="API Autodocs" href="autodocs.html" />
+    <link rel="prev" title="Dashboard" href="dashboard.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/daeploy_white.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/daeploy_description.html">Daeploy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/compatibility.html">Version compatibility</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_service.html">Anatomy of a Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dashboard.html">Dashboard</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Read Logs From Service</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#options-for-reading-the-logs-using-the-cli">Options for Reading the Logs Using the CLI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="autodocs.html">API Autodocs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notifications.html">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shadow_deployment.html">Versioning and Shadow Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reaching_service_from_external_applications.html">Reaching a service from external applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ticker.html">Schedule Repeating Actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monitoring.html">Monitoring Your Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cross_service_communication.html">Cross-service Communication</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/sdk_typing.html">Typing in the SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/using_multiple_hosts.html">Using Multiple Hosts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/manager_api.html">Manager API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/adv_deploy.html">Deployment Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/cli_autocompletion.html">Autocompletion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/service_environment.html">Service Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/manager_configuration.html">Manager Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/testing_services.html">Testing Services Before Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/proxy_dashboard.html">Proxy Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/going_beyond_sdk.html">Daeploy with FastAPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/daeploy_notebook_service.html">Work With Daeploy From a Notebook</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Special Usecases</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/deploying_ml_model.html">Deploying Machine Learning Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/ui_streamlit.html">Using Streamlit to build a dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/ui_plotly_dash.html">Using Plotly Dash to build a dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/conda.html">Using Daeploy with Conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/gpu_services.html">Access NVIDIA GPUs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/hosting_static_html.html">Host static HTML pages using Daeploy</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Api Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/cli.html">Command-line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/sdk.html">Software Development Kit</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3rd_party_software.html">3rd party software</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Daeploy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Read Logs From Service</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/content/getting_started/service_logs.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="read-logs-from-service">
+<span id="log-reference"></span><h1>Read Logs From Service<a class="headerlink" href="#read-logs-from-service" title="Permalink to this headline"></a></h1>
+<p>You are able to read anything that your service writes to stdout (for example using
+the python logging package or <code class="docutils literal notranslate"><span class="pre">print</span></code>) from outside the service. The logs are streamed
+to the Manager dashboard and can be read with the CLI:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">logs</span> <span class="n">my_service</span> 
+</pre></div>
+</div>
+<p>To stream the logs to the CLI:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">logs</span> <span class="o">--</span><span class="n">follow</span>  <span class="n">my_service</span>  
+</pre></div>
+</div>
+<section id="options-for-reading-the-logs-using-the-cli">
+<h2>Options for Reading the Logs Using the CLI<a class="headerlink" href="#options-for-reading-the-logs-using-the-cli" title="Permalink to this headline"></a></h2>
+<p>There are a few options that can be passed to the <code class="docutils literal notranslate"><span class="pre">logs</span></code> command to make reading the logs a bit more pleasant.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-n</span></code> , <code class="docutils literal notranslate"><span class="pre">--tail</span></code>: Return the latest <cite>n</cite> logs [default: 50]</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-f</span></code>, <code class="docutils literal notranslate"><span class="pre">--follow</span></code>: If the logs should be followed [default: False]</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-d</span></code>, <code class="docutils literal notranslate"><span class="pre">--date</span></code>: Show logs since given datetime.</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><code class="docutils literal notranslate"><span class="pre">daeploy</span> <span class="pre">logs</span></code> is compatible with <code class="docutils literal notranslate"><span class="pre">grep</span></code> so to filter on logs containing <code class="docutils literal notranslate"><span class="pre">WARNING</span></code> one can run the following:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">logs</span> <span class="n">my_service</span> <span class="o">--</span><span class="n">follow</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">WARNING</span> 
+</pre></div>
+</div>
+<p>Or if using powershell on windows:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">logs</span> <span class="n">my_service</span> <span class="o">--</span><span class="n">follow</span> <span class="o">|</span> <span class="n">findstr</span> <span class="n">WARNING</span> 
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="dashboard.html" class="btn btn-neutral float-left" title="Dashboard" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="autodocs.html" class="btn btn-neutral float-right" title="API Autodocs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Viking Analytics AB.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: 1.3.0
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Tags</dt>
+      <dd><a href="../../../1.0.0/content/getting_started/service_logs.html">1.0.0</a></dd>
+      <dd><a href="../../../1.0.0-beta/content/getting_started/service_logs.html">1.0.0-beta</a></dd>
+      <dd><a href="../../../1.0.1/content/getting_started/service_logs.html">1.0.1</a></dd>
+      <dd><a href="../../../1.0.2/content/getting_started/service_logs.html">1.0.2</a></dd>
+      <dd><a href="../../../1.1.0/content/getting_started/service_logs.html">1.1.0</a></dd>
+      <dd><a href="../../../1.1.1/content/getting_started/service_logs.html">1.1.1</a></dd>
+      <dd><a href="../../../1.2.0/content/getting_started/service_logs.html">1.2.0</a></dd>
+      <dd><a href="service_logs.html">1.3.0</a></dd>
+    </dl>
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../../develop/content/getting_started/service_logs.html">develop</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Using Daeploy with Conda &mdash; Daeploy  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Access NVIDIA GPUs" href="gpu_services.html" />
+    <link rel="prev" title="Using Plotly Dash to build a dashboard" href="ui_plotly_dash.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/daeploy_white.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/daeploy_description.html">Daeploy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/compatibility.html">Version compatibility</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/custom_service.html">Anatomy of a Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/dashboard.html">Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/service_logs.html">Read Logs From Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/autodocs.html">API Autodocs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/notifications.html">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/shadow_deployment.html">Versioning and Shadow Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/reaching_service_from_external_applications.html">Reaching a service from external applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/ticker.html">Schedule Repeating Actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/monitoring.html">Monitoring Your Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/cross_service_communication.html">Cross-service Communication</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/sdk_typing.html">Typing in the SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/using_multiple_hosts.html">Using Multiple Hosts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/manager_api.html">Manager API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/adv_deploy.html">Deployment Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/cli_autocompletion.html">Autocompletion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/service_environment.html">Service Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/manager_configuration.html">Manager Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/testing_services.html">Testing Services Before Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/proxy_dashboard.html">Proxy Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/going_beyond_sdk.html">Daeploy with FastAPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/daeploy_notebook_service.html">Work With Daeploy From a Notebook</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Special Usecases</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="deploying_ml_model.html">Deploying Machine Learning Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_streamlit.html">Using Streamlit to build a dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_plotly_dash.html">Using Plotly Dash to build a dashboard</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using Daeploy with Conda</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#conda-in-production-environment">Conda in Production Environment</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gpu_services.html">Access NVIDIA GPUs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hosting_static_html.html">Host static HTML pages using Daeploy</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Api Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/cli.html">Command-line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/sdk.html">Software Development Kit</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3rd_party_software.html">3rd party software</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Daeploy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Using Daeploy with Conda</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/content/special_usecases/conda.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="using-daeploy-with-conda">
+<span id="conda-reference"></span><h1>Using Daeploy with Conda<a class="headerlink" href="#using-daeploy-with-conda" title="Permalink to this headline"></a></h1>
+<p>If you prefer using conda over pip + venv you can still install Daeploy with pip
+inside of your conda environment. Everything will work as usual in your
+development environment:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">myenv</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">conda</span> <span class="n">activate</span> <span class="n">myenv</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">conda</span> <span class="n">install</span> <span class="n">pip</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pip</span> <span class="n">install</span> <span class="n">daeploy</span>  
+</pre></div>
+</div>
+<p>To check the installation, run:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="o">--</span><span class="n">help</span>  
+</pre></div>
+</div>
+<section id="conda-in-production-environment">
+<h2>Conda in Production Environment<a class="headerlink" href="#conda-in-production-environment" title="Permalink to this headline"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">daeploy</span> <span class="pre">deploy</span></code> from source code only uses pip, if you want to
+run your service in a conda environment on the manager you have to build an
+image from the service source code, forfeiting some of the convenience of Daeploy.
+A minimal example:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">init</span>  
+<span class="go">project_name [my_project]: conda_daeploy_project</span>
+</pre></div>
+</div>
+<p>Add an <cite>environment.yml</cite> file to the repo by running:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">conda</span> <span class="n">env</span> <span class="n">export</span> <span class="o">&gt;</span> <span class="n">conda_daeploy_project</span><span class="o">/</span><span class="n">environment</span><span class="o">.</span><span class="n">yml</span>  
+</pre></div>
+</div>
+<p>Add a <cite>Dockerfile</cite> to the project. A minimal working dockerfile can be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dockerfile</span>
+<span class="n">FROM</span> <span class="n">continuumio</span><span class="o">/</span><span class="n">miniconda3</span>
+
+<span class="n">WORKDIR</span> <span class="o">/</span><span class="n">app</span>
+
+<span class="c1"># Create the environment:</span>
+<span class="n">COPY</span> <span class="n">environment</span><span class="o">.</span><span class="n">yml</span> <span class="o">.</span>
+<span class="n">RUN</span> <span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">environment</span><span class="o">.</span><span class="n">yml</span>
+
+<span class="c1"># Make RUN commands use the new environment:</span>
+<span class="n">SHELL</span> <span class="p">[</span><span class="s2">&quot;conda&quot;</span><span class="p">,</span> <span class="s2">&quot;run&quot;</span><span class="p">,</span> <span class="s2">&quot;-n&quot;</span><span class="p">,</span> <span class="s2">&quot;myenv&quot;</span><span class="p">,</span> <span class="s2">&quot;/bin/bash&quot;</span><span class="p">,</span> <span class="s2">&quot;-c&quot;</span><span class="p">]</span>
+
+<span class="c1"># The code to run when container is started:</span>
+<span class="n">COPY</span> <span class="n">service</span><span class="o">.</span><span class="n">py</span> <span class="o">.</span>
+<span class="n">ENTRYPOINT</span> <span class="p">[</span><span class="s2">&quot;conda&quot;</span><span class="p">,</span> <span class="s2">&quot;run&quot;</span><span class="p">,</span> <span class="s2">&quot;-n&quot;</span><span class="p">,</span> <span class="s2">&quot;myenv&quot;</span><span class="p">,</span> <span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="s2">&quot;service.py&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You will have to change <cite>myenv</cite> to the name of the environment described by
+<cite>environment.yml</cite> if you named it something else.</p>
+</div>
+<p>Create an image with:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">docker</span> <span class="n">build</span> <span class="o">-</span><span class="n">t</span> <span class="n">conda_project</span> <span class="o">./</span><span class="n">conda_daeploy_project</span>  
+</pre></div>
+</div>
+<p>And save it as a tar file with:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">docker</span> <span class="n">save</span> <span class="n">conda_project</span> <span class="o">-</span><span class="n">o</span> <span class="o">./</span><span class="n">conda_project</span><span class="o">.</span><span class="n">tar</span>  
+</pre></div>
+</div>
+<p>To run it on a remote manager you first have to upload the image. This is easiest
+done from the manager API using the interactive documentation at <a class="reference external" href="http://your-host/docs">http://your-host/docs</a>.
+Upload the image with <code class="docutils literal notranslate"><span class="pre">/services/~upload-image</span></code> and then you can deploy it with:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">deploy</span> <span class="n">conda_project</span> <span class="mf">1.0.0</span> <span class="o">-</span><span class="n">i</span> <span class="n">conda_project</span>  
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ui_plotly_dash.html" class="btn btn-neutral float-left" title="Using Plotly Dash to build a dashboard" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="gpu_services.html" class="btn btn-neutral float-right" title="Access NVIDIA GPUs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Viking Analytics AB.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: 1.3.0
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Tags</dt>
+      <dd><a href="../../../1.0.0/content/special_usecases/conda.html">1.0.0</a></dd>
+      <dd><a href="../../../1.0.0-beta/content/special_usecases/conda.html">1.0.0-beta</a></dd>
+      <dd><a href="../../../1.0.1/content/special_usecases/conda.html">1.0.1</a></dd>
+      <dd><a href="../../../1.0.2/content/special_usecases/conda.html">1.0.2</a></dd>
+      <dd><a href="../../../1.1.0/content/special_usecases/conda.html">1.1.0</a></dd>
+      <dd><a href="../../../1.1.1/content/special_usecases/conda.html">1.1.1</a></dd>
+      <dd><a href="../../../1.2.0/content/special_usecases/conda.html">1.2.0</a></dd>
+      <dd><a href="conda.html">1.3.0</a></dd>
+    </dl>
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../../develop/content/special_usecases/conda.html">develop</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
