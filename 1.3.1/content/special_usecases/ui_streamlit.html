@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Using Streamlit to build a dashboard &mdash; Daeploy  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Using Plotly Dash to build a dashboard" href="ui_plotly_dash.html" />
+    <link rel="prev" title="Deploying Machine Learning Models" href="deploying_ml_model.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/daeploy_white.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/daeploy_description.html">Daeploy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/compatibility.html">Version compatibility</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/custom_service.html">Anatomy of a Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/dashboard.html">Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/service_logs.html">Read Logs From Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/autodocs.html">API Autodocs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/notifications.html">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/shadow_deployment.html">Versioning and Shadow Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/reaching_service_from_external_applications.html">Reaching a service from external applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/ticker.html">Schedule Repeating Actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/monitoring.html">Monitoring Your Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/cross_service_communication.html">Cross-service Communication</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/sdk_typing.html">Typing in the SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/using_multiple_hosts.html">Using Multiple Hosts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/manager_api.html">Manager API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/adv_deploy.html">Deployment Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/cli_autocompletion.html">Autocompletion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/service_environment.html">Service Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/manager_configuration.html">Manager Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/testing_services.html">Testing Services Before Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/proxy_dashboard.html">Proxy Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/going_beyond_sdk.html">Daeploy with FastAPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_tutorials/daeploy_notebook_service.html">Work With Daeploy From a Notebook</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Special Usecases</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="deploying_ml_model.html">Deploying Machine Learning Models</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using Streamlit to build a dashboard</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-the-streamlit-service">Creating the Streamlit Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deploying-the-service">Deploying the Service</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ui_plotly_dash.html">Using Plotly Dash to build a dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conda.html">Using Daeploy with Conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gpu_services.html">Access NVIDIA GPUs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hosting_static_html.html">Host static HTML pages using Daeploy</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Api Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/cli.html">Command-line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/sdk.html">Software Development Kit</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3rd_party_software.html">3rd party software</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Daeploy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Using Streamlit to build a dashboard</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/content/special_usecases/ui_streamlit.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="using-streamlit-to-build-a-dashboard">
+<span id="streamlit-service-reference"></span><h1>Using Streamlit to build a dashboard<a class="headerlink" href="#using-streamlit-to-build-a-dashboard" title="Permalink to this heading"></a></h1>
+<p>In this tutorial we will see how to create a service with a graphical interface
+using a very convenient python package called <a class="reference external" href="https://www.streamlit.io/">streamlit</a>.</p>
+<p>With streamlit it is very quick to make graphical applications and this can be
+used together with Daeploy to make dashboards for monitoring or configuration of
+your algorithms, just to name a few examples. We will not go into detail into how
+to use streamlit itself, but rather how to deploy a streamlit application in Daeploy and
+have it communicate with your services.</p>
+<section id="creating-the-streamlit-service">
+<h2>Creating the Streamlit Service<a class="headerlink" href="#creating-the-streamlit-service" title="Permalink to this heading"></a></h2>
+<p>Let’s reuse the <cite>Die Roller</cite> service we created as part of the <cite>Yatzee</cite> game in
+<a class="reference internal" href="../getting_started/cross_service_communication.html#cross-service-reference"><span class="std std-ref">Cross-service Communication</span></a> and create a roll button and a display for the
+die roll. We start by creating a new project:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">init</span> 
+<span class="go">project_name [my_project]: die_app</span>
+</pre></div>
+</div>
+<p>The first thing we have to do is to add <code class="docutils literal notranslate"><span class="pre">streamlit</span></code> to the <cite>requirements.txt</cite>
+file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">daeploy</span>
+<span class="n">streamlit</span>
+</pre></div>
+</div>
+<p>We rename <cite>service.py</cite> to <cite>die_app.py</cite> and write our streamlit app in that file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+<span class="kn">from</span> <span class="nn">daeploy.communication</span> <span class="kn">import</span> <span class="n">call_service</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Die App&quot;</span><span class="p">)</span>
+
+<span class="n">roll</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">button</span><span class="p">(</span><span class="s2">&quot;Roll&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">roll</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">call_service</span><span class="p">(</span><span class="n">service_name</span><span class="o">=</span><span class="s2">&quot;die_roller&quot;</span><span class="p">,</span> <span class="n">entrypoint_name</span><span class="o">=</span><span class="s2">&quot;roll_die&quot;</span><span class="p">)</span>
+
+    <span class="n">st</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&quot;Roll:&quot;</span><span class="p">)</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Notice how it does not end with <code class="docutils literal notranslate"><span class="pre">service.run()</span></code> like regular Daeploy services and
+therefore nothing would happen if we were to deploy the service now. To run
+streamlit apps we need to use the shell command <code class="docutils literal notranslate"><span class="pre">streamlit</span> <span class="pre">run</span> <span class="pre">app.py</span></code>,
+so for <cite>die_app.py</cite> to run when we deploy the service, we have to create a new
+file called <cite>app.sh</cite> that runs the shell command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">streamlit</span> <span class="n">run</span> <span class="n">die_app</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>When a Daeploy service is deployed it will look for the environment variable <code class="docutils literal notranslate"><span class="pre">APP_SCRIPT</span></code>
+to decide which file should be run on start-up. It is <cite>service.py</cite> by default but it
+can be changed by modifying the value of <code class="docutils literal notranslate"><span class="pre">APP_SCRIPT</span></code> in <cite>.s2i/environment</cite>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">APP_SCRIPT</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">APP_SCRIPT</span></code> is different from <code class="docutils literal notranslate"><span class="pre">APP_FILE</span></code>. By using <code class="docutils literal notranslate"><span class="pre">APP_SCRIPT</span></code> we let
+s2i know to run that file as a script, rather than a python file. <code class="docutils literal notranslate"><span class="pre">APP_SCRIPT</span></code> can
+be any file that is executable in linux.</p>
+</div>
+</section>
+<section id="deploying-the-service">
+<h2>Deploying the Service<a class="headerlink" href="#deploying-the-service" title="Permalink to this heading"></a></h2>
+<p>Since <cite>die_app</cite> is dependent of <cite>die_roller_service</cite> it has to be up and running
+before <cite>die_app</cite> can be used. The code for <cite>die_roller_service</cite> is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">daeploy</span> <span class="kn">import</span> <span class="n">service</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<span class="nd">@service</span><span class="o">.</span><span class="n">entrypoint</span>
+<span class="k">def</span> <span class="nf">roll_die</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">service</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">deploy</span> <span class="n">die_roller</span> <span class="mf">1.0.0</span> <span class="o">./</span><span class="n">die_roller_service</span> 
+<span class="go">Active host: http://your-host</span>
+<span class="go">Deploying service...</span>
+<span class="go">Service deployed successfully</span>
+<span class="go">MAIN    NAME         VERSION    STATUS    RUNNING</span>
+<span class="go">------  -----------  ---------  --------  -----------------------------------</span>
+<span class="go">*       die_roller   1.0.0      running   Running (since 2020-12-15 12:10:25)</span>
+</pre></div>
+</div>
+<p>We can now deploy the streamlit app, like we would any other, with one important
+difference. Streamlit uses internal port 8501 to communicate so we have to explicitly
+set the port when deploying:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">deploy</span> <span class="n">die_app</span> <span class="mf">1.0.0</span> <span class="o">./</span><span class="n">die_app</span> <span class="o">--</span><span class="n">port</span> <span class="mi">8501</span> 
+<span class="go">Active host: http://your-host</span>
+<span class="go">Deploying service...</span>
+<span class="go">Service deployed successfully</span>
+<span class="go">MAIN    NAME     VERSION    STATUS    RUNNING</span>
+<span class="go">------  -------  ---------  --------  -----------------------------------</span>
+<span class="go">*       die_app  1.0.0      running   Running (since 2020-12-15 12:15:35)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Daeploy services created using the SDK use port 8000, which is the default
+port for <code class="docutils literal notranslate"><span class="pre">daeploy</span> <span class="pre">deploy</span></code>. But when deploying other apps it might be necessary
+to change it to not get a <cite>Bad Gateway</cite>.</p>
+</div>
+<p>Open <a class="reference external" href="http://your-host/services/die_app/">http://your-host/services/die_app/</a> and you should see your app there:</p>
+<a class="reference internal image-reference" href="../../_images/streamlit_service.png"><img alt="Screenshot of streamlit service" src="../../_images/streamlit_service.png" style="width: 200px;" /></a>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="deploying_ml_model.html" class="btn btn-neutral float-left" title="Deploying Machine Learning Models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ui_plotly_dash.html" class="btn btn-neutral float-right" title="Using Plotly Dash to build a dashboard" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Viking Analytics AB.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: 1.3.1
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Tags</dt>
+      <dd><a href="../../../1.0.0/content/special_usecases/ui_streamlit.html">1.0.0</a></dd>
+      <dd><a href="../../../1.0.0-beta/content/special_usecases/ui_streamlit.html">1.0.0-beta</a></dd>
+      <dd><a href="../../../1.0.1/content/special_usecases/ui_streamlit.html">1.0.1</a></dd>
+      <dd><a href="../../../1.0.2/content/special_usecases/ui_streamlit.html">1.0.2</a></dd>
+      <dd><a href="../../../1.1.0/content/special_usecases/ui_streamlit.html">1.1.0</a></dd>
+      <dd><a href="../../../1.1.1/content/special_usecases/ui_streamlit.html">1.1.1</a></dd>
+      <dd><a href="../../../1.2.0/content/special_usecases/ui_streamlit.html">1.2.0</a></dd>
+      <dd><a href="../../../1.3.0/content/special_usecases/ui_streamlit.html">1.3.0</a></dd>
+      <dd><a href="ui_streamlit.html">1.3.1</a></dd>
+    </dl>
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../../develop/content/special_usecases/ui_streamlit.html">develop</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
