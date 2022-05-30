@@ -15,6 +15,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
@@ -151,7 +152,7 @@
 }
 </style>
 <section id="deployment-options">
-<span id="cli-deploy-reference"></span><h1>Deployment Options<a class="headerlink" href="#deployment-options" title="Permalink to this headline"></a></h1>
+<span id="cli-deploy-reference"></span><h1>Deployment Options<a class="headerlink" href="#deployment-options" title="Permalink to this heading"></a></h1>
 <p>There are a few ways to use the <code class="docutils literal notranslate"><span class="pre">deploy</span></code> command from the <a class="reference internal" href="../api_reference/cli.html#cli-reference"><span class="std std-ref">Command-line Interface</span></a>
 that we haven’t looked at until this point. In this tutorial we will look at
 those, to make sure you have a good idea of the options you have available.</p>
@@ -193,7 +194,7 @@ options that can be specified in <cite>s2i/</cite> and <cite>.s2iignore</cite> t
 to your service.</p>
 </div>
 <section id="git-repository">
-<h2>Git Repository<a class="headerlink" href="#git-repository" title="Permalink to this headline"></a></h2>
+<h2>Git Repository<a class="headerlink" href="#git-repository" title="Permalink to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">--git</span></code> option is used to deploy an onlie git repository. It is functionally
 identical to deploying from a local directory and have the same requirements on the
 contents of the service. To deploy a service from a public git repository:</p>
@@ -221,7 +222,7 @@ and using it like so:</p>
 </div>
 </section>
 <section id="container-image">
-<h2>Container Image<a class="headerlink" href="#container-image" title="Permalink to this headline"></a></h2>
+<h2>Container Image<a class="headerlink" href="#container-image" title="Permalink to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">--image</span></code> option can be used to deploy any container image as a Daeploy service.
 This can be useful for deploying applications that are not written using the
 SDK within the Daeploy framework. Keep in mind that most pre-build images will not
@@ -240,7 +241,7 @@ the service container. This is not required when deploying services locally or
 from git repositories, but it might be necessary when deploying from an image.</p>
 </section>
 <section id="advanced-deployment-of-docker-images">
-<h2>Advanced Deployment of Docker Images<a class="headerlink" href="#advanced-deployment-of-docker-images" title="Permalink to this headline"></a></h2>
+<h2>Advanced Deployment of Docker Images<a class="headerlink" href="#advanced-deployment-of-docker-images" title="Permalink to this heading"></a></h2>
 <p>Extra <code class="docutils literal notranslate"><span class="pre">key:</span> <span class="pre">value</span></code> arguments (beyond port number and environment variables) needed for the docker image
 to run properly can be specified when deploying the image via the <code class="docutils literal notranslate"><span class="pre">/~image</span></code> POST HTTP endpoint. These extra
 <code class="docutils literal notranslate"><span class="pre">key:</span> <span class="pre">value</span></code> arguments should be specified under the <code class="docutils literal notranslate"><span class="pre">docker_run_args</span></code> key in the request data field. The accepted
@@ -264,7 +265,7 @@ that requires <code class="docutils literal notranslate"><span class="pre">privi
 </div>
 </section>
 <section id="ignoring-files-when-deploying">
-<h2>Ignoring Files when Deploying<a class="headerlink" href="#ignoring-files-when-deploying" title="Permalink to this headline"></a></h2>
+<h2>Ignoring Files when Deploying<a class="headerlink" href="#ignoring-files-when-deploying" title="Permalink to this heading"></a></h2>
 <p>Sometimes not all the contents of a service have to be included when the service
 is deployed. Common exceptions can include test folders and configuration files.
 To exclude a file or a folder from being deployed you can specify their path

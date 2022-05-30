@@ -15,6 +15,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
@@ -159,7 +160,7 @@
 }
 </style>
 <section id="manager-configuration">
-<span id="manager-configuration-reference"></span><h1>Manager Configuration<a class="headerlink" href="#manager-configuration" title="Permalink to this headline"></a></h1>
+<span id="manager-configuration-reference"></span><h1>Manager Configuration<a class="headerlink" href="#manager-configuration" title="Permalink to this heading"></a></h1>
 <p>The Manager is highly configurable using environment variables.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -237,7 +238,7 @@
 </tbody>
 </table>
 <section id="user-management">
-<h2>User Management<a class="headerlink" href="#user-management" title="Permalink to this headline"></a></h2>
+<h2>User Management<a class="headerlink" href="#user-management" title="Permalink to this heading"></a></h2>
 <p>The manager always has an admin user with a password that is set with the <cite>DAEPLOY_ADMIN_PASSWORD</cite> environment variable.
 To configure other users, it is easiest to use the CLI <code class="docutils literal notranslate"><span class="pre">daeploy</span> <span class="pre">user</span></code> commands. This way you can add, list, remove and
 change passwords for non-admin users.</p>
@@ -248,7 +249,7 @@ sophisticated privileges system is planned for a future release.</p>
 </div>
 </section>
 <section id="secure-manager-connection">
-<h2>Secure Manager Connection<a class="headerlink" href="#secure-manager-connection" title="Permalink to this headline"></a></h2>
+<h2>Secure Manager Connection<a class="headerlink" href="#secure-manager-connection" title="Permalink to this heading"></a></h2>
 <p>It is possible to get a secure HTTPS connection to the Manager using automatically
 created certificates from <a class="reference external" href="https://letsencrypt.org">Let’s Encrypt</a>. To enable HTTPS you must
 start a new Manager with the environment variable
@@ -264,7 +265,7 @@ address. It will not work if you access the Manager using an IP address or
 </div>
 </section>
 <section id="email-notifications">
-<span id="email-config-reference"></span><h2>Email notifications<a class="headerlink" href="#email-notifications" title="Permalink to this headline"></a></h2>
+<span id="email-config-reference"></span><h2>Email notifications<a class="headerlink" href="#email-notifications" title="Permalink to this heading"></a></h2>
 <p>The first step is to set up an email address that the Daeploy Manager can use to send
 the notification emails. For this you need an
 <a class="reference external" href="https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol">SMTP</a> server with
@@ -303,7 +304,7 @@ as long as the Manager could still start, any issues with the email configuratio
 will be viewable on the notification tab in the dashboard.</p>
 </section>
 <section id="log-configuration">
-<h2>Log configuration<a class="headerlink" href="#log-configuration" title="Permalink to this headline"></a></h2>
+<h2>Log configuration<a class="headerlink" href="#log-configuration" title="Permalink to this heading"></a></h2>
 <p>All logging in Daeploy is done directly to stdout and stderr and relies heavily on the
 built-in logging features of the docker daemon. As such, any configuration of log
 rotation etc needs to be done on the docker daemon level.</p>
@@ -330,7 +331,7 @@ for the Manager container when starting.</p>
 </div>
 </section>
 <section id="changing-ports">
-<h2>Changing Ports<a class="headerlink" href="#changing-ports" title="Permalink to this headline"></a></h2>
+<h2>Changing Ports<a class="headerlink" href="#changing-ports" title="Permalink to this heading"></a></h2>
 <p>If you want to change the port that the manager is running on, you have to set the
 environment variable <code class="docutils literal notranslate"><span class="pre">DAEPLOY_PROXY_HTTP_PORT</span></code> or <code class="docutils literal notranslate"><span class="pre">DAEPLOY_PROXY_HTTPS_PORT</span></code> as
 well as changing the published port of the container with
@@ -338,14 +339,14 @@ well as changing the published port of the container with
 external and internal ports are the same.</p>
 </section>
 <section id="typical-production-setup">
-<h2>Typical production setup<a class="headerlink" href="#typical-production-setup" title="Permalink to this headline"></a></h2>
+<h2>Typical production setup<a class="headerlink" href="#typical-production-setup" title="Permalink to this heading"></a></h2>
 <p>Below we show an example of a typical production setup using the Docker CLI
 and the
 <a class="reference external" href="https://github.com/vikinganalytics/daeploy-examples/blob/master/start_manager">start_manager script</a>.
 In the example we start a Manager instance listening on <code class="docutils literal notranslate"><span class="pre">my.domain.com</span></code>, with HTTPS,
 authentication, an activated license and email notifications enabled.</p>
 <section id="docker-cli">
-<h3>Docker CLI<a class="headerlink" href="#docker-cli" title="Permalink to this headline"></a></h3>
+<h3>Docker CLI<a class="headerlink" href="#docker-cli" title="Permalink to this heading"></a></h3>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># We create a docker volume for keeping our data persistent across restarts/upgrades</span>
 docker volume create daeploy_data
 
@@ -380,7 +381,7 @@ for details on syntax etc.</p>
 </div>
 </section>
 <section id="id1">
-<h3>start_manager script<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
+<h3>start_manager script<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
 <p>To reduce the complexity of launching the manager we have created a simple script
 <code class="docutils literal notranslate"><span class="pre">start_manager</span></code> that hides much of the complexity while still leaving all
 manager settings available.</p>

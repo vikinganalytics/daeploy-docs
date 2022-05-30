@@ -15,6 +15,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
@@ -148,7 +149,7 @@
 }
 </style>
 <section id="deploying-machine-learning-models">
-<span id="deploy-ml-reference"></span><h1>Deploying Machine Learning Models<a class="headerlink" href="#deploying-machine-learning-models" title="Permalink to this headline"></a></h1>
+<span id="deploy-ml-reference"></span><h1>Deploying Machine Learning Models<a class="headerlink" href="#deploying-machine-learning-models" title="Permalink to this heading"></a></h1>
 <p>Machine Learning models are commonly trained in a separate environment from
 the deployment environment. The models are typically serialized as e.g.
 <a class="reference external" href="https://docs.python.org/3/library/pickle.html">pickle</a> files, which can easily
@@ -156,7 +157,7 @@ be moved between the environments. In this tutorial we are going to look at how 
 can take a pickled <a class="reference external" href="https://scikit-learn.org/stable/">sklearn</a> classifier model
 and create a service that uses that model to predict a class on data sent to it.</p>
 <section id="the-classifier">
-<h2>The Classifier<a class="headerlink" href="#the-classifier" title="Permalink to this headline"></a></h2>
+<h2>The Classifier<a class="headerlink" href="#the-classifier" title="Permalink to this heading"></a></h2>
 <p>Let’s create a simple classifier for the famous iris dataset in this example.
 We will not go into any detail about how it’s done. There are plenty of tutorials
 online that go through this process:</p>
@@ -193,7 +194,7 @@ online that go through this process:</p>
 </div>
 </section>
 <section id="the-service">
-<h2>The Service<a class="headerlink" href="#the-service" title="Permalink to this headline"></a></h2>
+<h2>The Service<a class="headerlink" href="#the-service" title="Permalink to this heading"></a></h2>
 <p>Like we have done previously we use <code class="docutils literal notranslate"><span class="pre">daeploy</span> <span class="pre">init</span></code> command to create a new project.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">init</span> 
 <span class="go">project_name [my_project]: iris_project</span>
@@ -256,7 +257,7 @@ we describe in <a class="reference internal" href="../advanced_tutorials/sdk_typ
 about converting the input and output to json compatible types.</p>
 </section>
 <section id="deployment">
-<h2>Deployment<a class="headerlink" href="#deployment" title="Permalink to this headline"></a></h2>
+<h2>Deployment<a class="headerlink" href="#deployment" title="Permalink to this heading"></a></h2>
 <p>Just like before, we deploy the service using the CLI:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">deploy</span> <span class="n">iris_classifier</span> <span class="mf">1.0.0</span> <span class="o">./</span><span class="n">iris_project</span> 
 <span class="go">Active host: http://your-host</span>

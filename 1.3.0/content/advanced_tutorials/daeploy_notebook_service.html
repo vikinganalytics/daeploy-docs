@@ -15,12 +15,13 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -337,7 +338,7 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
+.prompt .copybtn {
     display: none;
 }
 
@@ -398,18 +399,17 @@ div.rendered_html tbody tr:hover {
 }
 </style>
 <section id="Work-With-Daeploy-From-a-Notebook">
-<h1>Work With Daeploy From a Notebook<a class="headerlink" href="#Work-With-Daeploy-From-a-Notebook" title="Permalink to this headline"></a></h1>
+<h1>Work With Daeploy From a Notebook<a class="headerlink" href="#Work-With-Daeploy-From-a-Notebook" title="Permalink to this heading"></a></h1>
 <p>This example will show you how to create and deploy a service straight from a notebook.</p>
 <section id="Logging-in">
-<h2>Logging in<a class="headerlink" href="#Logging-in" title="Permalink to this headline"></a></h2>
+<h2>Logging in<a class="headerlink" href="#Logging-in" title="Permalink to this heading"></a></h2>
 <p>To log in to your host, first log in using a terminal with username + password and generate a token with <code class="docutils literal notranslate"><span class="pre">daeploy</span> <span class="pre">token</span></code>. Use this token for future log-ins from the notebook. This way you do not have to show your username and password. You can set a time limit to the token for better security.</p>
 <p>We start by importing some packages and defining the host and token as global variables</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>import requests
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import requests
 import json
 import time
 
@@ -426,8 +426,7 @@ TOKEN = &quot;&quot;  # Add your token here
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>!daeploy login --host $HOST --token $TOKEN
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>!daeploy login --host $HOST --token $TOKEN
 </pre></div>
 </div>
 </div>
@@ -441,7 +440,7 @@ Changed host to http://localhost
 </div>
 </section>
 <section id="Writing-the-Service">
-<h2>Writing the Service<a class="headerlink" href="#Writing-the-Service" title="Permalink to this headline"></a></h2>
+<h2>Writing the Service<a class="headerlink" href="#Writing-the-Service" title="Permalink to this heading"></a></h2>
 <p>The service code should be collected in a single cell decorated with the <code class="docutils literal notranslate"><span class="pre">service_cell</span></code> <a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/magics.html?highlight=magic">magic command</a>. We start by importing it from <code class="docutils literal notranslate"><span class="pre">daeploy.notebook</span></code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -451,8 +450,7 @@ Changed host to http://localhost
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>from daeploy.notebook import service_cell
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from daeploy.notebook import service_cell
 </pre></div>
 </div>
 </div>
@@ -462,8 +460,7 @@ Changed host to http://localhost
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>%%service_cell notebook_service
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%service_cell notebook_service
 
 import logging
 
@@ -499,8 +496,7 @@ if __name__ == &quot;__main__&quot;:
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>from daeploy.notebook import service_requirements
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from daeploy.notebook import service_requirements
 </pre></div>
 </div>
 </div>
@@ -508,8 +504,7 @@ if __name__ == &quot;__main__&quot;:
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>%%service_requirements notebook_service
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%service_requirements notebook_service
 numpy
 </pre></div>
 </div>
@@ -525,14 +520,13 @@ numpy
 </div>
 </section>
 <section id="Deploy-the-Service">
-<h2>Deploy the Service<a class="headerlink" href="#Deploy-the-Service" title="Permalink to this headline"></a></h2>
+<h2>Deploy the Service<a class="headerlink" href="#Deploy-the-Service" title="Permalink to this heading"></a></h2>
 <p>We can deploy the service like we normally would with the CLI using <code class="docutils literal notranslate"><span class="pre">daeploy</span> <span class="pre">deploy</span></code></p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>!daeploy deploy notebook_service 1.0.0 notebook_service
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>!daeploy deploy notebook_service 1.0.0 notebook_service
 time.sleep(5)  # Wait a moment for the service to start
 </pre></div>
 </div>
@@ -553,14 +547,13 @@ MAIN    NAME              VERSION    STATUS    RUNNING
 </div>
 </section>
 <section id="Test-the-Deployed-Service">
-<h2>Test the Deployed Service<a class="headerlink" href="#Test-the-Deployed-Service" title="Permalink to this headline"></a></h2>
+<h2>Test the Deployed Service<a class="headerlink" href="#Test-the-Deployed-Service" title="Permalink to this heading"></a></h2>
 <p>We can test the service straight from the notebook using the <code class="docutils literal notranslate"><span class="pre">requests</span></code> package.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>response = requests.post(
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>response = requests.post(
     url=f&quot;{HOST}/services/notebook_service/sqrt&quot;,
     json={&quot;number&quot;: 2},
     headers={&quot;Authorization&quot;: f&quot;Bearer {TOKEN}&quot;}
@@ -581,14 +574,13 @@ response.json()
 </div>
 </section>
 <section id="Kill-the-Service">
-<h2>Kill the Service<a class="headerlink" href="#Kill-the-Service" title="Permalink to this headline"></a></h2>
+<h2>Kill the Service<a class="headerlink" href="#Kill-the-Service" title="Permalink to this heading"></a></h2>
 <p>When we are finished we can kill the service.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>!daeploy kill notebook_service 1.0.0 --yes
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>!daeploy kill notebook_service 1.0.0 --yes
 </pre></div>
 </div>
 </div>

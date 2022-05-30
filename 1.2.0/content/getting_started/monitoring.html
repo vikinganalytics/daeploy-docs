@@ -15,6 +15,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
@@ -154,14 +155,14 @@
 }
 </style>
 <section id="monitoring-your-service">
-<span id="monitoring-reference"></span><h1>Monitoring Your Service<a class="headerlink" href="#monitoring-your-service" title="Permalink to this headline"></a></h1>
+<span id="monitoring-reference"></span><h1>Monitoring Your Service<a class="headerlink" href="#monitoring-your-service" title="Permalink to this heading"></a></h1>
 <p>Monitoring is a very important aspect of software deployment. Deployed algorithms
 often deteriorate over time, in a process called
 <a class="reference external" href="https://en.wikipedia.org/wiki/Domain_adaptation">domain shift</a>, and being able
 to monitor your deployed algorithms can make all the difference in detecting this
 in the early stages.</p>
 <section id="monitoring-variables">
-<h2>Monitoring Variables<a class="headerlink" href="#monitoring-variables" title="Permalink to this headline"></a></h2>
+<h2>Monitoring Variables<a class="headerlink" href="#monitoring-variables" title="Permalink to this heading"></a></h2>
 <p>To monitor the value of a variable in the code you can use the
 <code class="xref py py-func docutils literal notranslate"><span class="pre">store()</span></code> function. It takes an arbitrary number of keyword
 arguments and saves their values in a service-specific database, where they can be
@@ -187,7 +188,7 @@ string data. Let’s use the <cite>hello</cite> service as an example</p>
 </div>
 </section>
 <section id="monitoring-an-entrypoint">
-<h2>Monitoring an Entrypoint<a class="headerlink" href="#monitoring-an-entrypoint" title="Permalink to this headline"></a></h2>
+<h2>Monitoring an Entrypoint<a class="headerlink" href="#monitoring-an-entrypoint" title="Permalink to this heading"></a></h2>
 <p>It is also possible to automatically monitor the input and output of a service
 entrypoint. To do this we pass <code class="docutils literal notranslate"><span class="pre">monitor=True</span></code> to the
 <code class="xref py py-meth docutils literal notranslate"><span class="pre">entrypoint()</span></code> decorator</p>
@@ -210,7 +211,7 @@ entrypoint. To do this we pass <code class="docutils literal notranslate"><span 
 formats.</p>
 </section>
 <section id="monitoring-a-parameter">
-<h2>Monitoring a Parameter<a class="headerlink" href="#monitoring-a-parameter" title="Permalink to this headline"></a></h2>
+<h2>Monitoring a Parameter<a class="headerlink" href="#monitoring-a-parameter" title="Permalink to this heading"></a></h2>
 <p>Parameters set with <code class="xref py py-func docutils literal notranslate"><span class="pre">add_parameter()</span></code> can also be monitored by passing
 <code class="docutils literal notranslate"><span class="pre">monitor=True</span></code>, which also supports integer, float and string data</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
@@ -230,7 +231,7 @@ formats.</p>
 </div>
 </section>
 <section id="getting-the-data">
-<h2>Getting the Data<a class="headerlink" href="#getting-the-data" title="Permalink to this headline"></a></h2>
+<h2>Getting the Data<a class="headerlink" href="#getting-the-data" title="Permalink to this heading"></a></h2>
 <p>Daeploy provides three options for accessing the time-series data for
 your monitored variables.</p>
 <p><strong>Option 1: Json format</strong></p>
@@ -301,7 +302,7 @@ service database can be requested at the following entrypoint:</p>
 <p><code class="docutils literal notranslate"><span class="pre">http://your-host/services/&lt;servce_name&gt;_&lt;service_version&gt;/~monitor/db</span></code></p>
 </section>
 <section id="limiting-the-number-of-records-in-the-database">
-<h2>Limiting the Number of Records in the Database<a class="headerlink" href="#limiting-the-number-of-records-in-the-database" title="Permalink to this headline"></a></h2>
+<h2>Limiting the Number of Records in the Database<a class="headerlink" href="#limiting-the-number-of-records-in-the-database" title="Permalink to this heading"></a></h2>
 <p>Service databases are not intended to be permanent data storage. Records are kept for
 90 days by default, but if a service stores large amounts of data often there is a
 risk of filling the disk of the host machine. To prevent this it’s possible to change

@@ -15,6 +15,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
@@ -151,7 +152,7 @@
 }
 </style>
 <section id="testing-services-before-deployment">
-<span id="testing-services-reference"></span><h1>Testing Services Before Deployment<a class="headerlink" href="#testing-services-before-deployment" title="Permalink to this headline"></a></h1>
+<span id="testing-services-reference"></span><h1>Testing Services Before Deployment<a class="headerlink" href="#testing-services-before-deployment" title="Permalink to this heading"></a></h1>
 <p>Iteratively debugging a service by repeatedly deploying and calling entrypoints
 can become a somewhat slow and tedious process, having to wait a short time
 for every deploy. To help ensure that services are in
@@ -161,7 +162,7 @@ directory is created. It contains two files: <cite>base_functionality_test.py</c
 that performes base tests for things that are necessary for these services
 to work, and <cite>user_tests.py</cite> for the user to add their own tests.</p>
 <section id="writing-tests">
-<h2>Writing Tests<a class="headerlink" href="#writing-tests" title="Permalink to this headline"></a></h2>
+<h2>Writing Tests<a class="headerlink" href="#writing-tests" title="Permalink to this heading"></a></h2>
 <p>The tests use <a class="reference external" href="https://docs.pytest.org/en/stable/">pytest</a> which requires the
 tests to lay in a folder called <cite>tests/</cite>, in modules that end with <cite>_test.py</cite>
 and the names of the test functions should start with <cite>test_</cite>. Tests use the
@@ -212,7 +213,7 @@ service that is generated with <code class="docutils literal notranslate"><span 
 </div>
 </section>
 <section id="functions-that-do-not-work-locally">
-<h2>Functions That Do Not Work Locally<a class="headerlink" href="#functions-that-do-not-work-locally" title="Permalink to this headline"></a></h2>
+<h2>Functions That Do Not Work Locally<a class="headerlink" href="#functions-that-do-not-work-locally" title="Permalink to this heading"></a></h2>
 <p>There are three ways to run a Daeploy service. We have seen how to deploy and run
 your services to a manager using <code class="docutils literal notranslate"><span class="pre">daeploy</span> <span class="pre">deploy</span></code> many times now, but you could also
 run it with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">&lt;project_path&gt;/service.py</span></code> in which case it will be run as
@@ -262,7 +263,7 @@ The table below shows the SDK functions that cannot run locally without a manage
 but it won’t cause any errors</p>
 </section>
 <section id="mocking-functions-to-run-services-locally">
-<h2>Mocking Functions to Run Services Locally<a class="headerlink" href="#mocking-functions-to-run-services-locally" title="Permalink to this headline"></a></h2>
+<h2>Mocking Functions to Run Services Locally<a class="headerlink" href="#mocking-functions-to-run-services-locally" title="Permalink to this heading"></a></h2>
 <p>To be able to test services that depend on some of the functions listed above, we
 have to use something called mocking, which means to templorarily replace code to
 do something else. In the case of the <cite>hello</cite> service we would get an error if
@@ -343,7 +344,7 @@ class from <code class="xref py py-mod docutils literal notranslate"><span class
 </div>
 </section>
 <section id="more-testing">
-<h2>More Testing<a class="headerlink" href="#more-testing" title="Permalink to this headline"></a></h2>
+<h2>More Testing<a class="headerlink" href="#more-testing" title="Permalink to this heading"></a></h2>
 <p>Refer to the <a class="reference external" href="https://docs.pytest.org/en/stable/">pytest</a> documentation and its
 many addons if you would like to do more testing. To learn more about mocking and
 the <code class="xref py py-func docutils literal notranslate"><span class="pre">patch()</span></code> function, take a look at

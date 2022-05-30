@@ -15,6 +15,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
@@ -148,7 +149,7 @@
 }
 </style>
 <section id="versioning-and-shadow-deployment">
-<span id="versioning-shadow-reference"></span><h1>Versioning and Shadow Deployment<a class="headerlink" href="#versioning-and-shadow-deployment" title="Permalink to this headline"></a></h1>
+<span id="versioning-shadow-reference"></span><h1>Versioning and Shadow Deployment<a class="headerlink" href="#versioning-and-shadow-deployment" title="Permalink to this heading"></a></h1>
 <p>Daeploy supports something called shadow deployment, which means to deploy new versions
 of a program “in the background” of an older version that is known to be stable.
 This way, two or more services can run side by side and it becomes easy
@@ -157,7 +158,7 @@ other unwanted behaviour in production.</p>
 <p>This works by mirroring the input to every version of a service, but only
 returning the response of the main verision.</p>
 <section id="deploying-a-shadow-service">
-<h2>Deploying a Shadow Service<a class="headerlink" href="#deploying-a-shadow-service" title="Permalink to this headline"></a></h2>
+<h2>Deploying a Shadow Service<a class="headerlink" href="#deploying-a-shadow-service" title="Permalink to this heading"></a></h2>
 <p>Deploying a shadow service in Daeploy is as easy as deploying any other service.
 When deploying a service for the first time, it will always be the main version
 and every subsequent service with the same name will be a shadow of the main
@@ -204,7 +205,7 @@ This way it’s possible to use shadow deployment and still be able to communica
 with individual services.</p>
 </section>
 <section id="changing-main-service">
-<h2>Changing Main Service<a class="headerlink" href="#changing-main-service" title="Permalink to this headline"></a></h2>
+<h2>Changing Main Service<a class="headerlink" href="#changing-main-service" title="Permalink to this heading"></a></h2>
 <p>When a new service seems to perform to a satisfactory level you can change it to
 the main service using the CLI command <code class="docutils literal notranslate"><span class="pre">daeploy</span> <span class="pre">assign</span></code>:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">assign</span> <span class="n">hello</span> <span class="mf">2.0.0</span> 
@@ -222,7 +223,7 @@ or kept running in the background and changed back to if there should be any
 problems with the new version.</p>
 </section>
 <section id="killing-services">
-<h2>Killing Services<a class="headerlink" href="#killing-services" title="Permalink to this headline"></a></h2>
+<h2>Killing Services<a class="headerlink" href="#killing-services" title="Permalink to this heading"></a></h2>
 <p>The user is prohibited from killing main services while it has shadows. This
 is to protect the user from accidentally removing the main service and disrupting
 the production system. Shadow services can be killed freely or all versions of a

@@ -15,6 +15,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
@@ -150,7 +151,7 @@
 }
 </style>
 <section id="using-streamlit-to-build-a-dashboard">
-<span id="streamlit-service-reference"></span><h1>Using Streamlit to build a dashboard<a class="headerlink" href="#using-streamlit-to-build-a-dashboard" title="Permalink to this headline"></a></h1>
+<span id="streamlit-service-reference"></span><h1>Using Streamlit to build a dashboard<a class="headerlink" href="#using-streamlit-to-build-a-dashboard" title="Permalink to this heading"></a></h1>
 <p>In this tutorial we will see how to create a service with a graphical interface
 using a very convenient python package called <a class="reference external" href="https://www.streamlit.io/">streamlit</a>.</p>
 <p>With streamlit it is very quick to make graphical applications and this can be
@@ -159,7 +160,7 @@ your algorithms, just to name a few examples. We will not go into detail into ho
 to use streamlit itself, but rather how to deploy a streamlit application in Daeploy and
 have it communicate with your services.</p>
 <section id="creating-the-streamlit-service">
-<h2>Creating the Streamlit Service<a class="headerlink" href="#creating-the-streamlit-service" title="Permalink to this headline"></a></h2>
+<h2>Creating the Streamlit Service<a class="headerlink" href="#creating-the-streamlit-service" title="Permalink to this heading"></a></h2>
 <p>Let’s reuse the <cite>Die Roller</cite> service we created as part of the <cite>Yatzee</cite> game in
 <a class="reference internal" href="../getting_started/cross_service_communication.html#cross-service-reference"><span class="std std-ref">Cross-service Communication</span></a> and create a roll button and a display for the
 die roll. We start by creating a new project:</p>
@@ -210,7 +211,7 @@ be any file that is executable in linux.</p>
 </div>
 </section>
 <section id="deploying-the-service">
-<h2>Deploying the Service<a class="headerlink" href="#deploying-the-service" title="Permalink to this headline"></a></h2>
+<h2>Deploying the Service<a class="headerlink" href="#deploying-the-service" title="Permalink to this heading"></a></h2>
 <p>Since <cite>die_app</cite> is dependent of <cite>die_roller_service</cite> it has to be up and running
 before <cite>die_app</cite> can be used. The code for <cite>die_roller_service</cite> is:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>

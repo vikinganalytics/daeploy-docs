@@ -15,6 +15,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
@@ -151,7 +152,7 @@
 }
 </style>
 <section id="source-to-image-and-builder-images">
-<h1>Source to Image and Builder Images<a class="headerlink" href="#source-to-image-and-builder-images" title="Permalink to this headline"></a></h1>
+<h1>Source to Image and Builder Images<a class="headerlink" href="#source-to-image-and-builder-images" title="Permalink to this heading"></a></h1>
 <p>Daeploy uses something called <a class="reference external" href="https://github.com/openshift/source-to-image">Source to Image (S2I)</a> behind the hood to convert
 source code to container images. S2I injects that source code into an existing
 image, called a builder image, which it uses to produce a ready-to-run image.</p>
@@ -159,7 +160,7 @@ image, called a builder image, which it uses to produce a ready-to-run image.</p
 developed our own lightweight python builder images specifically for use with
 Daeploy (<a class="reference external" href="https://github.com/vikinganalytics/daeploy-s2i-python">github link</a>).</p>
 <section id="changing-builder-images">
-<h2>Changing Builder Images<a class="headerlink" href="#changing-builder-images" title="Permalink to this headline"></a></h2>
+<h2>Changing Builder Images<a class="headerlink" href="#changing-builder-images" title="Permalink to this heading"></a></h2>
 <p>By default Daeploy uses a builder image based on ubuntu with python 3.8. There
 can be situations, however, where that image might not be suitable. For
 example if you want to use some library that is not supported for that version
@@ -169,7 +170,7 @@ deployment command in the CLI. We recommend using one of the custom made builder
 images for Daeploy, but any python S2I builder images will work.</p>
 </section>
 <section id="injecting-additional-assembly-steps">
-<h2>Injecting Additional Assembly Steps<a class="headerlink" href="#injecting-additional-assembly-steps" title="Permalink to this headline"></a></h2>
+<h2>Injecting Additional Assembly Steps<a class="headerlink" href="#injecting-additional-assembly-steps" title="Permalink to this heading"></a></h2>
 <p>If your application is dependent on software that need to be installed on the OS level,
 it is not necessary to change the entire build image, but to instead add an additional step
 to the existing build process.</p>

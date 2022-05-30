@@ -15,6 +15,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
@@ -155,7 +156,7 @@
 }
 </style>
 <section id="anatomy-of-a-service">
-<span id="custom-service-reference"></span><h1>Anatomy of a Service<a class="headerlink" href="#anatomy-of-a-service" title="Permalink to this headline"></a></h1>
+<span id="custom-service-reference"></span><h1>Anatomy of a Service<a class="headerlink" href="#anatomy-of-a-service" title="Permalink to this heading"></a></h1>
 <p>In this tutorial we will go through the code of the service that is generated
 by <code class="docutils literal notranslate"><span class="pre">daeploy</span> <span class="pre">init</span></code> to learn the parts that make up a Daeploy service.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">init</span> 
@@ -172,7 +173,7 @@ tutorials.</p>
 <p>Let’s take a look at the contents of <cite>service.py</cite> to see how the SDK is used to
 create the service.</p>
 <section id="setup">
-<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline"></a></h2>
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading"></a></h2>
 <p>The first step is to import packages. We also initialize a logger
 so we can get information about the service for debugging:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
@@ -197,7 +198,7 @@ object, which Daeploy natively supports. The logs from a service can be read fro
 dashboard or using <code class="docutils literal notranslate"><span class="pre">daeploy</span> <span class="pre">logs</span> <span class="pre">name</span> <span class="pre">version</span></code>.</p>
 </section>
 <section id="defining-parameters">
-<span id="custom-service-defining-parameters-reference"></span><h2>Defining parameters<a class="headerlink" href="#defining-parameters" title="Permalink to this headline"></a></h2>
+<span id="custom-service-defining-parameters-reference"></span><h2>Defining parameters<a class="headerlink" href="#defining-parameters" title="Permalink to this heading"></a></h2>
 <p>It is possible to define parameters that automatically get exposed to the API and
 can be freely changed from outside a running service</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">service</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;greeting_phrase&quot;</span><span class="p">,</span> <span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
@@ -211,7 +212,7 @@ can be freely changed from outside a running service</p>
 to make any code changes. We recommend using them for control parameters.</p>
 </section>
 <section id="creating-an-entrypoint">
-<h2>Creating an Entrypoint<a class="headerlink" href="#creating-an-entrypoint" title="Permalink to this headline"></a></h2>
+<h2>Creating an Entrypoint<a class="headerlink" href="#creating-an-entrypoint" title="Permalink to this heading"></a></h2>
 <p>To define an entrypoint for a service we use the <code class="xref py py-obj docutils literal notranslate"><span class="pre">entrypoint</span></code> decorator</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@service</span><span class="o">.</span><span class="n">entrypoint</span>
 <span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
@@ -233,7 +234,7 @@ lists or dictionaries. Read <a class="reference internal" href="../advanced_tuto
 </div>
 </section>
 <section id="starting-the-service">
-<h2>Starting the Service<a class="headerlink" href="#starting-the-service" title="Permalink to this headline"></a></h2>
+<h2>Starting the Service<a class="headerlink" href="#starting-the-service" title="Permalink to this heading"></a></h2>
 <p>The last thing we have to do is to ensure the service runs once it is deployed</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">service</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
@@ -241,7 +242,7 @@ lists or dictionaries. Read <a class="reference internal" href="../advanced_tuto
 </div>
 </section>
 <section id="full-code">
-<h2>Full Code<a class="headerlink" href="#full-code" title="Permalink to this headline"></a></h2>
+<h2>Full Code<a class="headerlink" href="#full-code" title="Permalink to this heading"></a></h2>
 <p>All together the full service contains fewer than 25 lines of code, including input
 validation, logging and configurable parameters:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
@@ -264,7 +265,7 @@ validation, logging and configurable parameters:</p>
 </div>
 </section>
 <section id="deploying-the-service">
-<h2>Deploying the Service<a class="headerlink" href="#deploying-the-service" title="Permalink to this headline"></a></h2>
+<h2>Deploying the Service<a class="headerlink" href="#deploying-the-service" title="Permalink to this heading"></a></h2>
 <p>With the service code in place we can deploy it with:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">deploy</span> <span class="n">hello</span> <span class="mf">1.0.0</span> <span class="o">./</span><span class="n">my_first_daeploy_project</span><span class="o">/</span> 
 <span class="go">Deploying service...</span>
@@ -276,7 +277,7 @@ validation, logging and configurable parameters:</p>
 </div>
 </section>
 <section id="what-s-next">
-<h2>What’s Next?<a class="headerlink" href="#what-s-next" title="Permalink to this headline"></a></h2>
+<h2>What’s Next?<a class="headerlink" href="#what-s-next" title="Permalink to this heading"></a></h2>
 <p>Now you have seen the different components of the SDK and you should be ready to
 create your own service. The next step could be to take a look at the
 manager <a class="reference internal" href="dashboard.html#dashboard-reference"><span class="std std-ref">Dashboard</span></a>, or the <a class="reference internal" href="../api_reference/sdk.html#sdk-reference"><span class="std std-ref">Software Development Kit</span></a> documentation.</p>

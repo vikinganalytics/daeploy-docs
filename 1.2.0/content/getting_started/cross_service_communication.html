@@ -15,6 +15,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
@@ -152,14 +153,14 @@
 }
 </style>
 <section id="cross-service-communication">
-<span id="cross-service-reference"></span><h1>Cross-service Communication<a class="headerlink" href="#cross-service-communication" title="Permalink to this headline"></a></h1>
+<span id="cross-service-reference"></span><h1>Cross-service Communication<a class="headerlink" href="#cross-service-communication" title="Permalink to this heading"></a></h1>
 <p>Microservices is a modern software architectural style where an application consists
 of a collection of loosely coupled and independently deployable services. These
 small services communicate with each other to form large and complex applications.</p>
 <p>In this tutorial we will build a yatzee game consisting of two services, one that
 throws a die and another that handles the game logic.</p>
 <section id="die-roller-service">
-<h2>Die Roller Service<a class="headerlink" href="#die-roller-service" title="Permalink to this headline"></a></h2>
+<h2>Die Roller Service<a class="headerlink" href="#die-roller-service" title="Permalink to this heading"></a></h2>
 <p>The first service we create will generate a random number between 1 and 6 and
 respond with the result:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">init</span> 
@@ -197,7 +198,7 @@ respond with the result:</p>
 documentation at <a class="reference external" href="http://your-host/services/die_roller/docs">http://your-host/services/die_roller/docs</a>.</p>
 </section>
 <section id="yatzee-service">
-<h2>Yatzee Service<a class="headerlink" href="#yatzee-service" title="Permalink to this headline"></a></h2>
+<h2>Yatzee Service<a class="headerlink" href="#yatzee-service" title="Permalink to this heading"></a></h2>
 <p>The <cite>yatzee</cite> service will call the <code class="xref py py-func docutils literal notranslate"><span class="pre">roll_die()</span></code> method of the <cite>die_roller</cite>
 for each die in play. If the player gets a yatzee (all 6s) we send a notification!
 Let’s create the code for that service:</p>
@@ -256,7 +257,7 @@ use the keyword argument <code class="docutils literal notranslate"><span class=
 <p>Try out your new service at <a class="reference external" href="http://your-host/services/yatzee/docs">http://your-host/services/yatzee/docs</a>.</p>
 </section>
 <section id="what-s-next">
-<h2>What’s Next?<a class="headerlink" href="#what-s-next" title="Permalink to this headline"></a></h2>
+<h2>What’s Next?<a class="headerlink" href="#what-s-next" title="Permalink to this heading"></a></h2>
 <p>Now that you’ve come this far you have seen most of the fundamentals of Daeploy.
 Be sure that you have taken a look at the documentation for the
 <a class="reference internal" href="../api_reference/sdk.html#sdk-reference"><span class="std std-ref">Software Development Kit</span></a> and the <a class="reference internal" href="../api_reference/cli.html#cli-reference"><span class="std std-ref">Command-line Interface</span></a>. After which you should be ready

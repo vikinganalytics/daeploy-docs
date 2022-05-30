@@ -15,6 +15,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
@@ -153,7 +154,7 @@
 }
 </style>
 <section id="typing-in-the-sdk">
-<span id="sdk-typing-reference"></span><h1>Typing in the SDK<a class="headerlink" href="#typing-in-the-sdk" title="Permalink to this headline"></a></h1>
+<span id="sdk-typing-reference"></span><h1>Typing in the SDK<a class="headerlink" href="#typing-in-the-sdk" title="Permalink to this heading"></a></h1>
 <p>The <a class="reference internal" href="../api_reference/sdk.html#sdk-reference"><span class="std std-ref">Software Development Kit</span></a> supports type hints to add validation to the resulting API
 as well as well-defined json schemas for the automated documentation. In this
 tutorial we will see how we can make use of this to make the API and interactive
@@ -165,7 +166,7 @@ only support json-compatible input and output, such as numericals, strings,
 lists and dictionaries.</p>
 </div>
 <section id="why-type-hints">
-<h2>Why Type Hints?<a class="headerlink" href="#why-type-hints" title="Permalink to this headline"></a></h2>
+<h2>Why Type Hints?<a class="headerlink" href="#why-type-hints" title="Permalink to this heading"></a></h2>
 <p>It is not required to use type hints for your entrypoint functions. But if they are
 used they will give validation to the API, which can otherwise require a fair bit
 of code. Let’s look at the <code class="xref py py-func docutils literal notranslate"><span class="pre">hello()</span></code> entrypoint that we’ve seen
@@ -225,7 +226,7 @@ not desirable, take a look at pydantic’s
 </div>
 </section>
 <section id="creating-an-input-model">
-<h2>Creating an Input Model<a class="headerlink" href="#creating-an-input-model" title="Permalink to this headline"></a></h2>
+<h2>Creating an Input Model<a class="headerlink" href="#creating-an-input-model" title="Permalink to this heading"></a></h2>
 <p>In our examples so far we have only seen standard python types as type hints:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">daeploy</span> <span class="kn">import</span> <span class="n">service</span>
 
@@ -353,7 +354,7 @@ level of control of what data we accept into the entrypoint, which invites many
 bugs due to data validation issues.</p>
 </section>
 <section id="custom-validation">
-<h2>Custom Validation<a class="headerlink" href="#custom-validation" title="Permalink to this headline"></a></h2>
+<h2>Custom Validation<a class="headerlink" href="#custom-validation" title="Permalink to this heading"></a></h2>
 <p>We’ve seen how a data model can be used to ensure that the input data types are
 validated, but sometimes it’s not strict enough. Let’s take the <cite>hello</cite> service
 as an example this time. The <code class="xref py py-func docutils literal notranslate"><span class="pre">hello()</span></code> function takes any string as it’s
@@ -403,7 +404,7 @@ the desired format.</p>
 </div>
 </section>
 <section id="schema-example">
-<h2>Schema Example<a class="headerlink" href="#schema-example" title="Permalink to this headline"></a></h2>
+<h2>Schema Example<a class="headerlink" href="#schema-example" title="Permalink to this heading"></a></h2>
 <p>You can add example inputs for the documentation to
 speed up testing. To do this we create a local class <code class="xref py py-class docutils literal notranslate"><span class="pre">Config</span></code>
 within the data model:</p>
@@ -422,7 +423,7 @@ within the data model:</p>
 <a class="reference internal image-reference" href="../../_images/schema_example.png"><img alt="Screenshot of autodocs with data model and schema example" src="../../_images/schema_example.png" style="width: 800px;" /></a>
 </section>
 <section id="using-non-jsonable-data-types">
-<span id="sdk-typing-non-json-reference"></span><h2>Using Non-jsonable Data Types<a class="headerlink" href="#using-non-jsonable-data-types" title="Permalink to this headline"></a></h2>
+<span id="sdk-typing-non-json-reference"></span><h2>Using Non-jsonable Data Types<a class="headerlink" href="#using-non-jsonable-data-types" title="Permalink to this heading"></a></h2>
 <p>Some data types like <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> are very common for
 e.g. data science, but are not natively supported by Pydantic. They must first be
 converted to a json-compatible format like lists for arrays and dictionaries for

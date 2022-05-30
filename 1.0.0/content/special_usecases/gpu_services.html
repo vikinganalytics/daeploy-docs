@@ -15,6 +15,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
@@ -151,13 +152,13 @@
 }
 </style>
 <section id="access-nvidia-gpus">
-<span id="gpu-service-reference"></span><h1>Access NVIDIA GPUs<a class="headerlink" href="#access-nvidia-gpus" title="Permalink to this headline"></a></h1>
+<span id="gpu-service-reference"></span><h1>Access NVIDIA GPUs<a class="headerlink" href="#access-nvidia-gpus" title="Permalink to this heading"></a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This is an experimental feature and has not been extensively tested.</p>
 </div>
 <section id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline"></a></h2>
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading"></a></h2>
 <p>To enable this feature, make sure you have a cuda-enabled GPU with the correct
 drivers installed on your manager host. Drivers are available from
 <a class="reference external" href="https://www.nvidia.com/Download/index.aspx">nvidia drivers page</a>.</p>
@@ -167,7 +168,7 @@ drivers installed on your manager host. Drivers are available from
 </div>
 </section>
 <section id="installing-nvidia-container-runtime">
-<h2>Installing nvidia-container-runtime<a class="headerlink" href="#installing-nvidia-container-runtime" title="Permalink to this headline"></a></h2>
+<h2>Installing nvidia-container-runtime<a class="headerlink" href="#installing-nvidia-container-runtime" title="Permalink to this heading"></a></h2>
 <p>Follow the steps
 <a class="reference external" href="https://github.com/NVIDIA/nvidia-container-runtime#installation">here</a> to install
 the <cite>nvidia-container-runtime</cite>. The same URL describes a few ways to register the
@@ -182,7 +183,7 @@ configuration file and set nvidia as the default runtime.</p>
 </div>
 </section>
 <section id="deploying-services-with-gpu-access">
-<h2>Deploying services with GPU access<a class="headerlink" href="#deploying-services-with-gpu-access" title="Permalink to this headline"></a></h2>
+<h2>Deploying services with GPU access<a class="headerlink" href="#deploying-services-with-gpu-access" title="Permalink to this heading"></a></h2>
 <p>Services will not automatically use the GPU even with nvidia-container-runtime enabled,
 for the GPU to be available you must first set an environment variable in
 <cite>.s2i/environment</cite>. Add the row:</p>

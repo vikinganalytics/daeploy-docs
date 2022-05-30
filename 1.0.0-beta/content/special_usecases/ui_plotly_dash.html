@@ -15,6 +15,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
@@ -150,12 +151,12 @@
 }
 </style>
 <section id="using-plotly-dash-to-build-a-dashboard">
-<span id="plotly-dash-service-reference"></span><h1>Using Plotly Dash to build a dashboard<a class="headerlink" href="#using-plotly-dash-to-build-a-dashboard" title="Permalink to this headline"></a></h1>
+<span id="plotly-dash-service-reference"></span><h1>Using Plotly Dash to build a dashboard<a class="headerlink" href="#using-plotly-dash-to-build-a-dashboard" title="Permalink to this heading"></a></h1>
 <p>In this tutorial we will see how to create a service that serves a dashboard using
 <a class="reference external" href="https://plotly.com/dash/">Plotly Dash</a>.We will not go into detail into how
 to use Plotly Dash itself, but rather how to deploy a Plotly Dash application with Daeploy.</p>
 <section id="example-plotly-dash-application">
-<h2>Example Plotly Dash application<a class="headerlink" href="#example-plotly-dash-application" title="Permalink to this headline"></a></h2>
+<h2>Example Plotly Dash application<a class="headerlink" href="#example-plotly-dash-application" title="Permalink to this heading"></a></h2>
 <p>We will use a <cite>hello-world</cite> Plotly Dash application in this tutorial that simply prints
 <cite>Hello World</cite>. The code for this application looks like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
@@ -181,7 +182,7 @@ to use Plotly Dash itself, but rather how to deploy a Plotly Dash application wi
 look at making this example deployable and runnable with Daeploy.</p>
 </section>
 <section id="plotly-dash-application-as-a-standalone-service">
-<h2>Plotly Dash application as a standalone service<a class="headerlink" href="#plotly-dash-application-as-a-standalone-service" title="Permalink to this headline"></a></h2>
+<h2>Plotly Dash application as a standalone service<a class="headerlink" href="#plotly-dash-application-as-a-standalone-service" title="Permalink to this heading"></a></h2>
 <p>Let’s get som fresh boiler-plate directories/files using the functionality provided
 by the Daeploy CLI:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">init</span> 
@@ -246,7 +247,7 @@ to change it to not get a <cite>Bad Gateway</cite>.</p>
 <p>Open <a class="reference external" href="http://your-host/services/plotly_dashboard/">http://your-host/services/plotly_dashboard/</a> and you should see your app there</p>
 </section>
 <section id="plotly-dash-application-as-part-of-a-sdk-based-application">
-<h2>Plotly Dash application as part of a SDK-based application<a class="headerlink" href="#plotly-dash-application-as-part-of-a-sdk-based-application" title="Permalink to this headline"></a></h2>
+<h2>Plotly Dash application as part of a SDK-based application<a class="headerlink" href="#plotly-dash-application-as-part-of-a-sdk-based-application" title="Permalink to this heading"></a></h2>
 <p>It is also possible to add a Plotly Dash application as a (sub-)part of an SDK-based
 service. This is done by mounting the Plotly Dash <code class="docutils literal notranslate"><span class="pre">server</span></code> on the SDK <code class="docutils literal notranslate"><span class="pre">app</span></code>. In the
 example below, we mount the Plotly Dash <code class="docutils literal notranslate"><span class="pre">app</span></code> at the subpath <code class="docutils literal notranslate"><span class="pre">/dashboard/</span></code> under the
