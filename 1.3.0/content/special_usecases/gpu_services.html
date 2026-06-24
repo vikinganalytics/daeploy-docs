@@ -1,25 +1,25 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Access NVIDIA GPUs &mdash; Daeploy  documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/clipboard.min.js"></script>
-        <script src="../../_static/copybutton.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=4ea706d9"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -32,12 +32,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html">
-            <img src="../../_static/daeploy_white.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/daeploy_white.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -113,8 +117,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Access NVIDIA GPUs</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Access NVIDIA GPUs</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/content/special_usecases/gpu_services.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -124,38 +128,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="access-nvidia-gpus">
-<span id="gpu-service-reference"></span><h1>Access NVIDIA GPUs<a class="headerlink" href="#access-nvidia-gpus" title="Permalink to this heading"></a></h1>
+  <section id="access-nvidia-gpus">
+<span id="gpu-service-reference"></span><h1>Access NVIDIA GPUs<a class="headerlink" href="#access-nvidia-gpus" title="Link to this heading"></a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This is an experimental feature and has not been extensively tested.</p>
 </div>
 <section id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading"></a></h2>
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h2>
 <p>To enable this feature, make sure you have a cuda-enabled GPU with the correct
 drivers installed on your manager host. Drivers are available from
 <a class="reference external" href="https://www.nvidia.com/Download/index.aspx">nvidia drivers page</a>.</p>
@@ -165,7 +145,7 @@ drivers installed on your manager host. Drivers are available from
 </div>
 </section>
 <section id="installing-nvidia-container-runtime">
-<h2>Installing nvidia-container-runtime<a class="headerlink" href="#installing-nvidia-container-runtime" title="Permalink to this heading"></a></h2>
+<h2>Installing nvidia-container-runtime<a class="headerlink" href="#installing-nvidia-container-runtime" title="Link to this heading"></a></h2>
 <p>Follow the steps
 <a class="reference external" href="https://github.com/NVIDIA/nvidia-container-runtime#installation">here</a> to install
 the <cite>nvidia-container-runtime</cite>. The same URL describes a few ways to register the
@@ -180,7 +160,7 @@ configuration file and set nvidia as the default runtime.</p>
 </div>
 </section>
 <section id="deploying-services-with-gpu-access">
-<h2>Deploying services with GPU access<a class="headerlink" href="#deploying-services-with-gpu-access" title="Permalink to this heading"></a></h2>
+<h2>Deploying services with GPU access<a class="headerlink" href="#deploying-services-with-gpu-access" title="Link to this heading"></a></h2>
 <p>Services will not automatically use the GPU even with nvidia-container-runtime enabled,
 for the GPU to be available you must first set an environment variable in
 <cite>.s2i/environment</cite>. Add the row:</p>

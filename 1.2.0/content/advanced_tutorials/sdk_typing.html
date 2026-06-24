@@ -1,25 +1,25 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Typing in the SDK &mdash; Daeploy  documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/clipboard.min.js"></script>
-        <script src="../../_static/copybutton.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=4ea706d9"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -32,12 +32,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html">
-            <img src="../../_static/daeploy_white.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/daeploy_white.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -119,8 +123,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Typing in the SDK</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Typing in the SDK</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/content/advanced_tutorials/sdk_typing.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -130,32 +134,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="typing-in-the-sdk">
-<span id="sdk-typing-reference"></span><h1>Typing in the SDK<a class="headerlink" href="#typing-in-the-sdk" title="Permalink to this heading"></a></h1>
+  <section id="typing-in-the-sdk">
+<span id="sdk-typing-reference"></span><h1>Typing in the SDK<a class="headerlink" href="#typing-in-the-sdk" title="Link to this heading"></a></h1>
 <p>The <a class="reference internal" href="../api_reference/sdk.html#sdk-reference"><span class="std std-ref">Software Development Kit</span></a> supports type hints to add validation to the resulting API
 as well as well-defined json schemas for the automated documentation. In this
 tutorial we will see how we can make use of this to make the API and interactive
@@ -167,15 +147,15 @@ only support json-compatible input and output, such as numericals, strings,
 lists and dictionaries.</p>
 </div>
 <section id="why-type-hints">
-<h2>Why Type Hints?<a class="headerlink" href="#why-type-hints" title="Permalink to this heading"></a></h2>
+<h2>Why Type Hints?<a class="headerlink" href="#why-type-hints" title="Link to this heading"></a></h2>
 <p>It is not required to use type hints for your entrypoint functions. But if they are
 used they will give validation to the API, which can otherwise require a fair bit
 of code. Let’s look at the <code class="xref py py-func docutils literal notranslate"><span class="pre">hello()</span></code> entrypoint that we’ve seen
 a few times already, but without type hints:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">daeploy</span> <span class="kn">import</span> <span class="n">service</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">daeploy</span><span class="w"> </span><span class="kn">import</span> <span class="n">service</span>
 
 <span class="nd">@service</span><span class="o">.</span><span class="n">entrypoint</span>
-<span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Hello </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
 
 
@@ -188,10 +168,10 @@ say that an error caused a list of names to be sent to name instead of a single 
 then this entrypoint would respond with <code class="docutils literal notranslate"><span class="pre">&quot;Hello</span> <span class="pre">['Lars',</span> <span class="pre">'Claus',</span> <span class="pre">'Bob']&quot;</span></code> and a
 status code of 200. We also won’t get any schema definitions in the API documentation.
 Let’s define the same entrypoint again but with type hints this time:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">daeploy</span> <span class="kn">import</span> <span class="n">service</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">daeploy</span><span class="w"> </span><span class="kn">import</span> <span class="n">service</span>
 
 <span class="nd">@service</span><span class="o">.</span><span class="n">entrypoint</span>
-<span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Hello </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
 
 
@@ -227,12 +207,12 @@ not desirable, take a look at pydantic’s
 </div>
 </section>
 <section id="creating-an-input-model">
-<h2>Creating an Input Model<a class="headerlink" href="#creating-an-input-model" title="Permalink to this heading"></a></h2>
+<h2>Creating an Input Model<a class="headerlink" href="#creating-an-input-model" title="Link to this heading"></a></h2>
 <p>In our examples so far we have only seen standard python types as type hints:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">daeploy</span> <span class="kn">import</span> <span class="n">service</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">daeploy</span><span class="w"> </span><span class="kn">import</span> <span class="n">service</span>
 
 <span class="nd">@service</span><span class="o">.</span><span class="n">entrypoint</span>
-<span class="k">def</span> <span class="nf">example</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">example</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="k">pass</span>
 </pre></div>
 </div>
@@ -241,7 +221,7 @@ But a dictionary can contain many types of data, and usually only one (or a few)
 ways are expected. To simplify the life of the user, we can define something called
 a data model, that we create by extending the <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code> class from
 <a class="reference external" href="https://pydantic-docs.helpmanual.io/">pydantic</a>:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Item</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Item</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
     <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">description</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">price</span><span class="p">:</span> <span class="nb">float</span>
@@ -269,24 +249,24 @@ floats:</p>
 </pre></div>
 </div>
 <p>Then in <cite>service.py</cite> write the following code:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span>
 
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">daeploy</span> <span class="kn">import</span> <span class="n">service</span>
-<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">daeploy</span><span class="w"> </span><span class="kn">import</span> <span class="n">service</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span>
 
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
-<span class="k">class</span> <span class="nc">DataForm</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">DataForm</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
     <span class="n">col1</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
     <span class="n">col2</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
     <span class="n">col3</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
 
 
 <span class="nd">@service</span><span class="o">.</span><span class="n">entrypoint</span>
-<span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">DataForm</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">calculate</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">DataForm</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dict</span><span class="p">())</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Recieved data: </span><span class="se">\n</span><span class="si">{</span><span class="n">df</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">row_sum</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -316,7 +296,8 @@ floats:</p>
 </div>
 <p>Now if we head on to the automated documentation at
 <a class="reference external" href="http://your-host/services/row_sum/docs">http://your-host/services/row_sum/docs</a> you should see the following:</p>
-<a class="reference internal image-reference" href="../../_images/data_model.png"><img alt="Screenshot of autodocs with data model" src="../../_images/data_model.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../_images/data_model.png"><img alt="Screenshot of autodocs with data model" src="../../_images/data_model.png" style="width: 800px;" />
+</a>
 <p>We can see that now, we have an example input ready for us in the schema view, which
 makes testing with the interactive docs much faster, but the most important feature
 we get is validation of the input. Let’s try to change the value of “col1” to “string”:</p>
@@ -355,20 +336,20 @@ level of control of what data we accept into the entrypoint, which invites many
 bugs due to data validation issues.</p>
 </section>
 <section id="custom-validation">
-<h2>Custom Validation<a class="headerlink" href="#custom-validation" title="Permalink to this heading"></a></h2>
+<h2>Custom Validation<a class="headerlink" href="#custom-validation" title="Link to this heading"></a></h2>
 <p>We’ve seen how a data model can be used to ensure that the input data types are
 validated, but sometimes it’s not strict enough. Let’s take the <cite>hello</cite> service
 as an example this time. The <code class="xref py py-func docutils literal notranslate"><span class="pre">hello()</span></code> function takes any string as it’s
 input &lt;name&gt; and then returns “Hello &lt;name&gt;”. But we do not want the user to input
 numbers as name, so we want to add validation for that, so we create a base model
 for the the user name:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">validator</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">validator</span>
 
-<span class="k">class</span> <span class="nc">NameModel</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">NameModel</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
     <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
 
     <span class="nd">@validator</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">must_not_be_numeric</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">must_not_be_numeric</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
                 <span class="s2">&quot;Names cannot be numeric!&quot;</span>
@@ -405,14 +386,14 @@ the desired format.</p>
 </div>
 </section>
 <section id="schema-example">
-<h2>Schema Example<a class="headerlink" href="#schema-example" title="Permalink to this heading"></a></h2>
+<h2>Schema Example<a class="headerlink" href="#schema-example" title="Link to this heading"></a></h2>
 <p>You can add example inputs for the documentation to
 speed up testing. To do this we create a local class <code class="xref py py-class docutils literal notranslate"><span class="pre">Config</span></code>
 within the data model:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NameModel</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">NameModel</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
 <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
 
-<span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Config</span><span class="p">:</span>
     <span class="n">schema_extra</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s2">&quot;example&quot;</span><span class="p">:</span> <span class="p">{</span>
             <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Kermit&quot;</span>
@@ -421,22 +402,23 @@ within the data model:</p>
 </pre></div>
 </div>
 <p>This would change the standard value in the schema example to “Kermit”.</p>
-<a class="reference internal image-reference" href="../../_images/schema_example.png"><img alt="Screenshot of autodocs with data model and schema example" src="../../_images/schema_example.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../_images/schema_example.png"><img alt="Screenshot of autodocs with data model and schema example" src="../../_images/schema_example.png" style="width: 800px;" />
+</a>
 </section>
 <section id="using-non-jsonable-data-types">
-<span id="sdk-typing-non-json-reference"></span><h2>Using Non-jsonable Data Types<a class="headerlink" href="#using-non-jsonable-data-types" title="Permalink to this heading"></a></h2>
+<span id="sdk-typing-non-json-reference"></span><h2>Using Non-jsonable Data Types<a class="headerlink" href="#using-non-jsonable-data-types" title="Link to this heading"></a></h2>
 <p>Some data types like <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> are very common for
 e.g. data science, but are not natively supported by Pydantic. They must first be
 converted to a json-compatible format like lists for arrays and dictionaries for
 dataframes. This can be made more or less automated by using type hints with
 custom classes. Daeploy includes input and output types for <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> and
 <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>. Let’s look at how they can be used:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">daeploy</span> <span class="kn">import</span> <span class="n">service</span>
-<span class="kn">from</span> <span class="nn">daeploy.data_types</span> <span class="kn">import</span> <span class="n">ArrayInput</span><span class="p">,</span> <span class="n">ArrayOutput</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">daeploy</span><span class="w"> </span><span class="kn">import</span> <span class="n">service</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">daeploy.data_types</span><span class="w"> </span><span class="kn">import</span> <span class="n">ArrayInput</span><span class="p">,</span> <span class="n">ArrayOutput</span>
 
 
 <span class="nd">@service</span><span class="o">.</span><span class="n">entrypoint</span>
-<span class="k">def</span> <span class="nf">array_sum</span><span class="p">(</span><span class="n">array1</span><span class="p">:</span> <span class="n">ArrayInput</span><span class="p">,</span> <span class="n">array2</span><span class="p">:</span> <span class="n">ArrayInput</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ArrayOutput</span><span class="p">:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">array_sum</span><span class="p">(</span><span class="n">array1</span><span class="p">:</span> <span class="n">ArrayInput</span><span class="p">,</span> <span class="n">array2</span><span class="p">:</span> <span class="n">ArrayInput</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ArrayOutput</span><span class="p">:</span>
     <span class="k">return</span> <span class="n">array1</span> <span class="o">+</span> <span class="n">array2</span>
 
 
@@ -452,36 +434,36 @@ class has a validator that converts its input to numpy arrays and conversely,
 <p>Let’s take a look at how <a class="reference internal" href="../api_reference/sdk.html#daeploy.data_types.ArrayInput" title="daeploy.data_types.ArrayInput"><code class="xref py py-class docutils literal notranslate"><span class="pre">ArrayInput</span></code></a> and
 <a class="reference internal" href="../api_reference/sdk.html#daeploy.data_types.ArrayOutput" title="daeploy.data_types.ArrayOutput"><code class="xref py py-class docutils literal notranslate"><span class="pre">ArrayOutput</span></code></a> are defined so you can make your own Pydantic
 compatible data types:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ArrayInput</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Pydantic compatible data type for numpy ndarray input.&quot;&quot;&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">ArrayInput</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Pydantic compatible data type for numpy ndarray input.&quot;&quot;&quot;</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">__get_validators__</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">__get_validators__</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
         <span class="k">yield</span> <span class="bp">cls</span><span class="o">.</span><span class="n">validate</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">__modify_schema__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">field_schema</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">__modify_schema__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">field_schema</span><span class="p">):</span>
         <span class="n">field_schema</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="p">,</span> <span class="n">items</span><span class="o">=</span><span class="p">{})</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">List</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">List</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
         <span class="c1"># Transform input to ndarray</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ArrayOutput</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Pydantic compatible data type for numpy ndarray output.&quot;&quot;&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">ArrayOutput</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Pydantic compatible data type for numpy ndarray output.&quot;&quot;&quot;</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">__get_validators__</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">__get_validators__</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
         <span class="k">yield</span> <span class="bp">cls</span><span class="o">.</span><span class="n">validate</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">__modify_schema__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">field_schema</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">__modify_schema__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">field_schema</span><span class="p">):</span>
         <span class="n">field_schema</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="p">,</span> <span class="n">items</span><span class="o">=</span><span class="p">{})</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
         <span class="c1"># Transform ndarray to list for output</span>
         <span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 </pre></div>

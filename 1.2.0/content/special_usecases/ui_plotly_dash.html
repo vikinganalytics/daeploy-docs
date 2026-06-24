@@ -1,25 +1,25 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Using Plotly Dash to build a dashboard &mdash; Daeploy  documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/clipboard.min.js"></script>
-        <script src="../../_static/copybutton.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=4ea706d9"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -32,12 +32,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html">
-            <img src="../../_static/daeploy_white.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/daeploy_white.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -117,8 +121,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Using Plotly Dash to build a dashboard</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Using Plotly Dash to build a dashboard</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/content/special_usecases/ui_plotly_dash.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -128,41 +132,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="using-plotly-dash-to-build-a-dashboard">
-<span id="plotly-dash-service-reference"></span><h1>Using Plotly Dash to build a dashboard<a class="headerlink" href="#using-plotly-dash-to-build-a-dashboard" title="Permalink to this heading"></a></h1>
+  <section id="using-plotly-dash-to-build-a-dashboard">
+<span id="plotly-dash-service-reference"></span><h1>Using Plotly Dash to build a dashboard<a class="headerlink" href="#using-plotly-dash-to-build-a-dashboard" title="Link to this heading"></a></h1>
 <p>In this tutorial we will see how to create a service that serves a dashboard using
 <a class="reference external" href="https://plotly.com/dash/">Plotly Dash</a>.We will not go into detail into how
 to use Plotly Dash itself, but rather how to deploy a Plotly Dash application with Daeploy.</p>
 <section id="example-plotly-dash-application">
-<h2>Example Plotly Dash application<a class="headerlink" href="#example-plotly-dash-application" title="Permalink to this heading"></a></h2>
+<h2>Example Plotly Dash application<a class="headerlink" href="#example-plotly-dash-application" title="Link to this heading"></a></h2>
 <p>We will use a <cite>hello-world</cite> Plotly Dash application in this tutorial that simply prints
 <cite>Hello World</cite>. The code for this application looks like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
-<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">dash</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dash_html_components</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">html</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">dash</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
@@ -184,7 +164,7 @@ to use Plotly Dash itself, but rather how to deploy a Plotly Dash application wi
 look at making this example deployable and runnable with Daeploy.</p>
 </section>
 <section id="plotly-dash-application-as-a-standalone-service">
-<h2>Plotly Dash application as a standalone service<a class="headerlink" href="#plotly-dash-application-as-a-standalone-service" title="Permalink to this heading"></a></h2>
+<h2>Plotly Dash application as a standalone service<a class="headerlink" href="#plotly-dash-application-as-a-standalone-service" title="Link to this heading"></a></h2>
 <p>Let’s get som fresh boiler-plate directories/files using the functionality provided
 by the Daeploy CLI:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">init</span> 
@@ -194,7 +174,7 @@ by the Daeploy CLI:</p>
 <p>To run the same dashboard on Daeploy only a few changes have to be made. First, when
 creating the app-object we must tell Dash that it will be running under
 some custom root_path (aka base_path):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">daeploy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">daeploy</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">dash</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span>
     <span class="vm">__name__</span><span class="p">,</span>
@@ -209,9 +189,9 @@ accepts connections from others than localhost:</p>
 </pre></div>
 </div>
 <p>The final application code should now look like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dash</span>
-<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
-<span class="kn">import</span> <span class="nn">daeploy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">dash</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dash_html_components</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">html</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">daeploy</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">dash</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span>
     <span class="vm">__name__</span><span class="p">,</span>
@@ -249,20 +229,20 @@ to change it to not get a <cite>Bad Gateway</cite>.</p>
 <p>Open <a class="reference external" href="http://your-host/services/plotly_dashboard/">http://your-host/services/plotly_dashboard/</a> and you should see your app there</p>
 </section>
 <section id="plotly-dash-application-as-part-of-a-sdk-based-application">
-<h2>Plotly Dash application as part of a SDK-based application<a class="headerlink" href="#plotly-dash-application-as-part-of-a-sdk-based-application" title="Permalink to this heading"></a></h2>
+<h2>Plotly Dash application as part of a SDK-based application<a class="headerlink" href="#plotly-dash-application-as-part-of-a-sdk-based-application" title="Link to this heading"></a></h2>
 <p>It is also possible to add a Plotly Dash application as a (sub-)part of an SDK-based
 service. This is done by mounting the Plotly Dash <code class="docutils literal notranslate"><span class="pre">server</span></code> on the SDK <code class="docutils literal notranslate"><span class="pre">app</span></code>. In the
 example below, we mount the Plotly Dash <code class="docutils literal notranslate"><span class="pre">app</span></code> at the subpath <code class="docutils literal notranslate"><span class="pre">/dashboard/</span></code> under the
 Daeploy SDK service <code class="docutils literal notranslate"><span class="pre">app</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">daeploy</span>
-<span class="kn">import</span> <span class="nn">dash</span>
-<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">daeploy</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dash</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dash_html_components</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">html</span>
 
 <span class="c1"># We need a WSGIMiddleware to be the middleman between the asynchronous SDK app</span>
 <span class="c1"># (based on FastAPI) and the synchronous Dash app (based on Flask). `starlette`</span>
 <span class="c1"># is a dependency of FastAPI so it doesnt need to be added to the</span>
 <span class="c1"># `requirements.txt`</span>
-<span class="kn">from</span> <span class="nn">starlette.middleware.wsgi</span> <span class="kn">import</span> <span class="n">WSGIMiddleware</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">starlette.middleware.wsgi</span><span class="w"> </span><span class="kn">import</span> <span class="n">WSGIMiddleware</span>
 
 <span class="c1"># Creating Dash app object that can be used as usual to build you Dash application.</span>
 <span class="c1"># We make sure to give it the correct path where it will be mounted</span>

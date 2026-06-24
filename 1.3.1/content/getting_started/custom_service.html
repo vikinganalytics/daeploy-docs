@@ -1,25 +1,25 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anatomy of a Service &mdash; Daeploy  documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/clipboard.min.js"></script>
-        <script src="../../_static/copybutton.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=4ea706d9"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -32,12 +32,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html">
-            <img src="../../_static/daeploy_white.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/daeploy_white.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -117,8 +121,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Anatomy of a Service</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Anatomy of a Service</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/content/getting_started/custom_service.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -128,32 +132,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="anatomy-of-a-service">
-<span id="custom-service-reference"></span><h1>Anatomy of a Service<a class="headerlink" href="#anatomy-of-a-service" title="Permalink to this heading"></a></h1>
+  <section id="anatomy-of-a-service">
+<span id="custom-service-reference"></span><h1>Anatomy of a Service<a class="headerlink" href="#anatomy-of-a-service" title="Link to this heading"></a></h1>
 <p>In this tutorial we will go through the code of the service that is generated
 by <code class="docutils literal notranslate"><span class="pre">daeploy</span> <span class="pre">init</span></code> to learn the parts that make up a Daeploy service.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">init</span> 
@@ -170,11 +150,11 @@ tutorials.</p>
 <p>Let’s take a look at the contents of <cite>service.py</cite> to see how the SDK is used to
 create the service.</p>
 <section id="setup">
-<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading"></a></h2>
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading"></a></h2>
 <p>The first step is to import packages. We also initialize a logger
 so we can get information about the service for debugging:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
-<span class="kn">from</span> <span class="nn">daeploy</span> <span class="kn">import</span> <span class="n">service</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">daeploy</span><span class="w"> </span><span class="kn">import</span> <span class="n">service</span>
 
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 </pre></div>
@@ -195,24 +175,24 @@ object, which Daeploy natively supports. The logs from a service can be read fro
 dashboard or using <code class="docutils literal notranslate"><span class="pre">daeploy</span> <span class="pre">logs</span> <span class="pre">name</span> <span class="pre">version</span></code>.</p>
 </section>
 <section id="defining-parameters">
-<span id="custom-service-defining-parameters-reference"></span><h2>Defining parameters<a class="headerlink" href="#defining-parameters" title="Permalink to this heading"></a></h2>
+<span id="custom-service-defining-parameters-reference"></span><h2>Defining parameters<a class="headerlink" href="#defining-parameters" title="Link to this heading"></a></h2>
 <p>It is possible to define parameters that automatically get exposed to the API and
 can be freely changed from outside a running service</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">service</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;greeting_phrase&quot;</span><span class="p">,</span> <span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">service</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;greeting_phrase&quot;</span><span class="p">,</span> <span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Get the value of a parameter with</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">greeting_phrase</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">get_parameter</span><span class="p">(</span><span class="s2">&quot;greeting_phrase&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">greeting_phrase</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">get_parameter</span><span class="p">(</span><span class="s2">&quot;greeting_phrase&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This way you can control the behaviour of your running services without having
 to make any code changes. We recommend using them for control parameters.</p>
 </section>
 <section id="creating-an-entrypoint">
-<h2>Creating an Entrypoint<a class="headerlink" href="#creating-an-entrypoint" title="Permalink to this heading"></a></h2>
+<h2>Creating an Entrypoint<a class="headerlink" href="#creating-an-entrypoint" title="Link to this heading"></a></h2>
 <p>To define an entrypoint for a service we use the <code class="xref py py-obj docutils literal notranslate"><span class="pre">entrypoint</span></code> decorator</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@service</span><span class="o">.</span><span class="n">entrypoint</span>
-<span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@service</span><span class="o">.</span><span class="n">entrypoint</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="n">greeting_phrase</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">get_parameter</span><span class="p">(</span><span class="s2">&quot;greeting_phrase&quot;</span><span class="p">)</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Greeting someone with the name: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">greeting_phrase</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -231,26 +211,26 @@ lists or dictionaries. Read <a class="reference internal" href="../advanced_tuto
 </div>
 </section>
 <section id="starting-the-service">
-<h2>Starting the Service<a class="headerlink" href="#starting-the-service" title="Permalink to this heading"></a></h2>
+<h2>Starting the Service<a class="headerlink" href="#starting-the-service" title="Link to this heading"></a></h2>
 <p>The last thing we have to do is to ensure the service runs once it is deployed</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">service</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>
 <section id="full-code">
-<h2>Full Code<a class="headerlink" href="#full-code" title="Permalink to this heading"></a></h2>
+<h2>Full Code<a class="headerlink" href="#full-code" title="Link to this heading"></a></h2>
 <p>All together the full service contains fewer than 25 lines of code, including input
 validation, logging and configurable parameters:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
-<span class="kn">from</span> <span class="nn">daeploy</span> <span class="kn">import</span> <span class="n">service</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">daeploy</span><span class="w"> </span><span class="kn">import</span> <span class="n">service</span>
 
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 <span class="n">service</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;greeting_phrase&quot;</span><span class="p">,</span> <span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
 
 <span class="nd">@service</span><span class="o">.</span><span class="n">entrypoint</span>
-<span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="n">greeting_phrase</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">get_parameter</span><span class="p">(</span><span class="s2">&quot;greeting_phrase&quot;</span><span class="p">)</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Greeting someone with the name: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">greeting_phrase</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -262,7 +242,7 @@ validation, logging and configurable parameters:</p>
 </div>
 </section>
 <section id="deploying-the-service">
-<h2>Deploying the Service<a class="headerlink" href="#deploying-the-service" title="Permalink to this heading"></a></h2>
+<h2>Deploying the Service<a class="headerlink" href="#deploying-the-service" title="Link to this heading"></a></h2>
 <p>With the service code in place we can deploy it with:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">deploy</span> <span class="n">hello</span> <span class="mf">1.0.0</span> <span class="o">./</span><span class="n">my_first_daeploy_project</span><span class="o">/</span> 
 <span class="go">Deploying service...</span>
@@ -274,7 +254,7 @@ validation, logging and configurable parameters:</p>
 </div>
 </section>
 <section id="what-s-next">
-<h2>What’s Next?<a class="headerlink" href="#what-s-next" title="Permalink to this heading"></a></h2>
+<h2>What’s Next?<a class="headerlink" href="#what-s-next" title="Link to this heading"></a></h2>
 <p>Now you have seen the different components of the SDK and you should be ready to
 create your own service. The next step could be to take a look at the
 manager <a class="reference internal" href="dashboard.html#dashboard-reference"><span class="std std-ref">Dashboard</span></a>, or the <a class="reference internal" href="../api_reference/sdk.html#sdk-reference"><span class="std std-ref">Software Development Kit</span></a> documentation.</p>

@@ -1,25 +1,25 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Testing Services Before Deployment &mdash; Daeploy  documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/clipboard.min.js"></script>
-        <script src="../../_static/copybutton.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=4ea706d9"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -32,12 +32,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html">
-            <img src="../../_static/daeploy_white.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/daeploy_white.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -114,8 +118,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Testing Services Before Deployment</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Testing Services Before Deployment</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/content/advanced_tutorials/testing_services.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -125,32 +129,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="testing-services-before-deployment">
-<span id="testing-services-reference"></span><h1>Testing Services Before Deployment<a class="headerlink" href="#testing-services-before-deployment" title="Permalink to this heading"></a></h1>
+  <section id="testing-services-before-deployment">
+<span id="testing-services-reference"></span><h1>Testing Services Before Deployment<a class="headerlink" href="#testing-services-before-deployment" title="Link to this heading"></a></h1>
 <p>Iteratively debugging a service by repeatedly deploying and calling entrypoints
 can become a somewhat slow and tedious process, having to wait a short time
 for every deploy. To help ensure that services are in
@@ -160,22 +140,22 @@ directory is created. It contains two files: <cite>base_functionality_test.py</c
 that performes base tests for things that are necessary for these services
 to work, and <cite>user_tests.py</cite> for the user to add their own tests.</p>
 <section id="writing-tests">
-<h2>Writing Tests<a class="headerlink" href="#writing-tests" title="Permalink to this heading"></a></h2>
+<h2>Writing Tests<a class="headerlink" href="#writing-tests" title="Link to this heading"></a></h2>
 <p>The tests use <a class="reference external" href="https://docs.pytest.org/en/stable/">pytest</a> which requires the
 tests to lay in a folder called <cite>tests/</cite>, in modules that end with <cite>_test.py</cite>
 and the names of the test functions should start with <cite>test_</cite>. Tests use the
 <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement to see if code behaves as expected. Let’s use the <cite>hello</cite>
 service that is generated with <code class="docutils literal notranslate"><span class="pre">daeploy</span> <span class="pre">init</span></code> for an example test</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
-<span class="kn">from</span> <span class="nn">daeploy</span> <span class="kn">import</span> <span class="n">service</span>
-<span class="kn">from</span> <span class="nn">daeploy.communication</span> <span class="kn">import</span> <span class="n">notify</span><span class="p">,</span> <span class="n">Severity</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">daeploy</span><span class="w"> </span><span class="kn">import</span> <span class="n">service</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">daeploy.communication</span><span class="w"> </span><span class="kn">import</span> <span class="n">notify</span><span class="p">,</span> <span class="n">Severity</span>
 
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 <span class="n">service</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;greeting_phrase&quot;</span><span class="p">,</span> <span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
 
 <span class="nd">@service</span><span class="o">.</span><span class="n">entrypoint</span>
-<span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="n">greeting_phrase</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">get_parameter</span><span class="p">(</span><span class="s2">&quot;greeting_phrase&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;World&quot;</span><span class="p">:</span>
         <span class="n">notify</span><span class="p">(</span>
@@ -193,9 +173,9 @@ service that is generated with <code class="docutils literal notranslate"><span 
 </pre></div>
 </div>
 <p>The output of the <code class="xref py py-func docutils literal notranslate"><span class="pre">hello()</span></code> function can be tested with the following function</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># &lt;project_path&gt;/tests/user_tests</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># &lt;project_path&gt;/tests/user_tests</span>
 
-<span class="k">def</span> <span class="nf">test_hello</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_hello</span><span class="p">():</span>
     <span class="c1"># Test that service.hello(&quot;Bob&quot;) returns what is expected</span>
     <span class="k">assert</span> <span class="n">service</span><span class="o">.</span><span class="n">hello</span><span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;Hello Bob&quot;</span>
 </pre></div>
@@ -211,7 +191,7 @@ service that is generated with <code class="docutils literal notranslate"><span 
 </div>
 </section>
 <section id="functions-that-do-not-work-locally">
-<h2>Functions That Do Not Work Locally<a class="headerlink" href="#functions-that-do-not-work-locally" title="Permalink to this heading"></a></h2>
+<h2>Functions That Do Not Work Locally<a class="headerlink" href="#functions-that-do-not-work-locally" title="Link to this heading"></a></h2>
 <p>There are three ways to run a Daeploy service. We have seen how to deploy and run
 your services to a manager using <code class="docutils literal notranslate"><span class="pre">daeploy</span> <span class="pre">deploy</span></code> many times now, but you could also
 run it with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">&lt;project_path&gt;/service.py</span></code> in which case it will be run as
@@ -223,12 +203,6 @@ however you’d like. The  <code class="docutils literal notranslate"><span clas
 functions. However, the SDK will only have full functionality if run on a manager.
 The table below shows the SDK functions that cannot run locally without a manager:</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 61%" />
-<col style="width: 13%" />
-<col style="width: 14%" />
-<col style="width: 12%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>Functions</p></td>
 <td><p>Module</p></td>
@@ -261,7 +235,7 @@ The table below shows the SDK functions that cannot run locally without a manage
 but it won’t cause any errors</p>
 </section>
 <section id="mocking-functions-to-run-services-locally">
-<h2>Mocking Functions to Run Services Locally<a class="headerlink" href="#mocking-functions-to-run-services-locally" title="Permalink to this heading"></a></h2>
+<h2>Mocking Functions to Run Services Locally<a class="headerlink" href="#mocking-functions-to-run-services-locally" title="Link to this heading"></a></h2>
 <p>To be able to test services that depend on some of the functions listed above, we
 have to use something called mocking, which means to templorarily replace code to
 do something else. In the case of the <cite>hello</cite> service we would get an error if
@@ -270,12 +244,12 @@ do something else. In the case of the <cite>hello</cite> service we would get an
 to test that a notification would be posted to the manager. In <code class="xref py py-mod docutils literal notranslate"><span class="pre">daeploy.testing</span></code>
 there is a function <code class="xref py py-func docutils literal notranslate"><span class="pre">patch()</span></code> that is included in Daeploy for
 convenience from <code class="xref py py-mod docutils literal notranslate"><span class="pre">unittest.mock</span></code> and is used for mocking</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># &lt;project_path&gt;/tests/user_tests</span>
-<span class="kn">import</span> <span class="nn">service</span>
-<span class="kn">from</span> <span class="nn">daeploy.testing</span> <span class="kn">import</span> <span class="n">patch</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># &lt;project_path&gt;/tests/user_tests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">service</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">daeploy.testing</span><span class="w"> </span><span class="kn">import</span> <span class="n">patch</span>
 
 
-<span class="k">def</span> <span class="nf">test_notify_called</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_notify_called</span><span class="p">():</span>
     <span class="c1"># Test that notify() is called when running service.hello(&quot;World&quot;)</span>
     <span class="k">with</span> <span class="n">patch</span><span class="p">(</span><span class="s2">&quot;service.notify&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">notify</span><span class="p">:</span>
         <span class="n">service</span><span class="o">.</span><span class="n">hello</span><span class="p">(</span><span class="s2">&quot;World&quot;</span><span class="p">)</span>
@@ -294,14 +268,14 @@ very similar, because neither <code class="xref py py-func docutils literal notr
 <p><code class="xref py py-func docutils literal notranslate"><span class="pre">call_service()</span></code> on the other hand, will often have return values
 and testing a service that uses it requires you to mock a problem specific return value.
 Let’s take a look at an example service</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
-<span class="kn">from</span> <span class="nn">daeploy</span> <span class="kn">import</span> <span class="n">service</span>
-<span class="kn">from</span> <span class="nn">daeploy.communication</span> <span class="kn">import</span> <span class="n">call_service</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">daeploy</span><span class="w"> </span><span class="kn">import</span> <span class="n">service</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">daeploy.communication</span><span class="w"> </span><span class="kn">import</span> <span class="n">call_service</span>
 
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 <span class="nd">@service</span><span class="o">.</span><span class="n">entrypoint</span>
-<span class="k">def</span> <span class="nf">ping_service</span><span class="p">(</span><span class="n">service_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">ping_service</span><span class="p">(</span><span class="n">service_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pinging: </span><span class="si">{</span><span class="n">service_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">response</span> <span class="o">=</span> <span class="n">call_service</span><span class="p">(</span>
         <span class="n">service_name</span><span class="o">=</span><span class="n">service_name</span><span class="p">,</span>
@@ -318,12 +292,12 @@ Let’s take a look at an example service</p>
 To create an automated test for this we need to mock <code class="xref py py-func docutils literal notranslate"><span class="pre">call_service()</span></code>
 to return something that we would expect the <code class="xref py py-func docutils literal notranslate"><span class="pre">ping()</span></code> entrypoint of the target
 service to return in a real scenario</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># &lt;project_path&gt;/tests/user_tests</span>
-<span class="kn">import</span> <span class="nn">service</span>
-<span class="kn">from</span> <span class="nn">daeploy.testing</span> <span class="kn">import</span> <span class="n">patch</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># &lt;project_path&gt;/tests/user_tests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">service</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">daeploy.testing</span><span class="w"> </span><span class="kn">import</span> <span class="n">patch</span>
 
 
-<span class="k">def</span> <span class="nf">test_ping_service</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_ping_service</span><span class="p">():</span>
     <span class="k">with</span> <span class="n">patch</span><span class="p">(</span><span class="s2">&quot;service.call_service&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">call_service</span><span class="p">:</span>
         <span class="n">call_service</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="s2">&quot;Responding&quot;</span>
         <span class="n">service</span><span class="o">.</span><span class="n">ping_service</span><span class="p">(</span><span class="s2">&quot;test_service&quot;</span><span class="p">)</span>
@@ -342,7 +316,7 @@ class from <code class="xref py py-mod docutils literal notranslate"><span class
 </div>
 </section>
 <section id="more-testing">
-<h2>More Testing<a class="headerlink" href="#more-testing" title="Permalink to this heading"></a></h2>
+<h2>More Testing<a class="headerlink" href="#more-testing" title="Link to this heading"></a></h2>
 <p>Refer to the <a class="reference external" href="https://docs.pytest.org/en/stable/">pytest</a> documentation and its
 many addons if you would like to do more testing. To learn more about mocking and
 the <code class="xref py py-func docutils literal notranslate"><span class="pre">patch()</span></code> function, take a look at

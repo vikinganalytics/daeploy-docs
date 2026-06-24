@@ -1,25 +1,25 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Monitoring Your Service &mdash; Daeploy  documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/clipboard.min.js"></script>
-        <script src="../../_static/copybutton.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=4ea706d9"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -32,12 +32,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html">
-            <img src="../../_static/daeploy_white.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/daeploy_white.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -118,8 +122,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Monitoring Your Service</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Monitoring Your Service</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/content/getting_started/monitoring.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -129,53 +133,29 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="monitoring-your-service">
-<span id="monitoring-reference"></span><h1>Monitoring Your Service<a class="headerlink" href="#monitoring-your-service" title="Permalink to this heading"></a></h1>
+  <section id="monitoring-your-service">
+<span id="monitoring-reference"></span><h1>Monitoring Your Service<a class="headerlink" href="#monitoring-your-service" title="Link to this heading"></a></h1>
 <p>Monitoring is a very important aspect of software deployment. Deployed algorithms
 often deteriorate over time, in a process called
 <a class="reference external" href="https://en.wikipedia.org/wiki/Domain_adaptation">domain shift</a>, and being able
 to monitor your deployed algorithms can make all the difference in detecting this
 in the early stages.</p>
 <section id="monitoring-variables">
-<h2>Monitoring Variables<a class="headerlink" href="#monitoring-variables" title="Permalink to this heading"></a></h2>
+<h2>Monitoring Variables<a class="headerlink" href="#monitoring-variables" title="Link to this heading"></a></h2>
 <p>To monitor the value of a variable in the code you can use the
 <code class="xref py py-func docutils literal notranslate"><span class="pre">store()</span></code> function. It takes an arbitrary number of keyword
 arguments and saves their values in a service-specific database, where they can be
 retrieved at a later time. <code class="xref py py-func docutils literal notranslate"><span class="pre">store()</span></code> supports numeric and
 string data. Let’s use the <cite>hello</cite> service as an example</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
-<span class="kn">from</span> <span class="nn">daeploy</span> <span class="kn">import</span> <span class="n">service</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">daeploy</span><span class="w"> </span><span class="kn">import</span> <span class="n">service</span>
 
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 <span class="n">service</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;greeting_phrase&quot;</span><span class="p">,</span> <span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
 
 <span class="nd">@service</span><span class="o">.</span><span class="n">entrypoint</span>
-<span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="n">greeting_phrase</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">get_parameter</span><span class="p">(</span><span class="s2">&quot;greeting_phrase&quot;</span><span class="p">)</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Greeting someone with the name: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
@@ -187,12 +167,12 @@ string data. Let’s use the <cite>hello</cite> service as an example</p>
 </div>
 </section>
 <section id="monitoring-an-entrypoint">
-<h2>Monitoring an Entrypoint<a class="headerlink" href="#monitoring-an-entrypoint" title="Permalink to this heading"></a></h2>
+<h2>Monitoring an Entrypoint<a class="headerlink" href="#monitoring-an-entrypoint" title="Link to this heading"></a></h2>
 <p>It is also possible to automatically monitor the input and output of a service
 entrypoint. To do this we pass <code class="docutils literal notranslate"><span class="pre">monitor=True</span></code> to the
 <code class="xref py py-meth docutils literal notranslate"><span class="pre">entrypoint()</span></code> decorator</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
-<span class="kn">from</span> <span class="nn">daeploy</span> <span class="kn">import</span> <span class="n">service</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">daeploy</span><span class="w"> </span><span class="kn">import</span> <span class="n">service</span>
 
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
@@ -200,7 +180,7 @@ entrypoint. To do this we pass <code class="docutils literal notranslate"><span 
 
 <span class="c1"># Now the input and output of this entrypoint is stored after each call</span>
 <span class="nd">@service</span><span class="o">.</span><span class="n">entrypoint</span><span class="p">(</span><span class="n">monitor</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="n">greeting_phrase</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">get_parameter</span><span class="p">(</span><span class="s2">&quot;greeting_phrase&quot;</span><span class="p">)</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Greeting someone with the name: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">greeting_phrase</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -210,11 +190,11 @@ entrypoint. To do this we pass <code class="docutils literal notranslate"><span 
 formats.</p>
 </section>
 <section id="monitoring-a-parameter">
-<h2>Monitoring a Parameter<a class="headerlink" href="#monitoring-a-parameter" title="Permalink to this heading"></a></h2>
+<h2>Monitoring a Parameter<a class="headerlink" href="#monitoring-a-parameter" title="Link to this heading"></a></h2>
 <p>Parameters set with <code class="xref py py-func docutils literal notranslate"><span class="pre">add_parameter()</span></code> can also be monitored by passing
 <code class="docutils literal notranslate"><span class="pre">monitor=True</span></code>, which also supports integer, float and string data</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
-<span class="kn">from</span> <span class="nn">daeploy</span> <span class="kn">import</span> <span class="n">service</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">daeploy</span><span class="w"> </span><span class="kn">import</span> <span class="n">service</span>
 
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
@@ -222,7 +202,7 @@ formats.</p>
 <span class="n">service</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;greeting_phrase&quot;</span><span class="p">,</span> <span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="n">monitor</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="nd">@service</span><span class="o">.</span><span class="n">entrypoint</span>
-<span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="n">greeting_phrase</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">get_parameter</span><span class="p">(</span><span class="s2">&quot;greeting_phrase&quot;</span><span class="p">)</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Greeting someone with the name: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">greeting_phrase</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -230,7 +210,7 @@ formats.</p>
 </div>
 </section>
 <section id="getting-the-data">
-<h2>Getting the Data<a class="headerlink" href="#getting-the-data" title="Permalink to this heading"></a></h2>
+<h2>Getting the Data<a class="headerlink" href="#getting-the-data" title="Link to this heading"></a></h2>
 <p>Daeploy provides three options for accessing the time-series data for
 your monitored variables.</p>
 <p><strong>Option 1: Json format</strong></p>
@@ -276,10 +256,10 @@ time-series data for by using the following query parameters:
 <code class="docutils literal notranslate"><span class="pre">YYYY-MM-DD[T]HH:MM[:SS[.ffffff]][Z</span> <span class="pre">or</span> <span class="pre">[±]HH[:]MM]]]</span></code>, so for instance: 2020-01-01 02:30</p>
 <p>This will query time-series data for variable <cite>a</cite> and <cite>b</cite>.This entrypoint returns a zip file containing one csv file per requested variable.
 The csv files has the following format:</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>timestamp</p></th>
@@ -301,7 +281,7 @@ service database can be requested at the following entrypoint:</p>
 <p><code class="docutils literal notranslate"><span class="pre">http://your-host/services/&lt;servce_name&gt;_&lt;service_version&gt;/~monitor/db</span></code></p>
 </section>
 <section id="limiting-the-number-of-records-in-the-database">
-<h2>Limiting the Number of Records in the Database<a class="headerlink" href="#limiting-the-number-of-records-in-the-database" title="Permalink to this heading"></a></h2>
+<h2>Limiting the Number of Records in the Database<a class="headerlink" href="#limiting-the-number-of-records-in-the-database" title="Link to this heading"></a></h2>
 <p>Service databases are not meant as permanent data storage. The records are kept for
 365 days by default, but if a service stores large amounts of data often there is a
 risk of filling the disk of the host machine. To prevent this it’s possible to change

@@ -1,25 +1,25 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Versioning and Shadow Deployment &mdash; Daeploy  documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/clipboard.min.js"></script>
-        <script src="../../_static/copybutton.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=4ea706d9"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -32,12 +32,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html">
-            <img src="../../_static/daeploy_white.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/daeploy_white.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -115,8 +119,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Versioning and Shadow Deployment</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Versioning and Shadow Deployment</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/content/getting_started/shadow_deployment.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -126,32 +130,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="versioning-and-shadow-deployment">
-<span id="versioning-shadow-reference"></span><h1>Versioning and Shadow Deployment<a class="headerlink" href="#versioning-and-shadow-deployment" title="Permalink to this heading"></a></h1>
+  <section id="versioning-and-shadow-deployment">
+<span id="versioning-shadow-reference"></span><h1>Versioning and Shadow Deployment<a class="headerlink" href="#versioning-and-shadow-deployment" title="Link to this heading"></a></h1>
 <p>Daeploy supports something called shadow deployment, which means to deploy new versions
 of a program “in the background” of an older version that is known to be stable.
 This way, two or more services can run side by side and it becomes easy
@@ -160,7 +140,7 @@ other unwanted behaviour in production.</p>
 <p>This works by mirroring the input to every version of a service, but only
 returning the response of the main verision.</p>
 <section id="deploying-a-shadow-service">
-<h2>Deploying a Shadow Service<a class="headerlink" href="#deploying-a-shadow-service" title="Permalink to this heading"></a></h2>
+<h2>Deploying a Shadow Service<a class="headerlink" href="#deploying-a-shadow-service" title="Link to this heading"></a></h2>
 <p>Deploying a shadow service in Daeploy is as easy as deploying any other service.
 When deploying a service for the first time, it will always be the main version
 and every subsequent service with the same name will be a shadow of the main
@@ -207,7 +187,7 @@ This way it’s possible to use shadow deployment and still be able to communica
 with individual services.</p>
 </section>
 <section id="changing-main-service">
-<h2>Changing Main Service<a class="headerlink" href="#changing-main-service" title="Permalink to this heading"></a></h2>
+<h2>Changing Main Service<a class="headerlink" href="#changing-main-service" title="Link to this heading"></a></h2>
 <p>When a new service seems to perform to a satisfactory level you can change it to
 the main service using the CLI command <code class="docutils literal notranslate"><span class="pre">daeploy</span> <span class="pre">assign</span></code>:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">assign</span> <span class="n">hello</span> <span class="mf">2.0.0</span> 
@@ -225,7 +205,7 @@ or kept running in the background and changed back to if there should be any
 problems with the new version.</p>
 </section>
 <section id="killing-services">
-<h2>Killing Services<a class="headerlink" href="#killing-services" title="Permalink to this heading"></a></h2>
+<h2>Killing Services<a class="headerlink" href="#killing-services" title="Link to this heading"></a></h2>
 <p>The user is prohibited from killing main services while it has shadows. This
 is to protect the user from accidentally removing the main service and disrupting
 the production system. Shadow services can be killed freely or all versions of a

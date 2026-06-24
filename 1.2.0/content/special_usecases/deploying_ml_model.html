@@ -1,25 +1,25 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Deploying Machine Learning Models &mdash; Daeploy  documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/clipboard.min.js"></script>
-        <script src="../../_static/copybutton.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=4ea706d9"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -32,12 +32,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html">
-            <img src="../../_static/daeploy_white.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/daeploy_white.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -117,8 +121,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Deploying Machine Learning Models</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Deploying Machine Learning Models</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/content/special_usecases/deploying_ml_model.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -128,32 +132,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="deploying-machine-learning-models">
-<span id="deploy-ml-reference"></span><h1>Deploying Machine Learning Models<a class="headerlink" href="#deploying-machine-learning-models" title="Permalink to this heading"></a></h1>
+  <section id="deploying-machine-learning-models">
+<span id="deploy-ml-reference"></span><h1>Deploying Machine Learning Models<a class="headerlink" href="#deploying-machine-learning-models" title="Link to this heading"></a></h1>
 <p>Machine Learning models are commonly trained in a separate environment from
 the deployment environment. The models are typically serialized as e.g.
 <a class="reference external" href="https://docs.python.org/3/library/pickle.html">pickle</a> files, which can easily
@@ -161,16 +141,16 @@ be moved between the environments. In this tutorial we are going to look at how 
 can take a pickled <a class="reference external" href="https://scikit-learn.org/stable/">sklearn</a> classifier model
 and create a service that uses that model to predict a class on data sent to it.</p>
 <section id="the-classifier">
-<h2>The Classifier<a class="headerlink" href="#the-classifier" title="Permalink to this heading"></a></h2>
+<h2>The Classifier<a class="headerlink" href="#the-classifier" title="Link to this heading"></a></h2>
 <p>Let’s create a simple classifier for the famous iris dataset in this example.
 We will not go into any detail about how it’s done. There are plenty of tutorials
 online that go through this process:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pickle</span>
-<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pickle</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
-<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.neighbors</span><span class="w"> </span><span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
 
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
 <span class="n">THIS_DIR</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span>
@@ -198,7 +178,7 @@ online that go through this process:</p>
 </div>
 </section>
 <section id="the-service">
-<h2>The Service<a class="headerlink" href="#the-service" title="Permalink to this heading"></a></h2>
+<h2>The Service<a class="headerlink" href="#the-service" title="Link to this heading"></a></h2>
 <p>Like we have done previously we use <code class="docutils literal notranslate"><span class="pre">daeploy</span> <span class="pre">init</span></code> command to create a new project.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">init</span> 
 <span class="go">project_name [my_project]: iris_project</span>
@@ -219,12 +199,12 @@ still have to be installed. <cite>requirements.txt</cite> should contain the fol
 </div>
 <p>A very simple service to make predictions using the
 classifier we just trained could look like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
-<span class="kn">import</span> <span class="nn">pickle</span>
-<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pickle</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 
-<span class="kn">from</span> <span class="nn">daeploy</span> <span class="kn">import</span> <span class="n">service</span>
-<span class="kn">from</span> <span class="nn">daeploy.data_types</span> <span class="kn">import</span> <span class="n">ArrayOutput</span><span class="p">,</span> <span class="n">DataFrameInput</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">daeploy</span><span class="w"> </span><span class="kn">import</span> <span class="n">service</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">daeploy.data_types</span><span class="w"> </span><span class="kn">import</span> <span class="n">ArrayOutput</span><span class="p">,</span> <span class="n">DataFrameInput</span>
 
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 <span class="n">THIS_DIR</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span>
@@ -234,7 +214,7 @@ classifier we just trained could look like this:</p>
 
 
 <span class="nd">@service</span><span class="o">.</span><span class="n">entrypoint</span>
-<span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">DataFrameInput</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ArrayOutput</span><span class="p">:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">DataFrameInput</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ArrayOutput</span><span class="p">:</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Recieved data: </span><span class="se">\n</span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">pred</span> <span class="o">=</span> <span class="n">CLASSIFIER</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Predicted: </span><span class="si">{</span><span class="n">pred</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -248,7 +228,7 @@ classifier we just trained could look like this:</p>
 <p>In this service we unpickle the model as a global variable so we can use it anywhere
 in the service and we create the prediction entrypoint:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@service</span><span class="o">.</span><span class="n">entrypoint</span>
-<span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">DataFrameInput</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ArrayOutput</span><span class="p">:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">DataFrameInput</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ArrayOutput</span><span class="p">:</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Recieved data: </span><span class="se">\n</span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">pred</span> <span class="o">=</span> <span class="n">CLASSIFIER</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Predicted: </span><span class="si">{</span><span class="n">pred</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -261,7 +241,7 @@ we describe in <a class="reference internal" href="../advanced_tutorials/sdk_typ
 about converting the input and output to json compatible types.</p>
 </section>
 <section id="deployment">
-<h2>Deployment<a class="headerlink" href="#deployment" title="Permalink to this heading"></a></h2>
+<h2>Deployment<a class="headerlink" href="#deployment" title="Link to this heading"></a></h2>
 <p>Just like before, we deploy the service using the CLI:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">daeploy</span> <span class="n">deploy</span> <span class="n">iris_classifier</span> <span class="mf">1.0.0</span> <span class="o">./</span><span class="n">iris_project</span> 
 <span class="go">Active host: http://your-host</span>
