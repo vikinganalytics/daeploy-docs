@@ -1,0 +1,395 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work With Daeploy From a Notebook &mdash; Daeploy  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=2aa19091" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=4ea706d9"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Deploying Machine Learning Models" href="../special_usecases/deploying_ml_model.html" />
+    <link rel="prev" title="Daeploy with FastAPI" href="going_beyond_sdk.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/daeploy_white.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/daeploy_description.html">Daeploy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/compatibility.html">Version compatibility</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/custom_service.html">Anatomy of a Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/dashboard.html">Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/service_logs.html">Read Logs From Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/autodocs.html">API Autodocs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/notifications.html">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/shadow_deployment.html">Versioning and Shadow Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/reaching_service_from_external_applications.html">Reaching a service from external applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/ticker.html">Schedule Repeating Actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/monitoring.html">Monitoring Your Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/cross_service_communication.html">Cross-service Communication</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sdk_typing.html">Typing in the SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_multiple_hosts.html">Using Multiple Hosts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manager_api.html">Manager API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adv_deploy.html">Deployment Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli_autocompletion.html">Autocompletion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="service_environment.html">Service Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manager_configuration.html">Manager Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing_services.html">Testing Services Before Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proxy_dashboard.html">Proxy Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="going_beyond_sdk.html">Daeploy with FastAPI</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Work With Daeploy From a Notebook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Logging-in">Logging in</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Writing-the-Service">Writing the Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Deploy-the-Service">Deploy the Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Test-the-Deployed-Service">Test the Deployed Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Kill-the-Service">Kill the Service</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Special Usecases</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/deploying_ml_model.html">Deploying Machine Learning Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/ui_streamlit.html">Using Streamlit to build a dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/ui_plotly_dash.html">Using Plotly Dash to build a dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/conda.html">Using Daeploy with Conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/gpu_services.html">Access NVIDIA GPUs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_usecases/hosting_static_html.html">Host static HTML pages using Daeploy</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Api Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/cli.html">Command-line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/sdk.html">Software Development Kit</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3rd_party_software.html">3rd party software</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Daeploy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Work With Daeploy From a Notebook</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/content/advanced_tutorials/daeploy_notebook_service.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="Work-With-Daeploy-From-a-Notebook">
+<h1>Work With Daeploy From a Notebook<a class="headerlink" href="#Work-With-Daeploy-From-a-Notebook" title="Link to this heading"></a></h1>
+<p>This example will show you how to create and deploy a service straight from a notebook.</p>
+<section id="Logging-in">
+<h2>Logging in<a class="headerlink" href="#Logging-in" title="Link to this heading"></a></h2>
+<p>To log in to your host, first log in using a terminal with username + password and generate a token with <code class="docutils literal notranslate"><span class="pre">daeploy</span> <span class="pre">token</span></code>. Use this token for future log-ins from the notebook. This way you do not have to show your username and password. You can set a time limit to the token for better security.</p>
+<p>We start by importing some packages and defining the host and token as global variables</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import requests
+import json
+import time
+
+HOST = &quot;http://localhost&quot;  # Change to your host
+TOKEN = &quot;&quot;  # Add your token here
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In jupyter notebooks you can call terminal commands by starting a row with <code class="docutils literal notranslate"><span class="pre">!</span></code>. We can use this with the Daeploy CLI to log in to a manager and use all the functionality that we are used to from the command line. You can prepend an argument with <code class="docutils literal notranslate"><span class="pre">$</span></code> to use a python variable in your command.</p>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>!daeploy login --host $HOST --token $TOKEN
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Changed host to http://localhost
+</pre></div></div>
+</div>
+</section>
+<section id="Writing-the-Service">
+<h2>Writing the Service<a class="headerlink" href="#Writing-the-Service" title="Link to this heading"></a></h2>
+<p>The service code should be collected in a single cell decorated with the <code class="docutils literal notranslate"><span class="pre">service_cell</span></code> <a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/magics.html?highlight=magic">magic command</a>. We start by importing it from <code class="docutils literal notranslate"><span class="pre">daeploy.notebook</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The function has to imported directly for it to work. IPython will not recognize <code class="docutils literal notranslate"><span class="pre">%%daeploy.notebook.service_cell</span></code>.</p>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from daeploy.notebook import service_cell
+</pre></div>
+</div>
+</div>
+<p>The magic command has an argument for the project name of the service, which is the directory where all the files will be placed.</p>
+<p>For example <code class="docutils literal notranslate"><span class="pre">%%service_cell</span> <span class="pre">my_service</span></code> will create a directory with a <code class="docutils literal notranslate"><span class="pre">service.py</span></code> file with the contents of the cell and a <code class="docutils literal notranslate"><span class="pre">.s2i/environment</span></code> file that is required by Daeploy. If the files already exist, only <code class="docutils literal notranslate"><span class="pre">serivce.py</span></code> will be changed.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%service_cell notebook_service
+
+import logging
+
+import numpy as np
+
+from daeploy import service
+from daeploy.communication import notify, Severity
+
+logger = logging.getLogger(__name__)
+
+
+@service.entrypoint
+def sqrt(number: float) -&gt; float:
+    return np.sqrt(number)
+
+
+if __name__ == &quot;__main__&quot;:
+    service.run()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;Saved service.py&#39;
+</pre></div></div>
+</div>
+<p>If the service needs any packages besides <code class="docutils literal notranslate"><span class="pre">daeploy</span></code> that are not included in the python standard library you can add them with the <code class="docutils literal notranslate"><span class="pre">service_requirements</span></code> magic:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from daeploy.notebook import service_requirements
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%service_requirements notebook_service
+numpy
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;Saved requirements.txt&#39;
+</pre></div></div>
+</div>
+</section>
+<section id="Deploy-the-Service">
+<h2>Deploy the Service<a class="headerlink" href="#Deploy-the-Service" title="Link to this heading"></a></h2>
+<p>We can deploy the service like we normally would with the CLI using <code class="docutils literal notranslate"><span class="pre">daeploy</span> <span class="pre">deploy</span></code></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>!daeploy deploy notebook_service 1.0.0 notebook_service
+time.sleep(5)  # Wait a moment for the service to start
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Active host: http://localhost
+Deploying service...
+Service deployed successfully
+MAIN    NAME              VERSION    STATUS    RUNNING
+------  ----------------  ---------  --------  -----------------------------------
+*       notebook_service  1.0.0      running   Running (since 2021-04-13 08:24:26)
+
+</pre></div></div>
+</div>
+</section>
+<section id="Test-the-Deployed-Service">
+<h2>Test the Deployed Service<a class="headerlink" href="#Test-the-Deployed-Service" title="Link to this heading"></a></h2>
+<p>We can test the service straight from the notebook using the <code class="docutils literal notranslate"><span class="pre">requests</span></code> package.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>response = requests.post(
+    url=f&quot;{HOST}/services/notebook_service/sqrt&quot;,
+    json={&quot;number&quot;: 2},
+    headers={&quot;Authorization&quot;: f&quot;Bearer {TOKEN}&quot;}
+)
+assert response.status_code == 200, f&quot;{response.status_code}, {response.text}&quot;
+response.json()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+1.4142135623730951
+</pre></div></div>
+</div>
+</section>
+<section id="Kill-the-Service">
+<h2>Kill the Service<a class="headerlink" href="#Kill-the-Service" title="Link to this heading"></a></h2>
+<p>When we are finished we can kill the service.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>!daeploy kill notebook_service 1.0.0 --yes
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Active host: http://localhost
+MAIN    NAME              VERSION    STATUS    RUNNING
+------  ----------------  ---------  --------  -----------------------------------
+*       notebook_service  1.0.0      running   Running (since 2021-04-13 08:24:26)
+
+Service notebook_service 1.0.0 killed.
+</pre></div></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="going_beyond_sdk.html" class="btn btn-neutral float-left" title="Daeploy with FastAPI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../special_usecases/deploying_ml_model.html" class="btn btn-neutral float-right" title="Deploying Machine Learning Models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Viking Analytics AB.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: 1.4.0
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Tags</dt>
+      <dd><a href="../../../1.0.0/index.html">1.0.0</a></dd>
+      <dd><a href="../../../1.0.0-beta/index.html">1.0.0-beta</a></dd>
+      <dd><a href="../../../1.0.1/index.html">1.0.1</a></dd>
+      <dd><a href="../../../1.0.2/index.html">1.0.2</a></dd>
+      <dd><a href="../../../1.1.0/index.html">1.1.0</a></dd>
+      <dd><a href="../../../1.1.1/index.html">1.1.1</a></dd>
+      <dd><a href="../../../1.2.0/index.html">1.2.0</a></dd>
+      <dd><a href="../../../1.3.0/index.html">1.3.0</a></dd>
+      <dd><a href="../../../1.3.1/index.html">1.3.1</a></dd>
+      <dd><a href="daeploy_notebook_service.html">1.4.0</a></dd>
+    </dl>
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../../develop/index.html">develop</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
